@@ -8,86 +8,9 @@
 
 Design tokens are the atomic decisions of a design system: colors, spacing, typography, motion. Instead of hardcoding `#ae003f` or `1rem` throughout your codebase, you name the decision — `--color-brand`, `--spacing-md` — and reference that name everywhere.
 
-## DTCG — Design Token Community Group
-
-The [W3C Design Token Community Group (DTCG)](https://www.w3.org/community/design-tokens/) defines a standard interchange format for design tokens, so they can travel between tools (Figma, code, documentation) without loss of meaning.
-
-### The DTCG format
-
-The [DTCG spec](https://tr.designtokens.org/format/) defines tokens as JSON objects with reserved `$`-prefixed keys:
-
-```json
-{
-  "color-brand": {
-    "$value": "#ae003f",
-    "$type": "color",
-    "$description": "Primary brand color — used for CTAs and highlights."
-  }
-}
-```
-
-| Key | Required | Description |
-| --- | --- | --- |
-| `$value` | ✅ | The token's value |
-| `$type` | recommended | The token type (see below) |
-| `$description` | optional | Human-readable documentation |
-| `$extensions` | optional | Vendor-specific metadata (e.g. Figma, Tokens Studio) |
-
-### DTCG token types
-
-| Type | Example value | CSS usage |
-| --- | --- | --- |
-| `color` | `#ae003f`, `hsl(...)` | `color`, `background-color` |
-| `dimension` | `1rem`, `4px` | `width`, `padding`, `font-size` |
-| `fontFamily` | `"system-ui, sans-serif"` | `font-family` |
-| `fontWeight` | `700` | `font-weight` |
-| `duration` | `300ms` | `transition-duration` |
-| `cubicBezier` | `[0.165, 0.84, 0.44, 1]` | `animation-timing-function` |
-| `number` | `1.5` | `line-height`, `opacity` |
-| `shadow` | `{offsetX, offsetY, blur, spread, color}` | `box-shadow` |
-
-→ Full type list: [tr.designtokens.org/format/#types](https://tr.designtokens.org/format/#types)
-
-### Token groups
-
-Tokens are organized in nested objects. Groups share a `$type` by inheritance:
-
-```json
-{
-  "color": {
-    "$type": "color",
-    "gray": {
-      "100": { "$value": "#f8f9fa" },
-      "900": { "$value": "#111827" }
-    }
-  }
-}
-```
-
-→ [tr.designtokens.org/format/#groups](https://tr.designtokens.org/format/#groups)
-
-### References (aliases)
-
-Tokens can reference other tokens using `{dotted.path}` syntax:
-
-```json
-{
-  "color-primary": {
-    "$value": "{color.brand}",
-    "$type": "color"
-  }
-}
-```
-
-This is the key mechanism behind the **primitive → semantic → component** hierarchy.
-
-→ [tr.designtokens.org/format/#alias](https://tr.designtokens.org/format/#alias)
-
----
-
 ## Token architecture
 
-This package follows the three-layer model, which maps directly to DTCG's alias mechanism:
+This package follows the [DTCG](docs/dtcg.md) three-layer model — primitive → semantic → component:
 
 ```
 primitive   →   semantic   →   component
@@ -147,7 +70,7 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 
 - **Lowercase kebab-case** — always
 - **No component names** in primitive or semantic tokens (`--button-*` belongs in component tokens, not here)
-- **Semantic tokens never contain raw values** — they always reference a primitive via `var()`
+- **Semantic tokens are named by intent** — they may reference a primitive via `var()` or carry a raw value when the value itself has design intent (e.g. `--z-index-modal: 400`, `--radius-pill: 9999px`)
 - **States at the end** — `-hover`, `-focus`, `-active`, `-disabled`, `-checked`
 - **`color-*` prefix for all color values** — even when the CSS property is `background-color`, `border-color`, etc.
 
@@ -182,7 +105,10 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 | `transition` | Shorthand transitions | `--transition-normal`, `--transition-color` |
 | `ratio` | Aspect ratios | `--ratio-16-9` |
 | `flex` | Flex-basis fractions | `--flex-half`, `--flex-third` |
-| `span` | Grid column spans | `--span-half`, `--span-third` |
+| `fluid` | Responsive clamp() scale | `--fluid-sm`, `--fluid-lg` |
+| `focus` | Focus ring tokens | `--focus-color`, `--focus-outline-width` |
+| `opacity` | Opacity values | `--opacity-disabled`, `--opacity-overlay` |
+| `span` | Grid column spans | `--span-6`, `--span-4` |
 | `z-index` | Stacking order | `--z-index-modal`, `--z-index-dropdown` |
 | `max-width` | Readability caps | `--max-width-paragraph` |
 
@@ -226,7 +152,7 @@ yarn add @uncinq/design-tokens
 
 ```css
 /* everything */
-@import '@uncinq/design-tokens/tokens/index.css';
+@import '@uncinq/design-tokens';
 
 /* or by layer */
 @import '@uncinq/design-tokens/tokens/primitive.css';
@@ -251,28 +177,33 @@ yarn add @uncinq/design-tokens
 tokens/
   index.css               ← imports all layers in order
   primitive/
-    color.css             ← color palette (gray, brand, semantic palettes)
+    color.css             ← color palette (Tailwind v3 — amber, blue, gray, green…)
     font.css              ← font families, weights, line-heights, text-decoration
+    opacity.css           ← opacity scale (0 → 1)
     shadow.css            ← box-shadow scale
     size.css              ← rem scale (--size-1 → --size-1920)
   semantic/
     border.css            ← border styles and widths
     color.css             ← purposeful color aliases (--color-brand, --color-bg…)
-    form.css              ← form control tokens (input, label, checkbox…)
-    grid.css              ← flex fractions and grid span helpers
-    motion.css            ← duration, easing, transition shorthands
+    fluid.css             ← responsive clamp() scale (--fluid-2xs → --fluid-2xl)
+    focus.css             ← focus ring tokens (color, style, width, offset)
+    form.css              ← form control tokens (input, label, checkbox, switch…)
+    grid.css              ← columns, gap, flex fractions, integer spans (--span-1 → --span-24)
+    motion.css            ← duration, easing (standard + expressive + spring), transitions
+    opacity.css           ← purposeful opacity aliases (disabled, overlay)
     radius.css            ← border-radius scale + purposeful aliases
     ratio.css             ← aspect-ratio values (16/9, 4/3…)
     size.css              ← T-shirt scale + breakpoint aliases
     spacing.css           ← spacing scale + purposeful aliases
-    typography.css        ← font-size scale, heading sizes, line-heights, max-widths
+    typography.css        ← font-size scale (fixed + fluid), heading sizes, max-widths
+    z-index.css           ← stacking order (below → tooltip)
 ```
 
 ---
 
 ## References
 
+- [DTCG — format and concepts](docs/dtcg.md)
 - [DTCG specification](https://tr.designtokens.org/format/) — W3C Community Group draft
-- [DTCG GitHub](https://github.com/design-tokens/community-group) — issues, discussion
 - [Style Dictionary](https://amzn.github.io/style-dictionary/) — token build pipeline (JSON → CSS/SCSS/JS)
 - [MDN: CSS cascade layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
