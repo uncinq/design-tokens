@@ -1,0 +1,93 @@
+/* semantic/form.css */
+@layer config {
+  :root {
+    /* ── Base form ─────────────────────────────────────────────────────── */
+    --form-color-accent:     var(--color-black);
+    --form-color-background: var(--color-white);
+    --form-color-border:     var(--color-border);
+    --form-color-text:       var(--color-text);
+    --form-border-radius:    var(--radius-xs);
+    --form-border-width:     var(--border-width-normal);
+
+    /* ── Input ─────────────────────────────────────────────────────────── */
+    --input-color-background:   var(--form-color-background);
+    --input-color-border:       var(--form-color-border);
+    --input-color-border-hover: var(--form-color-accent);
+    --input-color-placeholder:  var(--color-text-muted);
+    --input-color-text:         var(--form-color-text);
+    --input-border-radius:      var(--form-border-radius);
+    --input-border-width:       var(--form-border-width);
+    --input-padding:            var(--spacing-control);
+
+    /* ── Textarea ──────────────────────────────────────────────────────── */
+    --textarea-color-background:   var(--form-color-background);
+    --textarea-color-border:       var(--form-color-border);
+    --textarea-color-border-hover: var(--textarea-color-border);
+    --textarea-color-placeholder:  var(--color-text-muted);
+    --textarea-color-text:         var(--form-color-text);
+    --textarea-border-radius:      var(--form-border-radius);
+    --textarea-border-width:       var(--form-border-width);
+
+    /* ── Select ────────────────────────────────────────────────────────── */
+    --select-color-background:   var(--form-color-background);
+    --select-color-border:       var(--form-color-border);
+    --select-color-border-hover: var(--select-color-border);
+    --select-color-optgroup:     var(--color-text-muted);
+    --select-color-text:         var(--form-color-text);
+    --select-border-radius:      var(--form-border-radius);
+    --select-border-width:       var(--form-border-width);
+
+    /* ── Label ─────────────────────────────────────────────────────────── */
+    --label-color-text:     var(--form-color-text);
+    --label-font-size:      var(--font-size-xs);
+    --label-font-weight:    var(--font-weight-medium);
+    --label-padding:        var(--spacing-2xs) 0;
+    --label-text-transform: uppercase;
+
+    /* ── Help text ─────────────────────────────────────────────────────── */
+    --help-color-text:  var(--color-text-muted);
+    --help-font-size:   var(--font-size-xs);
+    --help-font-weight: var(--font-weight-normal);
+    --help-margin:      0;
+
+    /* ── Checkables (checkbox + radio shared) ──────────────────────────── */
+    --checkable-color-border:         var(--form-color-border);
+    --checkable-color-border-checked: transparent;
+
+    /* ── Checkbox ──────────────────────────────────────────────────────── */
+    --checkbox-color-background:         var(--form-color-background);
+    --checkbox-color-background-checked: transparent;
+    --checkbox-color-border:             var(--checkable-color-border);
+    --checkbox-color-border-hover:       var(--checkbox-color-border);
+    --checkbox-color-checked:            var(--form-color-accent);
+    --checkbox-border-radius:            0;
+    --checkbox-border-width:             var(--form-border-width);
+
+    /* ── Radio ─────────────────────────────────────────────────────────── */
+    --radio-color-background:    var(--form-color-background);
+    --radio-color-border:        var(--checkable-color-border);
+    --radio-color-border-checked: var(--checkable-color-border-checked);
+    --radio-color-border-hover:  var(--radio-color-border);
+    --radio-color-checked:       var(--form-color-accent);
+    --radio-border-radius:       var(--radius-pill);
+    --radio-border-width:        var(--form-border-width);
+
+    /* ── Switch ────────────────────────────────────────────────────────── */
+    --switch-color-border:         var(--checkable-color-border);
+    --switch-color-thumb:          var(--color-white);
+    --switch-color-track:          var(--form-color-background);
+    --switch-color-track-checked:  var(--form-color-accent);
+    --switch-border-radius:        var(--radius-pill);
+    --switch-border-width:         var(--border-width-normal);
+    --switch-height:               var(--size-24);
+    --switch-width:                var(--size-40);
+
+    /* ── Range ─────────────────────────────────────────────────────────── */
+    --range-color-accent:       var(--form-color-accent);
+    --range-color-track:        var(--form-color-border);
+    --range-thumb-color-border: var(--color-white);
+    --range-thumb-border-width: var(--size-4);
+    --range-thumb-size:         var(--size-24);
+    --range-track-height:       calc(var(--border-width-normal) + 2px);
+  }
+}

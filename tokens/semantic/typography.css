@@ -1,0 +1,66 @@
+/* semantic/typography.css */
+@layer config {
+  :root {
+    /* ── Font families ──────────────────────────────────────────────────── */
+    --font-family-code:    var(--font-family-mono);
+    --font-family-heading: var(--font-family-sans);
+    --font-family-text:    var(--font-family-sans);
+
+    /* ── Font weights ───────────────────────────────────────────────────── */
+    --font-weight-control: var(--font-weight-medium);
+    --font-weight-heading: var(--font-weight-bold);
+    --font-weight-text:    var(--font-weight-normal);
+
+    /* ── Letter spacing ─────────────────────────────────────────────────── */
+    --letter-spacing-normal: 0;
+    --letter-spacing-medium: 0.025em;
+    --letter-spacing-large:  0.05em;
+
+    /* ── Line heights ───────────────────────────────────────────────────── */
+    --line-height-heading: var(--line-height-tight);
+    --line-height-text:    var(--line-height-normal);
+
+    /* ── Font size scale (T-shirt) ──────────────────────────────────────── */
+    --font-size-2xs:     var(--size-12);
+    --font-size-xs:      var(--size-14);
+    --font-size-sm:      var(--size-16);
+    --font-size-md:      var(--size-18);
+    --font-size-lg:      var(--size-24);
+    --font-size-xl:      var(--size-40);
+    --font-size-2xl:     var(--size-64);
+    --font-size-display: var(--size-96);  /* hero / marketing */
+
+    /* ── Body ───────────────────────────────────────────────────────────── */
+    --font-size-text: var(--font-size-sm);
+
+    /* ── Headings ───────────────────────────────────────────────────────── */
+    --font-size-heading-01: var(--font-size-xl);
+    --font-size-heading-02: var(--font-size-lg);
+    --font-size-heading-03: var(--font-size-md);
+    --font-size-heading-04: var(--font-size-sm);
+    --font-size-heading-05: var(--font-size-sm);
+    --font-size-heading-06: var(--font-size-sm);
+
+    /* ── Fluid font sizes ───────────────────────────────────────────────── */
+    /*
+     * clamp(min, preferred, max) — scales between ~320px and ~1440px viewport.
+     * Use these instead of fixed sizes for responsive typography without breakpoints.
+     * $type: dimension
+     */
+    --font-size-fluid-xs:      clamp(0.875rem, 1.5vw, 1rem);    /* 14 → 16px */
+    --font-size-fluid-sm:      clamp(1rem,     2vw,   1.125rem); /* 16 → 18px */
+    --font-size-fluid-md:      clamp(1.125rem, 2.5vw, 1.5rem);  /* 18 → 24px */
+    --font-size-fluid-lg:      clamp(1.5rem,   4vw,   2.5rem);  /* 24 → 40px */
+    --font-size-fluid-xl:      clamp(2.5rem,   6vw,   4rem);    /* 40 → 64px */
+    --font-size-fluid-display: clamp(4rem,     8vw,   6rem);    /* 64 → 96px */
+
+    /* ── Readability ────────────────────────────────────────────────────── */
+    /*
+     * Max line length in ch units (width of "0" character).
+     * Prevents overly long lines causing reading fatigue (WCAG 1.4.8).
+     * Headings use a shorter value: larger font = physically wider chars.
+     */
+    --max-width-heading:   40ch;
+    --max-width-paragraph: 70ch;
+  }
+}

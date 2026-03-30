@@ -1,0 +1,21 @@
+/* semantic/spacing.css */
+@layer config {
+  :root {
+    /* ── T-shirt scale ──────────────────────────────────────────────────── */
+    --spacing-2xs: var(--size-5);
+    --spacing-xs:  var(--size-10);
+    --spacing-sm:  var(--size-20);
+    --spacing-md:  var(--size-30);
+    --spacing-lg:  var(--size-40);
+    --spacing-xl:  var(--size-60);
+    --spacing-2xl: var(--size-100);
+    --spacing-3xl: var(--size-150);
+
+    /* ── Purposeful aliases ─────────────────────────────────────────────── */
+    --spacing-control:    var(--spacing-xs);   /* padding inside interactive controls */
+    --spacing-heading:    var(--spacing-sm);   /* gap below headings */
+    --spacing-section:    var(--spacing-2xl);  /* vertical rhythm between sections */
+    --spacing-surface:    var(--spacing-sm);   /* padding inside surfaces (card, panel) */
+    --spacing-typography: var(--spacing-xs);   /* gap between typographic elements */
+  }
+}

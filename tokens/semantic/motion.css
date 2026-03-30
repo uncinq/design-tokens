@@ -1,0 +1,43 @@
+/* semantic/motion.css */
+@layer config {
+  :root {
+    /* ── Duration ───────────────────────────────────────────────────────── */
+    --duration-fast:   150ms;
+    --duration-normal: 300ms;
+    --duration-slow:   600ms;
+
+    /* ── Easing — standard ──────────────────────────────────────────────── */
+    --easing-linear:  linear;
+    --easing-default: ease-in-out;
+    --easing-in:      ease-in;
+    --easing-out:     ease-out;
+
+    /* ── Easing — expressive ─────────────────────────────────────────────── */
+    /* Fast deceleration, natural feel — good for elements entering the screen */
+    --easing-out-circ: cubic-bezier(0, 0.55, 0.45, 1);
+    /* Dramatic deceleration — good for modals, drawers */
+    --easing-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    /* Slight overshoot then settle — good for confirmations, badges */
+    --easing-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Legacy alias — ease-out-quart curve */
+    --easing-bounce:   cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    /* ── Easing — physics (requires modern browser linear() support) ─────── */
+    /* Spring — overshoots slightly, settles naturally */
+    --easing-spring: linear(
+      0, 0.006, 0.025 2.8%, 0.101, 0.197, 0.325, 0.474, 0.638, 0.806,
+      0.962, 1.065, 1.12, 1.14, 1.12 30.9%, 1.034, 0.997, 0.986, 0.998, 1
+    );
+
+    /* ── Transition shorthands ──────────────────────────────────────────── */
+    --transition-fast:   all var(--duration-fast)   var(--easing-default);
+    --transition-normal: all var(--duration-normal) var(--easing-default);
+    --transition-slow:   all var(--duration-slow)   var(--easing-default);
+    /* Targeted transitions — prefer over `all` for performance */
+    --transition-opacity:   opacity   var(--duration-normal) var(--easing-default);
+    --transition-transform: transform var(--duration-normal) var(--easing-default);
+    /* Targeted color transitions */
+    --transition-property-color: color, background-color, border-color, outline-color, fill, stroke;
+    --transition-color: var(--transition-property-color) var(--duration-normal) var(--easing-default);
+  }
+}

@@ -1,0 +1,14 @@
+/* semantic/z-index.css */
+@layer config {
+  :root {
+    --z-index-below:     -1;   /* background decorative elements */
+    --z-index-base:       0;
+    --z-index-raised:    10;   /* cards, sticky elements within flow */
+    --z-index-dropdown:  100;  /* dropdowns, popovers */
+    --z-index-sticky:    200;  /* sticky header/sidebar */
+    --z-index-offcanvas: 300;  /* drawer, side panel */
+    --z-index-modal:     400;  /* modal dialogs */
+    --z-index-toast:     500;  /* notifications, toasts */
+    --z-index-tooltip:   600;  /* tooltips (always on top) */
+  }
+}

@@ -1,0 +1,50 @@
+/* semantic/grid.css */
+@layer config {
+  :root {
+    /* ── Grid base ──────────────────────────────────────────────────────── */
+    --columns: 12;
+    --gap:     var(--spacing-md);
+
+    /* ── Flex fractions ─────────────────────────────────────────────────── */
+    --flex-full:            100%;
+    --flex-eleven-twelfths: 91.6666666667%;
+    --flex-five-sixths:     83.3333333333%;
+    --flex-four-fifths:     80%;
+    --flex-three-quarters:  75%;
+    --flex-two-thirds:      66.6666666667%;
+    --flex-half:            50%;
+    --flex-third:           33.3333333333%;
+    --flex-quarter:         25%;
+    --flex-fifth:           20%;
+    --flex-sixth:           16.6666666667%;
+    --flex-twelfth:         8.3333333333%;
+
+    /* ── Grid column spans ──────────────────────────────────────────────── */
+    /* Integer spans — grid-agnostic. Comments show col-12 / col-24 fractions. */
+    --span-full: span var(--columns);
+    --span-24:   span 24;
+    --span-23:   span 23;
+    --span-22:   span 22;
+    --span-21:   span 21;
+    --span-20:   span 20;
+    --span-19:   span 19;
+    --span-18:   span 18;
+    --span-17:   span 17;
+    --span-16:   span 16;
+    --span-15:   span 15;
+    --span-14:   span 14;
+    --span-13:   span 13;
+    --span-12:   span 12;
+    --span-11:   span 11;
+    --span-10:   span 10;
+    --span-9:    span 9; 
+    --span-8:    span 8; 
+    --span-7:    span 7;
+    --span-6:    span 6; 
+    --span-5:    span 5;
+    --span-4:    span 4; 
+    --span-3:    span 3; 
+    --span-2:    span 2; 
+    --span-1:    span 1; 
+  }
+}
