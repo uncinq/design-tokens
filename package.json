@@ -1,0 +1,29 @@
+{
+  "name": "@uncinq/design-tokens",
+  "version": "0.0.0",
+  "description": "Framework-agnostic CSS design tokens — primitive and semantic layers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uncinq/design-tokens.git"
+  },
+  "homepage": "https://github.com/uncinq/design-tokens#readme",
+  "keywords": [
+    "design-tokens",
+    "css",
+    "custom-properties",
+    "design-system"
+  ],
+  "files": [
+    "tokens/"
+  ],
+  "exports": {
+    ".": "./tokens/index.css",
+    "./tokens/index.css": "./tokens/index.css",
+    "./tokens/primitive.css": "./tokens/primitive.css",
+    "./tokens/semantic.css": "./tokens/semantic.css",
+    "./tokens/primitive/*": "./tokens/primitive/*",
+    "./tokens/semantic/*": "./tokens/semantic/*"
+  },
+  "style": "./tokens/index.css"
+}
