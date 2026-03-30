@@ -1,0 +1,8 @@
+/* @uncinq/design-tokens — primitive.css */
+@layer config;
+
+@import 'primitive/color.css';
+@import 'primitive/font.css';
+@import 'primitive/opacity.css';
+@import 'primitive/shadow.css';
+@import 'primitive/size.css';
