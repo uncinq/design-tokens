@@ -72,6 +72,17 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 - **Semantic tokens are named by intent** — they may reference a primitive via `var()` or carry a raw value when the value itself has design intent (e.g. `--z-index-modal: 400`, `--radius-pill: 9999px`)
 - **States at the end** — `-hover`, `-focus`, `-active`, `-disabled`, `-checked`
 - **`color-*` prefix for all color values** — even when the CSS property is `background-color`, `border-color`, etc.
+- **Alphabetical order** — tokens within a file are sorted alphabetically; group related tokens with a comment when the file has many entries:
+
+```css
+/* Brand */
+--color-brand:       var(--color-indigo-600);
+--color-brand-hover: var(--color-indigo-700);
+
+/* Text */
+--color-text:        var(--color-gray-900);
+--color-text-muted:  var(--color-gray-500);
+```
 
 ### Scales
 
