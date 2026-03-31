@@ -29,5 +29,8 @@
     "./tokens/primitive/*": "./tokens/primitive/*",
     "./tokens/semantic/*": "./tokens/semantic/*"
   },
-  "style": "./tokens/index.css"
+  "style": "./tokens/index.css",
+  "publishConfig": {
+    "access": "public"
+  }
 }
