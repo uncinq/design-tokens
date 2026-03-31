@@ -43,14 +43,13 @@ A semantic token answers: **"what is this value for?"**
 
 This is the layer that gives portability: all projects consuming `@uncinq/design-tokens` share the same semantic API. When the brand color changes, you update one primitive — all semantic tokens that reference it update automatically.
 
-### Layer 3 — Component (not in this package)
+### Layer 3 — Component
 
-Scoped to a specific component. Lives in each project's own design system.
+Scoped to a specific component. Generic component tokens are provided by [@uncinq/component-tokens](https://github.com/uncinq/component-tokens); project-specific ones live in each project's own design system.
 
 ```css
-/* in hugolify-theme-design-system, not here */
 --alert-border-radius: var(--radius-none);
---button-padding: var(--spacing-control);
+--btn-padding: var(--spacing-control);
 ```
 
 ---
@@ -105,7 +104,8 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 | `transition` | Shorthand transitions | `--transition-normal`, `--transition-color` |
 | `ratio` | Aspect ratios | `--ratio-16-9` |
 | `flex` | Flex-basis fractions | `--flex-half`, `--flex-third` |
-| `fluid` | Responsive clamp() scale | `--fluid-sm`, `--fluid-lg` |
+| `fluid-text` | Responsive fluid type scale (Utopia) | `--fluid-text-sm`, `--fluid-text-xl` |
+| `fluid-spacing` | Responsive fluid spacing scale (Utopia) | `--fluid-spacing-sm`, `--fluid-spacing-lg` |
 | `focus` | Focus ring tokens | `--focus-color`, `--focus-outline-width` |
 | `opacity` | Opacity values | `--opacity-disabled`, `--opacity-overlay` |
 | `span` | Grid column spans | `--span-6`, `--span-4` |
@@ -185,7 +185,7 @@ tokens/
   semantic/
     border.css            ← border styles and widths
     color.css             ← purposeful color aliases (--color-brand, --color-bg…)
-    fluid.css             ← responsive clamp() scale (--fluid-2xs → --fluid-2xl)
+    fluid.css             ← responsive clamp() scales (--fluid-text-*, --fluid-spacing-*)
     focus.css             ← focus ring tokens (color, style, width, offset)
     form.css              ← form control tokens (input, label, checkbox, switch…)
     grid.css              ← columns, gap, flex fractions, integer spans (--span-1 → --span-24)

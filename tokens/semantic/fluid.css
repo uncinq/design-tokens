@@ -1,20 +1,30 @@
 /* semantic/fluid.css */
 /*
- * Responsive fluid scale using clamp().
+ * Responsive fluid scales using clamp().
  * Viewport range: 360px → 1440px (1080px range).
  * preferred = intercept + slope×vw  (exact linear interpolation, no approximation)
  * $type: dimension
- * 
+ *
  * https://utopia.fyi/clamp/calculator/
  */
 @layer config {
   :root {
-    --fluid-2xs: clamp(0.5625rem, 0.5rem + 0.2778vw, 0.75rem);   /*  9 →  12px */
-    --fluid-xs:  clamp(0.75rem, 0.625rem + 0.5556vw, 1.125rem);  /* 12 →  18px */
-    --fluid-sm:  clamp(1.125rem, 1rem + 0.5556vw, 1.5rem);       /* 18 →  24px */
-    --fluid-md:  clamp(1.5rem, 1.25rem + 1.1111vw, 2.25rem);     /* 24 →  36px */
-    --fluid-lg:  clamp(2.25rem, 2rem + 1.1111vw, 3rem);          /* 36 →  48px */
-    --fluid-xl:  clamp(3rem, 2.5rem + 2.2222vw, 4.5rem);         /* 48 →  72px */
-    --fluid-2xl: clamp(4.5rem, 4rem + 2.2222vw, 6rem);           /* 72 →  96px */
+
+    /* ── Fluid text scale ───────────────────────────────────────────────── */
+    --fluid-text-2xs: clamp(0.5625rem, 0.5rem + 0.2778vw, 0.75rem);   /*  9 →  12px */
+    --fluid-text-xs:  clamp(0.75rem, 0.625rem + 0.5556vw, 1.125rem);  /* 12 →  18px */
+    --fluid-text-sm:  clamp(1.125rem, 1rem + 0.5556vw, 1.5rem);       /* 18 →  24px */
+    --fluid-text-md:  clamp(1.5rem, 1.25rem + 1.1111vw, 2.25rem);     /* 24 →  36px */
+    --fluid-text-lg:  clamp(2.25rem, 2rem + 1.1111vw, 3rem);          /* 36 →  48px */
+    --fluid-text-xl:  clamp(3rem, 2.5rem + 2.2222vw, 4.5rem);         /* 48 →  72px */
+    --fluid-text-2xl: clamp(4.5rem, 4rem + 2.2222vw, 6rem);           /* 72 →  96px */
+
+    /* ── Fluid spacing scale ────────────────────────────────────────────── */
+    --fluid-spacing-xs: clamp(0.625rem, 0.4167rem + 0.9259vw, 1.25rem);   /* 10 →  20px */
+    --fluid-spacing-sm: clamp(1.25rem, 0.8333rem + 1.8519vw, 2.5rem);     /* 20 →  40px */
+    --fluid-spacing-md: clamp(1.875rem, 1.25rem + 2.7778vw, 3.75rem);     /* 30 →  60px */
+    --fluid-spacing-lg: clamp(2.5rem, 1.6667rem + 3.7037vw, 5rem);        /* 40 →  80px */
+    --fluid-spacing-xl: clamp(3.125rem, 2.0833rem + 4.6296vw, 6.25rem);   /* 50 → 100px */
+
   }
 }

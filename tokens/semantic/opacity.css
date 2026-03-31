@@ -1,7 +1,7 @@
 /* semantic/opacity.css */
 @layer config {
   :root {
-    --opacity-disabled: var(--opacity-50);
+    --opacity-disabled: var(--opacity-25);
     --opacity-overlay:  var(--opacity-75);
     --opacity-subtle:   var(--opacity-10);
   }
