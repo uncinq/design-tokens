@@ -8,6 +8,10 @@
     "url": "https://github.com/uncinq/design-tokens.git"
   },
   "homepage": "https://github.com/uncinq/design-tokens#readme",
+  "author": {
+    "name": "Un Cinq",
+    "url": "https://uncinq.dev/"
+  },
   "keywords": [
     "design-tokens",
     "css",
