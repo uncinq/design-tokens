@@ -51,10 +51,10 @@
     /* ── Semantic variants ─────────────────────────────────────────────── */
 
     /* Primary (alias of accent) */
-    --color-primary:        var(--color-accent);
-    --color-primary-muted:  var(--color-accent-muted);
-    --color-primary-hover:  var(--color-accent-hover);
-    --color-primary-strong: var(--color-accent-strong);
+    --color-primary:        var(--color-brand);
+    --color-primary-muted:  var(--color-brand-muted);
+    --color-primary-hover:  var(--color-brand-hover);
+    --color-primary-strong: var(--color-brand-strong);
 
     /* Secondary */
     --color-secondary:        var(--color-gray-500);
