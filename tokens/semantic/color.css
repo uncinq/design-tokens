@@ -3,10 +3,16 @@
  * Purposeful color aliases — reference primitives, never raw values.
  * Override --color-brand (and optionally --color-*) in your project to rebrand.
  *
- * Default brand: claret (deep red).
+ * Default brand: indigo.
  */
 @layer config {
   :root {
+    /* ── Accent ─────────────────────────────────────────────────────────── */
+    --color-accent:       var(--color-indigo-600);
+    --color-accent-muted: var(--color-indigo-100);
+    --color-accent-hover: var(--color-indigo-700);
+    --color-accent-strong: var(--color-indigo-900);
+    
     /* ── Brand ─────────────────────────────────────────────────────────── */
     --color-brand:       var(--color-indigo-600);
     --color-brand-muted: var(--color-indigo-100);
@@ -15,16 +21,16 @@
 
     /* ── Backgrounds ───────────────────────────────────────────────────── */
     --color-bg:       var(--color-white);
-    --color-bg-accent: var(--color-brand);
+    --color-bg-accent: var(--color-accent);
     --color-bg-media: var(--color-gray-200);
     --color-bg-muted: var(--color-gray-100);
 
     /* ── Borders & focus ───────────────────────────────────────────────── */
     --color-border: var(--color-gray-200);
-    --color-focus:  var(--color-brand);
+    --color-focus:  var(--color-accent);
 
     /* ── Text ──────────────────────────────────────────────────────────── */
-    --color-active:          var(--color-brand);
+    --color-active:          var(--color-accent);
     --color-credit:          var(--color-text-muted);
     --color-heading:         var(--color-black);
     --color-link:            var(--color-black);
@@ -44,20 +50,20 @@
 
     /* ── Semantic variants ─────────────────────────────────────────────── */
 
-    /* Primary (alias of brand) */
-    --color-primary:       var(--color-brand);
-    --color-primary-muted: var(--color-brand-muted);
-    --color-primary-hover: var(--color-brand-hover);
-    --color-primary-strong: var(--color-brand-strong);
+    /* Primary (alias of accent) */
+    --color-primary:        var(--color-accent);
+    --color-primary-muted:  var(--color-accent-muted);
+    --color-primary-hover:  var(--color-accent-hover);
+    --color-primary-strong: var(--color-accent-strong);
 
     /* Secondary */
-    --color-secondary:       var(--color-gray-500);
-    --color-secondary-muted: var(--color-gray-100);
+    --color-secondary:        var(--color-gray-500);
+    --color-secondary-muted:  var(--color-gray-100);
     --color-secondary-strong: var(--color-gray-800);
 
     /* Danger */
-    --color-danger:       var(--color-red-500);
-    --color-danger-muted: var(--color-red-100);
+    --color-danger:        var(--color-red-500);
+    --color-danger-muted:  var(--color-red-100);
     --color-danger-strong: var(--color-red-900);
 
     /* Dark */
@@ -66,23 +72,23 @@
     --color-dark-strong: var(--color-black);
 
     /* Info */
-    --color-info:       var(--color-blue-500);
-    --color-info-muted: var(--color-blue-100);
+    --color-info:        var(--color-blue-500);
+    --color-info-muted:  var(--color-blue-100);
     --color-info-strong: var(--color-blue-900);
 
     /* Light */
-    --color-light:       var(--color-gray-200);
-    --color-light-muted: var(--color-gray-100);
+    --color-light:        var(--color-gray-200);
+    --color-light-muted:  var(--color-gray-100);
     --color-light-strong: var(--color-gray-700);
 
     /* Success */
-    --color-success:       var(--color-green-500);
-    --color-success-muted: var(--color-green-100);
+    --color-success:        var(--color-green-500);
+    --color-success-muted:  var(--color-green-100);
     --color-success-strong: var(--color-green-900);
 
     /* Warning */
-    --color-warning:       var(--color-yellow-500);
-    --color-warning-muted: var(--color-yellow-100);
+    --color-warning:        var(--color-yellow-500);
+    --color-warning-muted:  var(--color-yellow-100);
     --color-warning-strong: var(--color-yellow-900);
   }
 }
