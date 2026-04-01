@@ -26,33 +26,44 @@
     --font-size-sm:      var(--size-16);
     --font-size-md:      var(--size-18);
     --font-size-lg:      var(--size-24);
-    --font-size-xl:      var(--size-40);
+    --font-size-xl:      var(--size-48);
     --font-size-2xl:     var(--size-64);
     --font-size-display: var(--size-96);  /* hero / marketing */
 
-    /* ── Body ───────────────────────────────────────────────────────────── */
-    --font-size-text: var(--font-size-sm);
-
-    /* ── Headings ───────────────────────────────────────────────────────── */
-    --font-size-heading-01: var(--font-size-xl);
-    --font-size-heading-02: var(--font-size-lg);
-    --font-size-heading-03: var(--font-size-md);
-    --font-size-heading-04: var(--font-size-sm);
-    --font-size-heading-05: var(--font-size-sm);
-    --font-size-heading-06: var(--font-size-sm);
-
     /* ── Fluid font sizes ───────────────────────────────────────────────── */
     /*
-     * clamp(min, preferred, max) — scales between ~320px and ~1440px viewport.
-     * Use these instead of fixed sizes for responsive typography without breakpoints.
-     * $type: dimension
+     * Fluid typography using the Utopia method — https://utopia.fyi
+     *
+     * Each value is a clamp(min, intercept + slope×vw, max) expression where
+     * intercept and slope are calculated so the font size equals exactly `min`
+     * at a 320px viewport and exactly `max` at a 1440px viewport, with a
+     * perfectly linear scale in between.
+     *
+     *   slope     = (max_px − min_px) / (1440 − 320)
+     *   intercept = min_px − slope × 320   (converted to rem)
+     *
+     * Use these instead of fixed T-shirt sizes wherever you want type to
+     * scale continuously with the viewport, without breakpoints.
      */
-    --font-size-fluid-xs:      clamp(0.875rem, 1.5vw, 1rem);    /* 14 → 16px */
-    --font-size-fluid-sm:      clamp(1rem,     2vw,   1.125rem); /* 16 → 18px */
-    --font-size-fluid-md:      clamp(1.125rem, 2.5vw, 1.5rem);  /* 18 → 24px */
-    --font-size-fluid-lg:      clamp(1.5rem,   4vw,   2.5rem);  /* 24 → 40px */
-    --font-size-fluid-xl:      clamp(2.5rem,   6vw,   4rem);    /* 40 → 64px */
-    --font-size-fluid-display: clamp(4rem,     8vw,   6rem);    /* 64 → 96px */
+    --font-size-fluid-2xs:     clamp(0.625rem,  0.5893rem + 0.1786vw, 0.75rem);   /*  10 →  12px */
+    --font-size-fluid-xs:      clamp(0.75rem,   0.7143rem + 0.1786vw, 0.875rem);  /*  12 →  14px */
+    --font-size-fluid-sm:      clamp(0.875rem,  0.8393rem + 0.1786vw, 1rem);      /*  14 →  16px */
+    --font-size-fluid-md:      clamp(1rem,      0.9643rem + 0.1786vw, 1.125rem);  /*  16 →  18px */
+    --font-size-fluid-lg:      clamp(1.125rem,  1.0179rem + 0.5357vw, 1.5rem);    /*  18 →  24px */
+    --font-size-fluid-xl:      clamp(1.5rem,    1.0714rem + 2.1429vw, 3rem);      /*  24 →  48px */
+    --font-size-fluid-2xl:     clamp(3rem,      2.7143rem + 1.4286vw, 4rem);      /*  48 →  64px */
+    --font-size-fluid-display: clamp(4rem,      3.4286rem + 2.8571vw, 6rem);      /*  64 →  96px */
+
+    /* ── Body ───────────────────────────────────────────────────────────── */
+    --font-size-text: var(--font-size-fluid-md);
+
+    /* ── Headings ───────────────────────────────────────────────────────── */
+    --font-size-heading-01: var(--font-size-fluid-xl);
+    --font-size-heading-02: var(--font-size-fluid-lg);
+    --font-size-heading-03: var(--font-size-fluid-md);
+    --font-size-heading-04: var(--font-size-fluid-sm);
+    --font-size-heading-05: var(--font-size-fluid-sm);
+    --font-size-heading-06: var(--font-size-fluid-sm);
 
     /* ── Readability ────────────────────────────────────────────────────── */
     /*

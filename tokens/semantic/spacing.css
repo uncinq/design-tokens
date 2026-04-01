@@ -1,6 +1,7 @@
 /* semantic/spacing.css */
 @layer config {
   :root {
+
     /* ── T-shirt scale ──────────────────────────────────────────────────── */
     --spacing-2xs: var(--size-5);
     --spacing-xs:  var(--size-10);
@@ -11,11 +12,30 @@
     --spacing-2xl: var(--size-100);
     --spacing-3xl: var(--size-150);
 
+    /* ── Fluid spacing scale ────────────────────────────────────────────── */
+    /*
+     * Fluid spacing using the Utopia method — https://utopia.fyi
+     *
+     * Each value is a clamp(min, intercept + slope×vw, max) expression where
+     * intercept and slope are calculated so the spacing equals exactly `min`
+     * at a 360px viewport and exactly `max` at a 1440px viewport.
+     *
+     *   slope     = (max_px − min_px) / (1440 − 360)
+     *   intercept = min_px − slope × 360   (converted to rem)
+     */
+    --spacing-fluid-2xs: clamp(0.3125rem, 0.2083rem + 0.4630vw, 0.625rem);  /*   5 →  10px */
+    --spacing-fluid-xs:  clamp(0.625rem,  0.4167rem + 0.9259vw, 1.25rem);  /*  10 →  20px */
+    --spacing-fluid-sm:  clamp(1.25rem,   0.8333rem + 1.8519vw, 2.5rem);   /*  20 →  40px */
+    --spacing-fluid-md:  clamp(1.875rem,  1.25rem   + 2.7778vw, 3.75rem);  /*  30 →  60px */
+    --spacing-fluid-lg:  clamp(2.5rem,    1.6667rem + 3.7037vw, 5rem);     /*  40 →  80px */
+    --spacing-fluid-xl:  clamp(3.125rem,  2.0833rem + 4.6296vw, 6.25rem);  /*  50 → 100px */
+    --spacing-fluid-2xl: clamp(3.75rem,   2.5rem    + 5.5556vw, 7.5rem);   /*  60 → 120px */
+
     /* ── Purposeful aliases ─────────────────────────────────────────────── */
-    --spacing-control:    var(--spacing-xs);   /* padding inside interactive controls */
-    --spacing-heading:    var(--spacing-sm);   /* gap below headings */
-    --spacing-section:    var(--spacing-2xl);  /* vertical rhythm between sections */
-    --spacing-surface:    var(--spacing-sm);   /* padding inside surfaces (card, panel) */
-    --spacing-typography: var(--spacing-xs);   /* gap between typographic elements */
+    --spacing-control:    var(--spacing-xs);         /* padding inside interactive controls */
+    --spacing-heading:    var(--spacing-fluid-sm);   /* gap below headings */
+    --spacing-section:    var(--spacing-fluid-2xl);  /* vertical rhythm between sections */
+    --spacing-surface:    var(--spacing-fluid-sm);   /* padding inside surfaces (card, panel) */
+    --spacing-typography: var(--spacing-fluid-xs);   /* gap between typographic elements */
   }
 }
