@@ -2,17 +2,18 @@
 @layer config {
   :root {
     /* ── Base form ─────────────────────────────────────────────────────── */
-    --form-color-accent:     var(--color-black);
-    --form-color-bg:         var(--color-white);
-    --form-color-border:     var(--color-border);
-    --form-color-text:       var(--color-text);
-    --form-border-radius:    var(--radius-xs);
-    --form-border-width:     var(--border-width-normal);
+    --form-color-accent:         var(--color-black);
+    --form-color-bg:             var(--color-white);
+    --form-color-border:         var(--color-border);
+    --form-color-border-hover:   var(--form-color-accent);
+    --form-color-text:           var(--color-text);
+    --form-border-radius:        var(--radius-xs);
+    --form-border-width:         var(--border-width-normal);
 
     /* ── Input ─────────────────────────────────────────────────────────── */
     --input-color-bg:             var(--form-color-bg);
     --input-color-border:         var(--form-color-border);
-    --input-color-border-hover:   var(--form-color-accent);
+    --input-color-border-hover:   var(--form-color-border-hover);
     --input-color-placeholder:    var(--color-text-muted);
     --input-color-text:           var(--form-color-text);
     --input-border-radius:        var(--form-border-radius);
@@ -22,7 +23,7 @@
     /* ── Textarea ──────────────────────────────────────────────────────── */
     --textarea-color-bg:          var(--form-color-bg);
     --textarea-color-border:      var(--form-color-border);
-    --textarea-color-border-hover: var(--textarea-color-border);
+    --textarea-color-border-hover: var(--form-color-border-hover);
     --textarea-color-placeholder:  var(--color-text-muted);
     --textarea-color-text:         var(--form-color-text);
     --textarea-border-radius:      var(--form-border-radius);
@@ -31,7 +32,7 @@
     /* ── Select ────────────────────────────────────────────────────────── */
     --select-color-bg:             var(--form-color-bg);
     --select-color-border:         var(--form-color-border);
-    --select-color-border-hover:   var(--select-color-border);
+    --select-color-border-hover:   var(--form-color-border-hover);
     --select-color-optgroup:       var(--color-text-muted);
     --select-color-text:           var(--form-color-text);
     --select-border-radius:        var(--form-border-radius);
@@ -68,23 +69,13 @@
 
     /* ── Radio ─────────────────────────────────────────────────────────── */
     --radio-color-bg:             var(--form-color-bg);
-    --radio-color-bg-checked:     var(--form-color-bg);
+    --radio-color-bg-checked:     var(--checkable-color);
     --radio-color-bg-hover:       var(--form-color-bg);
     --radio-color-border:         var(--form-color-border);
     --radio-color-border-checked: var(--checkable-color);
     --radio-color-border-hover:   var(--form-color-border-hover);
     --radio-border-radius:        var(--radius-pill);
     --radio-border-width:         var(--form-border-width);
-
-    /* ── Switch ────────────────────────────────────────────────────────── */
-    --switch-color-border:         var(--checkable-color-border);
-    --switch-color-thumb:          var(--color-white);
-    --switch-color-track:          var(--form-color-bg);
-    --switch-color-track-checked:  var(--form-color-accent);
-    --switch-border-radius:        var(--radius-pill);
-    --switch-border-width:         var(--border-width-normal);
-    --switch-height:               var(--size-24);
-    --switch-width:                var(--size-40);
 
     /* ── Range ─────────────────────────────────────────────────────────── */
     --range-color-accent:       var(--form-color-accent);
