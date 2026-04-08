@@ -1,0 +1,10 @@
+/* primitive/blur.css */
+@layer config {
+  :root {
+    --blur-xs:  2px;
+    --blur-sm:  4px;
+    --blur-md:  8px;
+    --blur-lg:  16px;
+    --blur-xl:  32px;
+  }
+}

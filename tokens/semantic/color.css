@@ -19,11 +19,15 @@
     --color-brand-hover: var(--color-indigo-700);
     --color-brand-strong: var(--color-indigo-900);
 
+    /* ── Overlay ───────────────────────────────────────────────────────── */
+    --color-backdrop: rgb(var(--color-black-rgb) / var(--opacity-backdrop));
+
     /* ── Backgrounds ───────────────────────────────────────────────────── */
-    --color-bg:       var(--color-white);
-    --color-bg-accent: var(--color-accent);
-    --color-bg-media: var(--color-gray-200);
-    --color-bg-muted: var(--color-gray-100);
+    --color-bg:         var(--color-white);
+    --color-bg-accent:  var(--color-accent);
+    --color-bg-media:   var(--color-gray-200);
+    --color-bg-muted:   var(--color-gray-100);
+    --color-bg-surface: var(--color-bg);
 
     /* ── Borders & focus ───────────────────────────────────────────────── */
     --color-border: var(--color-gray-200);
@@ -45,6 +49,7 @@
     --color-text-on-light:     var(--color-gray-900);
     --color-text-on-primary:   var(--color-white);
     --color-text-on-secondary: var(--color-white);
+    --color-text-on-surface:   var(--color-text);
     --color-text-on-success:   var(--color-white);
     --color-text-on-warning:   var(--color-gray-900);
 

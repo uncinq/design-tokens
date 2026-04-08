@@ -2,6 +2,7 @@
 @layer config {
   :root {
     --color-black: #000000;
+    --color-black-rgb: 0 0 0;
 
     --color-amber-100: #fef3c7;
     --color-amber-200: #fde68a;
@@ -114,6 +115,7 @@
     --color-teal-900: #134e4a;
 
     --color-white: #ffffff;
+    --color-white-rgb: 255 255 255;
 
     --color-yellow-100: #fef9c3;
     --color-yellow-200: #fef08a;

@@ -2,6 +2,7 @@
 @layer config;
 
 @import 'semantic/border.css';
+@import 'semantic/blur.css';
 @import 'semantic/color.css';
 @import 'semantic/focus.css';
 @import 'semantic/form.css';

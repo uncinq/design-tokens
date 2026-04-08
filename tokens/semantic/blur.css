@@ -1,0 +1,6 @@
+/* semantic/blur.css */
+@layer config {
+  :root {
+    --blur-backdrop: var(--blur-sm);
+  }
+}
