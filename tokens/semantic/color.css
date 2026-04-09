@@ -37,7 +37,9 @@
     --color-active:          var(--color-accent);
     --color-credit:          var(--color-text-muted);
     --color-heading:         var(--color-black);
-    --color-link:            var(--color-black);
+    --color-link:            var(--color-text);
+    --color-link-active:     var(--color-active);
+    --color-link-hover:      var(--color-accent);
     --color-text:            var(--color-gray-900);
     --color-text-muted:      var(--color-gray-500);
     --color-text-disabled:   var(--color-gray-300);
