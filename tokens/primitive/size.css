@@ -51,7 +51,10 @@
     /* Screen widths */
     --size-768:  48rem;
     --size-1024: 64rem;
+    --size-1200: 75rem;
+    --size-1280: 80rem;
     --size-1440: 90rem;
+    --size-1600: 100rem;
     --size-1920: 120rem;
   }
 }
