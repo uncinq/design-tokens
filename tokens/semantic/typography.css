@@ -71,7 +71,7 @@
      * Prevents overly long lines causing reading fatigue (WCAG 1.4.8).
      * Headings use a shorter value: larger font = physically wider chars.
      */
-    --max-width-heading:   40ch;
+    --max-width-heading:   50ch;
     --max-width-paragraph: 70ch;
   }
 }

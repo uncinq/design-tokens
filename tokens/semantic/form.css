@@ -9,6 +9,8 @@
     --form-color-border:         var(--color-border);
     --form-color-border-hover:   var(--form-color-accent);
     --form-color-text:           var(--color-text);
+    --form-padding:              var(--spacing-control);
+    --form-transition:           var(--transition-normal);
 
     /* ── Input ─────────────────────────────────────────────────────────── */
     --input-border-radius:        var(--form-border-radius);
@@ -18,7 +20,7 @@
     --input-color-border-hover:   var(--form-color-border-hover);
     --input-color-placeholder:    var(--color-text-muted);
     --input-color-text:           var(--form-color-text);
-    --input-padding:              var(--spacing-control);
+    --input-padding:              var(--form-padding);
 
     /* ── Textarea ──────────────────────────────────────────────────────── */
     --textarea-border-radius:      var(--form-border-radius);
@@ -28,6 +30,8 @@
     --textarea-color-border-hover: var(--form-color-border-hover);
     --textarea-color-placeholder:  var(--color-text-muted);
     --textarea-color-text:         var(--form-color-text);
+    --textarea-min-height:         5lh;
+    --textarea-padding:            var(--form-padding);
 
     /* ── Select ────────────────────────────────────────────────────────── */
     --select-border-radius:        var(--form-border-radius);
@@ -39,6 +43,8 @@
     --select-color-text:           var(--form-color-text);
     --select-icon:                 var(--icon-chevron);
     --select-icon-size:            var(--size-16);
+    --select-padding:              var(--form-padding);
+    --select-padding-end:          2rem;
 
     /* ── Label ─────────────────────────────────────────────────────────── */
     --label-color-text:     var(--form-color-text);
