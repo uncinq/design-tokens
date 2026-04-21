@@ -1,6 +1,6 @@
 {
   "name": "@uncinq/design-tokens",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Framework-agnostic CSS design tokens — primitive and semantic layers.",
   "license": "MIT",
   "repository": {
