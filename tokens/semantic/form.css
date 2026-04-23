@@ -22,6 +22,10 @@
     --input-color-text:           var(--form-color-text);
     --input-padding:              var(--form-padding);
 
+    /* ── File button ───────────────────────────────────────────────────── */
+    --file-button-margin-end:     var(--spacing-12);
+    --file-button-padding:        var(--spacing-8) var(--spacing-12);
+
     /* ── Textarea ──────────────────────────────────────────────────────── */
     --textarea-border-radius:      var(--form-border-radius);
     --textarea-border-width:       var(--form-border-width);
@@ -42,7 +46,7 @@
     --select-color-optgroup:       var(--color-text-muted);
     --select-color-text:           var(--form-color-text);
     --select-icon:                 var(--icon-chevron);
-    --select-icon-size:            var(--size-16);
+    --select-icon-size:            var(--icon-size);
     --select-padding:              var(--form-padding);
     --select-padding-end:          2rem;
 
@@ -72,18 +76,23 @@
     --checkbox-color-border:         var(--form-color-border);
     --checkbox-color-border-checked: var(--checkable-color);
     --checkbox-color-border-hover:   var(--form-color-border-hover);
+    --checkbox-label-padding:        0 0 0 .3125rem;
     --checkbox-mask-checked:         var(--icon-tick) center no-repeat;
     --checkbox-mask-indeterminate:   var(--icon-dash) center no-repeat;
+    --checkbox-scale-checked:        0.7;
 
     /* ── Radio ─────────────────────────────────────────────────────────── */
     --radio-border-radius:        var(--radius-pill);
     --radio-border-width:         var(--form-border-width);
+    --radio-border-width-checked: var(--border-width-large);
     --radio-color-bg:             var(--form-color-bg);
     --radio-color-bg-checked:     var(--checkable-color);
     --radio-color-bg-hover:       var(--form-color-bg);
     --radio-color-border:         var(--form-color-border);
     --radio-color-border-checked: var(--checkable-color);
     --radio-color-border-hover:   var(--form-color-border-hover);
+    --radio-label-padding:        0 0 0 .3125rem;
+    --radio-scale-checked:        0.5;
 
     /* ── Range ─────────────────────────────────────────────────────────── */
     --range-color-accent:       var(--form-color-accent);
