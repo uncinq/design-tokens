@@ -16,10 +16,12 @@
     --font-weight-black:    900;
 
     /* Line heights */
+    --line-height-none:    1;
     --line-height-tight:   1.1;
     --line-height-snug:    1.25;
     --line-height-normal:  1.5;
     --line-height-relaxed: 1.75;
+    --line-height-loose:   2;
 
     /* Text decoration */
     --text-decoration-none:      none;

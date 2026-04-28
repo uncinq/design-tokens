@@ -2,10 +2,11 @@
 @layer config {
   :root {
     /* ── Breakpoints ────────────────────────────────────────────────────── */
-    --size-tablet:      var(--size-768);   /* 48rem  — 768px  */
-    --size-tablet-wide: var(--size-1024);  /* 64rem  — 1024px */
-    --size-laptop:      var(--size-1440);  /* 90rem  — 1440px */
-    --size-desktop:     var(--size-1920);  /* 120rem — 1920px */
+    --size-tablet:       var(--size-768);   /* 48rem  — 768px  */
+    --size-tablet-wide:  var(--size-1024);  /* 64rem  — 1024px */
+    --size-laptop:       var(--size-1440);  /* 90rem  — 1440px */
+    --size-desktop:      var(--size-1600);  /* 100rem — 1600px */
+    --size-desktop-wide: var(--size-1920);  /* 120rem — 1920px */
 
     /* ── T-shirt scale ──────────────────────────────────────────────────── */
     --size-2xs: var(--size-5);
