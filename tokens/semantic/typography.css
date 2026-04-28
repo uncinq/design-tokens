@@ -28,7 +28,7 @@
     --font-size-lg:      var(--size-24);
     --font-size-xl:      var(--size-48);
     --font-size-2xl:     var(--size-64);
-    --font-size-display: var(--size-96);  /* hero / marketing */
+    --font-size-display: var(--size-96);
 
     /* ── Fluid font sizes ───────────────────────────────────────────────── */
     /*
@@ -56,6 +56,7 @@
 
     /* ── Body ───────────────────────────────────────────────────────────── */
     --font-size-text: var(--font-size-fluid-md);
+    --font-size-small: var(--font-size-fluid-sm);
 
     /* ── Headings ───────────────────────────────────────────────────────── */
     --font-size-heading-01: var(--font-size-fluid-xl);

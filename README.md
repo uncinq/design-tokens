@@ -125,6 +125,188 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 
 ---
 
+## Colors
+
+### Color space — OKLCH
+
+All primitive color values are defined in **OKLCH** (`oklch(L C H)`):
+
+| Channel | Range | Meaning |
+|---------|-------|---------|
+| `L` | `0 → 1` | Perceptual lightness (0 = black, 1 = white) |
+| `C` | `0 → ~0.4` | Chroma / colorfulness (0 = gray) |
+| `H` | `0° → 360°` | Hue angle |
+
+**Why OKLCH over hex/HSL?**
+
+- **Perceptually uniform** — equal steps in L produce equal perceived brightness differences, regardless of hue. HSL does not guarantee this (`hsl(60, 100%, 50%)` yellow looks far brighter than `hsl(240, 100%, 50%)` blue at the same L).
+- **Predictable contrast** — you can reason about WCAG contrast by comparing L values without converting to relative luminance.
+- **Better interpolation** — gradients and animations between two OKLCH colors don't pass through muddy grays.
+- **Future-proof** — native in all modern browsers, the color space used by Tailwind v4, Radix, and the W3C Design Tokens spec.
+
+> Browser support: Chrome 111+, Firefox 113+, Safari 15.4+. Legacy browsers receive the nearest sRGB fallback automatically.
+
+### Primitive palette
+
+The primitive palette provides **11 steps per hue** (50 → 950), named numerically. These are raw values with no opinion about usage.
+
+| Hue | H angle | Character |
+|-----|---------|-----------|
+| `amber` | ≈ 70° | Golden yellow-orange |
+| `blue` | ≈ 260° | Classic blue |
+| `cyan` | ≈ 215° | Bright cyan |
+| `gray` | neutral | Cool neutral |
+| `green` | ≈ 150° | Lush green |
+| `indigo` | ≈ 277° | Blue-violet |
+| `lime` | ≈ 131° | Electric yellow-green |
+| `orange` | ≈ 48° | Vivid orange |
+| `pink` | ≈ 354° | Bright pink |
+| `purple` | ≈ 304° | Rich purple |
+| `red` | ≈ 25° | Classic red |
+| `rose` | ≈ 16° | Pink-red |
+| `sienna` | ≈ 23° | Brick-red (crimson × terracotta) |
+| `sky` | ≈ 237° | Soft sky blue |
+| `teal` | ≈ 183° | Blue-green |
+| `violet` | ≈ 293° | Modern violet |
+| `yellow` | ≈ 86° | Pure yellow |
+
+Plus `--color-black` and `--color-white` (with `*-rgb` variants for `rgb()` opacity usage).
+
+**Step guide:**
+
+| Step | L (avg) | L amber/yellow/lime | Typical use |
+|------|---------|---------------------|-------------|
+| 50  | ≈ 0.97 | ≈ 0.98 | Page tinted backgrounds, hover states on white |
+| 100 | ≈ 0.94 | ≈ 0.96 | Muted backgrounds, badges, tags |
+| 200 | ≈ 0.90 | ≈ 0.93 | Borders, dividers |
+| 300 | ≈ 0.83 | ≈ 0.88 | Disabled elements, placeholder text |
+| 400 | ≈ 0.72 | ≈ 0.83 | Secondary icons, decorative |
+| 500 | ≈ 0.63 | ≈ 0.77 | Mid-tone — use with dark text for UI |
+| 600 | ≈ 0.53 | ≈ 0.67 | **Default brand/status bg** — white text passes WCAG AA (UI) |
+| 700 | ≈ 0.46 | ≈ 0.55 | Hover state, colored text on white background |
+| 800 | ≈ 0.39 | ≈ 0.47 | Deep accents, high-contrast text |
+| 900 | ≈ 0.33 | ≈ 0.41 | Near-dark, very high contrast |
+| 950 | ≈ 0.22 | ≈ 0.28 | Darkest tint, almost black |
+
+> **Note OKLCH** — L est perceptuellement uniforme, mais les hues intrinsèquement brillantes (amber, yellow, lime) ont des valeurs L naturellement plus élevées aux steps 400–700. C'est un comportement attendu, pas une erreur de calibration. Gray va dans l'autre sens (chroma ≈ 0, pas de boost de brillance, L légèrement plus bas). La colonne "L avg" est représentative des hues chromatiques froides (blue, red, green, violet…).
+
+### Semantic color tokens
+
+Semantic tokens are named by **purpose**, not by value. They reference primitives via `var()`.
+
+#### Brand & accent
+
+```css
+--color-brand:        /* primary brand color (button bg, active states…) */
+--color-brand-muted:  /* tinted background for brand areas */
+--color-brand-hover:  /* hover state of brand */
+--color-brand-strong: /* darkest brand shade */
+
+--color-accent:       /* = brand by default; override independently if needed */
+```
+
+The default brand is **sienna** — a warm brick-red. Override it in your project:
+
+```css
+@layer config {
+  :root {
+    --color-brand:        var(--color-violet-600);
+    --color-brand-muted:  var(--color-violet-100);
+    --color-brand-hover:  var(--color-violet-700);
+    --color-brand-strong: var(--color-violet-900);
+  }
+}
+```
+
+#### Backgrounds
+
+| Token | Default | Usage |
+|-------|---------|-------|
+| `--color-bg` | white | Page background |
+| `--color-bg-muted` | gray-100 | Subtle section backgrounds |
+| `--color-bg-surface` | = `--color-bg` | Card / panel backgrounds |
+| `--color-bg-media` | gray-200 | Image placeholders, skeleton loaders |
+| `--color-bg-accent` | = `--color-accent` | Highlighted sections |
+
+#### Text
+
+| Token | Default | Usage |
+|-------|---------|-------|
+| `--color-text` | gray-900 | Body text |
+| `--color-text-muted` | gray-500 | Secondary, captions |
+| `--color-text-disabled` | gray-300 | Disabled UI |
+| `--color-heading` | black | Headings |
+| `--color-link` | = `--color-text` | Default link color |
+| `--color-link-hover` | = `--color-accent` | Link hover |
+| `--color-active` | = `--color-accent` | Active nav item |
+| `--color-credit` | = `--color-text-muted` | Bylines, captions |
+
+#### Text on colored backgrounds
+
+Used to ensure contrast when a color is the background:
+
+```css
+--color-text-on-brand      /* white */
+--color-text-on-accent     /* white */
+--color-text-on-dark       /* white */
+--color-text-on-light      /* gray-900 */
+--color-text-on-surface    /* = --color-text */
+--color-text-on-danger     /* white */
+--color-text-on-info       /* white */
+--color-text-on-success    /* white */
+--color-text-on-warning    /* gray-900 — amber is bright, dark text required */
+```
+
+#### Status / semantic variants
+
+| Token | Primitive | Notes |
+|-------|-----------|-------|
+| `--color-danger` | red-600 | Errors, destructive actions |
+| `--color-success` | green-600 | Confirmations |
+| `--color-warning` | amber-500 | Warnings — use with `--color-text-on-warning` |
+| `--color-info` | blue-600 | Informational |
+| `--color-secondary` | gray-500 | De-emphasized UI |
+| `--color-dark` | gray-900 | Dark surfaces |
+| `--color-light` | gray-200 | Light surfaces |
+
+Each variant has `-muted` (tinted bg) and `-strong` (hover / emphasis) companions:
+
+```css
+--color-danger-muted:   var(--color-red-100);
+--color-danger-strong:  var(--color-red-800);  /* used for hover */
+```
+
+### Accessibility (WCAG)
+
+| Ratio | Requirement |
+|-------|-------------|
+| **4.5 : 1** | Normal text (< 18px / non-bold < 14px) — WCAG AA |
+| **3 : 1** | Large text, UI components (buttons, inputs, icons) — WCAG AA |
+| **7 : 1** | Any text — WCAG AAA |
+
+**Rules of thumb for this palette:**
+
+- **White text on a colored background** — use step **600 or darker**. Steps 500 and below are typically too light (3–3.5 : 1 ratio).
+- **Colored text on white** — use step **700 or darker** for normal text.
+- **Warning (amber-500)** — always pair with `--color-text-on-warning` (gray-900). Never white text on amber-500.
+- **Decorative only** — any step is fine when color carries no information (icons, borders, illustrations).
+
+### Adding a custom hue
+
+Add a new primitive scale in `tokens/primitive/color.css` following the existing pattern:
+
+```css
+/* ── Coral — H ≈ 35° ──────────────────────────────────────────────── */
+--color-coral-50:  oklch(0.975 0.014 35.0);
+--color-coral-100: oklch(0.948 0.032 35.0);
+/* … 11 steps … */
+--color-coral-950: oklch(0.225 0.078 35.0);
+```
+
+Then reference it in `tokens/semantic/color.css` or your project's `@layer config` override.
+
+---
+
 ## CSS cascade layers
 
 All tokens are declared inside `@layer config`, the lowest-priority layer in the stack:
