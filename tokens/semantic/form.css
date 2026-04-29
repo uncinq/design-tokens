@@ -10,6 +10,8 @@
     --form-color-border-hover:   var(--form-color-accent);
     --form-color-text:           var(--color-text);
     --form-padding:              var(--spacing-control);
+    --form-shadow:               var(--shadow-control);
+    --form-shadow-hover:         var(--shadow-control-hover);
     --form-transition:           var(--transition-normal);
 
     /* ── Input ─────────────────────────────────────────────────────────── */

@@ -13,6 +13,8 @@
  */
 @layer config {
   :root {
+    color-scheme: light;
+
     /* ── Accent ─────────────────────────────────────────────────────────── */
     --color-accent:        var(--color-sienna-600);
     --color-accent-muted:  var(--color-sienna-100);
@@ -38,6 +40,13 @@
     /* ── Borders & focus ───────────────────────────────────────────────── */
     --color-border: var(--color-gray-200);
     --color-focus:  var(--color-accent);
+
+    /* ── Shadows ───────────────────────────────────────────────────────── */
+    /* --color-shadow holds raw RGB channels so rgb(var(--color-shadow) / α) works. */
+    /* In dark mode, flip to 255 255 255 → all shadows become a white glow.  */
+    --color-shadow:        0 0 0;
+    --color-shadow-light:  rgb(var(--color-shadow) / var(--opacity-shadow));  /* sm, center-* */
+    --color-shadow-normal: rgb(var(--color-shadow) / var(--opacity-shadow));  /* md, lg */
 
     /* ── Text ──────────────────────────────────────────────────────────── */
     --color-active:          var(--color-accent);

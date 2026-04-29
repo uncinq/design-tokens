@@ -1,0 +1,14 @@
+/* semantic/shadow.css */
+/*
+ * Semantic shadow aliases — map primitive shadows to purposeful roles.
+ * Override in @layer config to restyle elevation system-wide.
+ * In dark mode (semantic/dark.css), --shadow-sm/md/lg are overridden with
+ * higher opacity — these aliases adapt automatically.
+ */
+@layer config {
+  :root {
+    --shadow-control:        none;
+    --shadow-control-hover:  none;
+    --shadow-surface:        var(--shadow-sm);
+  }
+}
