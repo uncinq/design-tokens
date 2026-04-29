@@ -35,6 +35,7 @@
     --color-bg-accent:  var(--color-accent);
     --color-bg-media:   var(--color-gray-200);
     --color-bg-muted:   var(--color-gray-100);
+    --color-bg-muted-hover: var(--color-gray-200);
     --color-bg-surface: var(--color-bg);
 
     /* ── Borders & focus ───────────────────────────────────────────────── */
@@ -80,7 +81,7 @@
     --color-primary-strong: var(--color-brand-strong);
 
     /* Secondary */
-    --color-secondary:        var(--color-gray-500);
+    --color-secondary:        var(--color-gray-600);
     --color-secondary-muted:  var(--color-gray-100);
     --color-secondary-strong: var(--color-gray-800);
 
