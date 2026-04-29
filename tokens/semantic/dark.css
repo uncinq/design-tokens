@@ -41,7 +41,7 @@
 
       /* ── Shadows ─────────────────────────────────────────────────────── */
       /* Flip to white → all shadows become a subtle white glow */
-      --color-shadow: 255 255 255;
+      --color-shadow: var(--color-white-rgb);
     }
   }
 }

@@ -44,7 +44,7 @@
     /* ── Shadows ───────────────────────────────────────────────────────── */
     /* --color-shadow holds raw RGB channels so rgb(var(--color-shadow) / α) works. */
     /* In dark mode, flip to 255 255 255 → all shadows become a white glow.  */
-    --color-shadow:        0 0 0;
+    --color-shadow:        var(--color-black-rgb);
     --color-shadow-light:  rgb(var(--color-shadow) / var(--opacity-shadow));  /* sm, center-* */
     --color-shadow-normal: rgb(var(--color-shadow) / var(--opacity-shadow));  /* md, lg */
 
