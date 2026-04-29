@@ -13,12 +13,14 @@ The [DTCG spec](https://tr.designtokens.org/format/) defines tokens as JSON obje
 ```json
 {
   "color-brand": {
-    "$value": "#4338ca",
+    "$value": "oklch(0.530 0.195 22.0)",
     "$type": "color",
     "$description": "Primary brand color — used for CTAs and highlights."
   }
 }
 ```
+
+> **Note on OKLCH:** The DTCG `color` type accepts any valid CSS color value, including `oklch(…)`. `@uncinq/design-tokens` uses OKLCH throughout — perceptually uniform, wide-gamut, and natively supported in modern browsers.
 
 | Key | Required | Description |
 | --- | --- | --- |
@@ -31,20 +33,33 @@ The [DTCG spec](https://tr.designtokens.org/format/) defines tokens as JSON obje
 
 ## DTCG token types
 
+### Scalar types
+
 | Type | Example value | CSS usage |
 | --- | --- | --- |
-| `color` | `#4338ca`, `hsl(...)` | `color`, `background-color` |
+| `color` | `oklch(0.530 0.195 22.0)` | `color`, `background-color` |
 | `dimension` | `1rem`, `4px` | `width`, `padding`, `font-size` |
 | `fontFamily` | `"system-ui, sans-serif"` | `font-family` |
 | `fontWeight` | `700` | `font-weight` |
 | `duration` | `300ms` | `transition-duration` |
 | `cubicBezier` | `[0.165, 0.84, 0.44, 1]` | `animation-timing-function` |
 | `number` | `1.5` | `line-height`, `opacity` |
+| `string` | `"uppercase"` | free-form text values |
+| `strokeStyle` | `"solid"`, `"dashed"` | `border-style` |
+
+### Composite types
+
+| Type | Shape | CSS usage |
+| --- | --- | --- |
 | `shadow` | `{offsetX, offsetY, blur, spread, color}` | `box-shadow` |
+| `border` | `{width, style, color}` | `border` shorthand |
+| `transition` | `{duration, delay, timingFunction}` | `transition` shorthand |
+| `typography` | `{fontFamily, fontSize, fontWeight, letterSpacing, lineHeight}` | typography rules |
+| `gradient` | `{gradientType, stops[]}` | `background: linear-gradient(…)` |
 
 → Full type list: [tr.designtokens.org/format/#types](https://tr.designtokens.org/format/#types)
 
-> **Note on `clamp()` values:** DTCG has no native `fluid` type. Fluid tokens (`--fluid-sm`, `--font-size-fluid-md`) use `$type: "dimension"` as the closest match — a documented gap in the spec.
+> **Note on `clamp()` values:** DTCG has no native `fluid` type. Fluid tokens (`--font-size-fluid-sm`, `--font-size-fluid-md`, `--spacing-fluid-*`) use `$type: "dimension"` as the closest match — a documented gap in the spec.
 
 ---
 
@@ -57,8 +72,8 @@ Tokens are organized in nested objects. Groups share a `$type` by inheritance:
   "color": {
     "$type": "color",
     "gray": {
-      "100": { "$value": "#f3f4f6" },
-      "900": { "$value": "#111827" }
+      "100": { "$value": "oklch(0.967 0.003 264.542)" },
+      "900": { "$value": "oklch(0.208 0.006 264.542)" }
     }
   }
 }
