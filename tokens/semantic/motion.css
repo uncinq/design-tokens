@@ -40,7 +40,7 @@
     --transition-opacity:   opacity   var(--duration-normal) var(--easing-default);
     --transition-transform: transform var(--duration-normal) var(--easing-default);
     /* Targeted color transitions */
-    --transition-property-color: color, background-color, border-color, outline-color, fill, stroke;
+    --transition-property-color: color, background-color, border-color, outline-color, fill, stroke, text-decoration;
     --transition-color: var(--transition-property-color) var(--duration-normal) var(--easing-default);
   }
 }
