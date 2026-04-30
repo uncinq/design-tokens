@@ -2,9 +2,9 @@
 @layer config {
   :root {
     --opacity-backdrop: var(--opacity-50);
-    --opacity-disabled: var(--opacity-25);
+    --opacity-disabled: var(--opacity-50);
     --opacity-overlay:  var(--opacity-75);
     --opacity-shadow:   var(--opacity-10);
-    --opacity-subtle:   var(--opacity-10);
+    --opacity-subtle:   var(--opacity-25);
   }
 }
