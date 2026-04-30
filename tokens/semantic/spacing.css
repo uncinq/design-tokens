@@ -32,10 +32,11 @@
     --spacing-fluid-2xl: clamp(3.75rem,   2.5rem    + 5.5556vw, 7.5rem);   /*  60 → 120px */
 
     /* ── Purposeful aliases ─────────────────────────────────────────────── */
+    --spacing-card:       var(--spacing-sm);         /* padding inside surfaces (card) */
     --spacing-control:    var(--spacing-xs);         /* padding inside interactive controls */
     --spacing-heading:    var(--spacing-fluid-sm);   /* gap below headings */
     --spacing-section:    var(--spacing-fluid-2xl);  /* vertical rhythm between sections */
-    --spacing-surface:    var(--spacing-fluid-sm);   /* padding inside surfaces (card, panel) */
+    --spacing-surface:    var(--spacing-fluid-sm);   /* padding inside surfaces (panel) */
     --spacing-typography: var(--spacing-fluid-xs);   /* gap between typographic elements */
   }
 }
