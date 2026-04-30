@@ -7,7 +7,7 @@
     --form-color-accent:         var(--color-black);
     --form-color-bg:             var(--color-white);
     --form-color-border:         var(--color-border);
-    --form-color-border-hover:   var(--form-color-accent);
+    --form-color-border-hover:   var(--color-border-hover);
     --form-color-text:           var(--color-text);
     --form-padding:              var(--spacing-control);
     --form-shadow:               var(--shadow-control);
@@ -97,11 +97,11 @@
     --radio-scale-checked:        0.5;
 
     /* ── Range ─────────────────────────────────────────────────────────── */
-    --range-color-accent:       var(--form-color-accent);
-    --range-color-track:        var(--form-color-border);
+    --range-thumb-color:        var(--form-color-accent);
     --range-thumb-color-border: var(--color-white);
     --range-thumb-border-width: var(--size-4);
     --range-thumb-size:         var(--size-24);
+    --range-track-color:        var(--form-color-border);
     --range-track-height:       calc(var(--border-width-normal) + 2px);
   }
 }

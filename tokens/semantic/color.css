@@ -40,7 +40,8 @@
 
     /* ── Borders & focus ───────────────────────────────────────────────── */
     --color-border: var(--color-gray-200);
-    --color-focus:  var(--color-accent);
+    --color-border-hover: var(--color-gray-500);
+    --color-focus:  var(--color-text);
 
     /* ── Shadows ───────────────────────────────────────────────────────── */
     /* --color-shadow holds raw RGB channels so rgb(var(--color-shadow) / α) works. */

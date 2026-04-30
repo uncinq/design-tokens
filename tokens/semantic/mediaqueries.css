@@ -12,6 +12,6 @@
   /* 1440px */
   @custom-media --laptop      (width >= 90rem);
 
-  /* 1920px */
-  @custom-media --desktop     (width >= 120rem);
+  /* 1600px */
+  @custom-media --desktop     (width >= 100rem);
 }
