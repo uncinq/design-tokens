@@ -103,5 +103,17 @@
     --range-thumb-size:         var(--size-24);
     --range-track-color:        var(--form-color-border);
     --range-track-height:       calc(var(--border-width-normal) + 2px);
+
+    /* ── Switch ────────────────────────────────────────────────────────── */
+    --switch-border-radius:       var(--radius-pill);
+    --switch-border-width:        var(--form-border-width);
+    --switch-color-bg:            var(--form-color-bg);
+    --switch-color-border:        var(--form-color-border);
+    --switch-thumb-color:         var(--form-color-accent);
+    --switch-thumb-color-checked: var(--form-color-bg);
+    --switch-thumb-scale:         0.6;
+    --switch-track-color:         var(--form-color-bg);
+    --switch-track-color-checked: var(--form-color-accent);
+    --switch-width:               var(--size-40);
   }
 }
