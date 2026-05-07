@@ -1,16 +1,14 @@
 /* primitive/shadow.css */
 @layer config {
   :root {
-    --shadow-none: none;
-
     /* Directional (top-left light source) */
-    --shadow-sm: 0 1px 2px 0 var(--color-shadow-light);
+    --shadow-sm: 0 1px 2px 0 var(--color-shadow-normal);
     --shadow-md: 0 4px 6px -1px var(--color-shadow-normal), 0 2px 4px -2px var(--color-shadow-normal);
     --shadow-lg: 0 10px 15px -3px var(--color-shadow-normal), 0 4px 6px -4px var(--color-shadow-normal);
 
     /* Centered (ambient glow) */
-    --shadow-center-sm: 0 0 2px  2px  var(--color-shadow-light);
-    --shadow-center-md: 0 0 5px  5px  var(--color-shadow-light);
-    --shadow-center-lg: 0 0 10px 10px var(--color-shadow-light);
+    --shadow-center-sm: 0 0 2px  2px  var(--color-shadow-normal);
+    --shadow-center-md: 0 0 5px  5px  var(--color-shadow-normal);
+    --shadow-center-lg: 0 0 10px 10px var(--color-shadow-normal);
   }
 }

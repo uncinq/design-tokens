@@ -2,9 +2,7 @@
 @layer config {
   :root {
     /* Styles */
-    --border-style-dotted: dotted;
-    --border-style-dashed: dashed;
-    --border-style-solid:  solid;
+    --border-style-normal: solid;
 
     /* Widths */
     --border-width-none:   0px;

@@ -5,7 +5,7 @@
     --form-border-radius:        var(--radius-xs);
     --form-border-width:         var(--border-width-normal);
     --form-color-accent:         var(--color-black);
-    --form-color-bg:             var(--color-white);
+    --form-color-background:     var(--color-white);
     --form-color-border:         var(--color-border);
     --form-color-border-hover:   var(--color-border-hover);
     --form-color-text:           var(--color-text);
@@ -15,42 +15,42 @@
     --form-transition:           var(--transition-normal);
 
     /* ── Input ─────────────────────────────────────────────────────────── */
-    --input-border-radius:        var(--form-border-radius);
-    --input-border-width:         var(--form-border-width);
-    --input-color-bg:             var(--form-color-bg);
-    --input-color-border:         var(--form-color-border);
-    --input-color-border-hover:   var(--form-color-border-hover);
-    --input-color-placeholder:    var(--color-text-muted);
-    --input-color-text:           var(--form-color-text);
-    --input-padding:              var(--form-padding);
+    --input-border-radius:       var(--form-border-radius);
+    --input-border-width:        var(--form-border-width);
+    --input-color-background:    var(--form-color-background);
+    --input-color-border:        var(--form-color-border);
+    --input-color-border-hover:  var(--form-color-border-hover);
+    --input-color-placeholder:   var(--color-text-muted);
+    --input-color-text:          var(--form-color-text);
+    --input-padding:             var(--form-padding);
 
     /* ── File button ───────────────────────────────────────────────────── */
-    --file-button-margin-end:     var(--spacing-12);
-    --file-button-padding:        var(--spacing-8) var(--spacing-12);
+    --file-button-margin-end:    var(--spacing-12);
+    --file-button-padding:       var(--spacing-8) var(--spacing-12);
 
     /* ── Textarea ──────────────────────────────────────────────────────── */
-    --textarea-border-radius:      var(--form-border-radius);
-    --textarea-border-width:       var(--form-border-width);
-    --textarea-color-bg:          var(--form-color-bg);
-    --textarea-color-border:      var(--form-color-border);
-    --textarea-color-border-hover: var(--form-color-border-hover);
-    --textarea-color-placeholder:  var(--color-text-muted);
-    --textarea-color-text:         var(--form-color-text);
-    --textarea-min-height:         5lh;
-    --textarea-padding:            var(--form-padding);
+    --textarea-border-radius:       var(--form-border-radius);
+    --textarea-border-width:        var(--form-border-width);
+    --textarea-color-background:    var(--form-color-background);
+    --textarea-color-border:        var(--form-color-border);
+    --textarea-color-border-hover:  var(--form-color-border-hover);
+    --textarea-color-placeholder:   var(--color-text-muted);
+    --textarea-color-text:          var(--form-color-text);
+    --textarea-min-height:          5lh;
+    --textarea-padding:             var(--form-padding);
 
     /* ── Select ────────────────────────────────────────────────────────── */
-    --select-border-radius:        var(--form-border-radius);
-    --select-border-width:         var(--form-border-width);
-    --select-color-bg:             var(--form-color-bg);
-    --select-color-border:         var(--form-color-border);
-    --select-color-border-hover:   var(--form-color-border-hover);
-    --select-color-optgroup:       var(--color-text-muted);
-    --select-color-text:           var(--form-color-text);
-    --select-icon:                 var(--icon-chevron);
-    --select-icon-size:            var(--icon-size);
-    --select-padding:              var(--form-padding);
-    --select-padding-end:          2rem;
+    --select-border-radius:      var(--form-border-radius);
+    --select-border-width:       var(--form-border-width);
+    --select-color-background:   var(--form-color-background);
+    --select-color-border:       var(--form-color-border);
+    --select-color-border-hover: var(--form-color-border-hover);
+    --select-color-optgroup:     var(--color-text-muted);
+    --select-color-text:         var(--form-color-text);
+    --select-icon:               var(--icon-chevron);
+    --select-icon-size:          var(--icon-size);
+    --select-padding:            var(--form-padding);
+    --select-padding-end:        2rem;
 
     /* ── Label ─────────────────────────────────────────────────────────── */
     --label-color-text:     var(--form-color-text);
@@ -70,36 +70,36 @@
     --checkable-size:  1.25em;
 
     /* ── Checkbox ──────────────────────────────────────────────────────── */
-    --checkbox-border-radius:        0;
-    --checkbox-border-width:         var(--form-border-width);
-    --checkbox-color-bg:             var(--form-color-bg);
-    --checkbox-color-bg-checked:     var(--form-color-bg);
-    --checkbox-color-bg-hover:       var(--form-color-bg);
-    --checkbox-color-border:         var(--form-color-border);
-    --checkbox-color-border-checked: var(--checkable-color);
-    --checkbox-color-border-hover:   var(--form-color-border-hover);
-    --checkbox-label-padding:        0 0 0 .3125rem;
-    --checkbox-mask-checked:         var(--icon-tick) center no-repeat;
-    --checkbox-mask-indeterminate:   var(--icon-dash) center no-repeat;
-    --checkbox-scale-checked:        0.7;
+    --checkbox-border-radius:            0;
+    --checkbox-border-width:             var(--form-border-width);
+    --checkbox-color-background:         var(--form-color-background);
+    --checkbox-color-background-checked: var(--form-color-background);
+    --checkbox-color-background-hover:   var(--form-color-background);
+    --checkbox-color-border:             var(--form-color-border);
+    --checkbox-color-border-checked:     var(--checkable-color);
+    --checkbox-color-border-hover:       var(--form-color-border-hover);
+    --checkbox-label-padding:            0 0 0 .3125rem;
+    --checkbox-mask-checked:             var(--icon-tick) center no-repeat;
+    --checkbox-mask-indeterminate:       var(--icon-dash) center no-repeat;
+    --checkbox-scale-checked:            0.7;
 
     /* ── Radio ─────────────────────────────────────────────────────────── */
-    --radio-border-radius:        var(--radius-pill);
-    --radio-border-width:         var(--form-border-width);
-    --radio-border-width-checked: var(--border-width-large);
-    --radio-color-bg:             var(--form-color-bg);
-    --radio-color-bg-checked:     var(--checkable-color);
-    --radio-color-bg-hover:       var(--form-color-bg);
-    --radio-color-border:         var(--form-color-border);
-    --radio-color-border-checked: var(--checkable-color);
-    --radio-color-border-hover:   var(--form-color-border-hover);
-    --radio-label-padding:        0 0 0 .3125rem;
-    --radio-scale-checked:        0.5;
+    --radio-border-radius:            var(--radius-pill);
+    --radio-border-width:             var(--form-border-width);
+    --radio-border-width-checked:     var(--border-width-large);
+    --radio-color-background:         var(--form-color-background);
+    --radio-color-background-checked: var(--checkable-color);
+    --radio-color-background-hover:   var(--form-color-background);
+    --radio-color-border:             var(--form-color-border);
+    --radio-color-border-checked:     var(--checkable-color);
+    --radio-color-border-hover:       var(--form-color-border-hover);
+    --radio-label-padding:            0 0 0 .3125rem;
+    --radio-scale-checked:            0.5;
 
     /* ── Range ─────────────────────────────────────────────────────────── */
+    --range-thumb-border-width: var(--size-4);
     --range-thumb-color:        var(--form-color-accent);
     --range-thumb-color-border: var(--color-white);
-    --range-thumb-border-width: var(--size-4);
     --range-thumb-size:         var(--size-24);
     --range-track-color:        var(--form-color-border);
     --range-track-height:       calc(var(--border-width-normal) + 2px);
@@ -107,12 +107,12 @@
     /* ── Switch ────────────────────────────────────────────────────────── */
     --switch-border-radius:       var(--radius-pill);
     --switch-border-width:        var(--form-border-width);
-    --switch-color-bg:            var(--form-color-bg);
+    --switch-color-background:    var(--form-color-background);
     --switch-color-border:        var(--form-color-border);
     --switch-thumb-color:         var(--form-color-accent);
-    --switch-thumb-color-checked: var(--form-color-bg);
+    --switch-thumb-color-checked: var(--form-color-background);
     --switch-thumb-scale:         0.6;
-    --switch-track-color:         var(--form-color-bg);
+    --switch-track-color:         var(--form-color-background);
     --switch-track-color-checked: var(--form-color-accent);
     --switch-width:               var(--size-40);
   }

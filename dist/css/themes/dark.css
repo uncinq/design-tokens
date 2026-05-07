@@ -1,30 +1,31 @@
-/* semantic/dark.css */
+/* themes/dark.css */
 /*
  * Dark mode token overrides — activated by OS preference.
- * Projects without dark mode: add `color-scheme: only light` in @layer config.
- * Manual toggle ([data-theme]): handled at project level.
+ * For a manual toggle, override these same tokens at project level
+ * using your own selector (e.g. [data-color-scheme="dark"]).
  *
- * Tokens that adapt automatically (reference semantic tokens that change here):
- *   --color-bg-surface  → var(--color-bg)
- *   --color-link        → var(--color-text)
- *   --form-color-border → var(--color-border)
- *   --form-color-text   → var(--color-text)
- *   --input-color-bg    → var(--form-color-bg)
+ * Projects without dark mode: add `color-scheme: only light` in @layer config.
+ *
+ * Tokens that adapt automatically (reference semantics that change here):
+ *   --color-background-surface → var(--color-background)
+ *   --color-link               → var(--color-text)
+ *   --form-color-border        → var(--color-border)
+ *   --form-color-text          → var(--color-text)
+ *   --input-color-background   → var(--form-color-background)
  *
  * Not changed: brand, status (danger/success/info/warning), secondary, dark,
  * light — functional colors that stay consistent in dark mode.
- * Override at project level if needed.
  */
 @layer config {
   @media (prefers-color-scheme: dark) {
-    :root:not([data-color-scheme="light"]) {
+    :root {
       color-scheme: dark;
 
       /* ── Backgrounds ─────────────────────────────────────────────────── */
-      --color-bg:             var(--color-gray-950);
-      --color-bg-muted:       var(--color-gray-900);
-      --color-bg-muted-hover: var(--color-gray-800);
-      --color-bg-media:       var(--color-gray-800);
+      --color-background:             var(--color-gray-950);
+      --color-background-muted:       var(--color-gray-900);
+      --color-background-muted-hover: var(--color-gray-800);
+      --color-background-media:       var(--color-gray-800);
 
       /* ── Borders ─────────────────────────────────────────────────────── */
       --color-border:        var(--color-gray-800);
@@ -37,12 +38,10 @@
       --color-text-hover:    var(--color-gray-300);
 
       /* ── Forms ───────────────────────────────────────────────────────── */
-      /* --form-color-bg references --color-white directly — must be explicit */
-      --form-color-bg:       var(--color-gray-900);
+      --form-color-background: var(--color-gray-900);
 
       /* ── Shadows ─────────────────────────────────────────────────────── */
-      /* Flip to white → all shadows become a subtle white glow */
-      --color-shadow: var(--color-white-rgb);
+      --color-shadow: var(--color-white);
     }
   }
 }

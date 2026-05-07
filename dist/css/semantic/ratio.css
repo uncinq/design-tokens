@@ -1,0 +1,14 @@
+/* semantic/ratio.css */
+@layer config {
+  :root {
+    --ratio-banner: 21 / 9;
+    --ratio-cinema: 21 / 9;
+    --ratio-hero: 4 / 1;
+    --ratio-landscape: 5 / 4;
+    --ratio-photography: 4 / 3;
+    --ratio-portrait: 4 / 5;
+    --ratio-square: 1 / 1;
+    --ratio-story: 9 / 16;
+    --ratio-video: 16 / 9;
+  }
+}

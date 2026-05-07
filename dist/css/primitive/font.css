@@ -24,8 +24,6 @@
     --line-height-loose:   2;
 
     /* Text decoration */
-    --text-decoration-none:      none;
-    --text-decoration-underline: underline;
     --text-decoration-offset:    0.25rem;
     --text-decoration-thickness: 1px;
   }

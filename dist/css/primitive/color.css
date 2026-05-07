@@ -9,9 +9,7 @@
 @layer config {
   :root {
     --color-black: oklch(0 0 0);
-    --color-black-rgb: 0 0 0;
     --color-white: oklch(1 0 0);
-    --color-white-rgb: 255 255 255;
 
     /* ── Amber — H ≈ 70° ───────────────────────────────────────────────── */
     --color-amber-50:  oklch(0.987 0.022 95.277);

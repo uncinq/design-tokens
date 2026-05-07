@@ -28,15 +28,15 @@
     --color-brand-strong: var(--color-sienna-900);
 
     /* ── Overlay ───────────────────────────────────────────────────────── */
-    --color-backdrop: rgb(var(--color-black-rgb) / var(--opacity-backdrop));
+    --color-backdrop: oklch(from var(--color-black) l c h / var(--opacity-backdrop));
 
     /* ── Backgrounds ───────────────────────────────────────────────────── */
-    --color-bg:         var(--color-white);
-    --color-bg-accent:  var(--color-accent);
-    --color-bg-media:   var(--color-gray-200);
-    --color-bg-muted:   var(--color-gray-100);
-    --color-bg-muted-hover: var(--color-gray-200);
-    --color-bg-surface: var(--color-bg);
+    --color-background:         var(--color-white);
+    --color-background-accent:  var(--color-accent);
+    --color-background-media:   var(--color-gray-200);
+    --color-background-muted:   var(--color-gray-100);
+    --color-background-muted-hover: var(--color-gray-200);
+    --color-background-surface: var(--color-background);
 
     /* ── Borders & focus ───────────────────────────────────────────────── */
     --color-border: var(--color-gray-200);
@@ -44,23 +44,20 @@
     --color-focus:  var(--color-text);
 
     /* ── Shadows ───────────────────────────────────────────────────────── */
-    /* --color-shadow holds raw RGB channels so rgb(var(--color-shadow) / α) works. */
-    /* In dark mode, flip to 255 255 255 → all shadows become a white glow.  */
-    --color-shadow:        var(--color-black-rgb);
-    --color-shadow-light:  rgb(var(--color-shadow) / var(--opacity-shadow));  /* sm, center-* */
-    --color-shadow-normal: rgb(var(--color-shadow) / var(--opacity-shadow));  /* md, lg */
+    --color-shadow-default: var(--color-black);
+    --color-shadow-normal:  oklch(from var(--color-shadow-default) l c h / var(--opacity-shadow));
 
     /* ── Text ──────────────────────────────────────────────────────────── */
-    --color-active:          var(--color-accent);
-    --color-credit:          var(--color-text-muted);
-    --color-heading:         var(--color-black);
-    --color-link:            var(--color-text);
-    --color-link-active:     var(--color-active);
-    --color-link-hover:      var(--color-accent);
-    --color-text:            var(--color-gray-900);
-    --color-text-hover:      var(--color-gray-700);
-    --color-text-muted:      var(--color-gray-500);
-    --color-text-disabled:   var(--color-gray-300);
+    --color-active:            var(--color-accent);
+    --color-credit:            var(--color-text-muted);
+    --color-heading:           var(--color-black);
+    --color-link:              var(--color-text);
+    --color-link-active:       var(--color-active);
+    --color-link-hover:        var(--color-accent);
+    --color-text:              var(--color-gray-900);
+    --color-text-hover:        var(--color-gray-700);
+    --color-text-muted:        var(--color-gray-500);
+    --color-text-disabled:     var(--color-gray-300);
     --color-text-on-accent:    var(--color-white);
     --color-text-on-brand:     var(--color-white);
     --color-text-on-danger:    var(--color-white);
