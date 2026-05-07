@@ -1,0 +1,60 @@
+{
+  "font-family": {
+    "code":    { "$value": "{font.family.mono}", "$type": "fontFamily" },
+    "heading": { "$value": "{font.family.sans}", "$type": "fontFamily" },
+    "text":    { "$value": "{font.family.sans}", "$type": "fontFamily" }
+  },
+  "font-weight": {
+    "control": { "$value": "{font.weight.medium}", "$type": "number" },
+    "heading": { "$value": "{font.weight.bold}",   "$type": "number" },
+    "text":    { "$value": "{font.weight.normal}", "$type": "number" }
+  },
+  "letter-spacing": {
+    "$type": "dimension",
+    "normal": { "$value": "0" },
+    "medium": { "$value": "0.025em" },
+    "large":  { "$value": "0.05em" }
+  },
+  "line-height": {
+    "$type": "number",
+    "heading": { "$value": "{line.height.tight}" },
+    "text":    { "$value": "{line.height.normal}" }
+  },
+  "font-size": {
+    "2xs":     { "$value": "{size.12}", "$type": "dimension" },
+    "xs":      { "$value": "{size.14}", "$type": "dimension" },
+    "sm":      { "$value": "{size.16}", "$type": "dimension" },
+    "md":      { "$value": "{size.18}", "$type": "dimension" },
+    "lg":      { "$value": "{size.24}", "$type": "dimension" },
+    "xl":      { "$value": "{size.48}", "$type": "dimension" },
+    "2xl":     { "$value": "{size.64}", "$type": "dimension" },
+    "display": { "$value": "{size.96}", "$type": "dimension" },
+    "fluid": {
+      "$type": "dimension",
+      "2xs":     { "$value": "clamp(0.625rem,  0.5893rem + 0.1786vw, 0.75rem)" },
+      "xs":      { "$value": "clamp(0.75rem,   0.7143rem + 0.1786vw, 0.875rem)" },
+      "sm":      { "$value": "clamp(0.875rem,  0.8393rem + 0.1786vw, 1rem)" },
+      "md":      { "$value": "clamp(1rem,      0.9643rem + 0.1786vw, 1.125rem)" },
+      "lg":      { "$value": "clamp(1.125rem,  1.0179rem + 0.5357vw, 1.5rem)" },
+      "xl":      { "$value": "clamp(1.5rem,    1.0714rem + 2.1429vw, 3rem)" },
+      "2xl":     { "$value": "clamp(3rem,      2.7143rem + 1.4286vw, 4rem)" },
+      "display": { "$value": "clamp(4rem,      3.4286rem + 2.8571vw, 6rem)" }
+    },
+    "heading": {
+      "$type": "dimension",
+      "01": { "$value": "{font-size.fluid.xl}" },
+      "02": { "$value": "{font-size.fluid.lg}" },
+      "03": { "$value": "{font-size.fluid.md}" },
+      "04": { "$value": "{font-size.fluid.sm}" },
+      "05": { "$value": "{font-size.fluid.sm}" },
+      "06": { "$value": "{font-size.fluid.sm}" }
+    },
+    "small": { "$value": "{font-size.fluid.sm}", "$type": "dimension" },
+    "text":  { "$value": "{font-size.fluid.md}", "$type": "dimension" }
+  },
+  "max-width": {
+    "$type": "dimension",
+    "heading":   { "$value": "50ch" },
+    "paragraph": { "$value": "70ch" }
+  }
+}

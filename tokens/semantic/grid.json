@@ -1,0 +1,28 @@
+{
+  "columns": {
+    "$value": "12",
+    "$type": "string"
+  },
+  "gap": {
+    "$value": "{spacing.md}",
+    "$type": "string"
+  },
+  "span": {
+    "full": {
+      "$value": "span {columns}",
+      "$type": "number"
+    },
+    "half": {
+      "$value": "span calc({columns} / 2)",
+      "$type": "number"
+    },
+    "quarter": {
+      "$value": "span calc({columns} / 4)",
+      "$type": "number"
+    },
+    "third": {
+      "$value": "span calc({columns} / 3)",
+      "$type": "number"
+    }
+  }
+}

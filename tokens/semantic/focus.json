@@ -1,0 +1,22 @@
+{
+  "focus": {
+    "color": {
+      "$value": "{color.focus}",
+      "$type": "color"
+    },
+    "outline": {
+      "offset": {
+        "$value": "2px",
+        "$type": "dimension"
+      },
+      "style": {
+        "$value": "solid",
+        "$type": "string"
+      },
+      "width": {
+        "$value": "1px",
+        "$type": "dimension"
+      }
+    }
+  }
+}

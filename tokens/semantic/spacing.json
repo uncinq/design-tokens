@@ -1,0 +1,28 @@
+{
+  "spacing": {
+    "2xs": { "$value": "{size.5}",   "$type": "dimension" },
+    "xs":  { "$value": "{size.10}",  "$type": "dimension" },
+    "sm":  { "$value": "{size.20}",  "$type": "dimension" },
+    "md":  { "$value": "{size.30}",  "$type": "dimension" },
+    "lg":  { "$value": "{size.40}",  "$type": "dimension" },
+    "xl":  { "$value": "{size.60}",  "$type": "dimension" },
+    "2xl": { "$value": "{size.100}", "$type": "dimension" },
+    "3xl": { "$value": "{size.150}", "$type": "dimension" },
+    "fluid": {
+      "$type": "dimension",
+      "2xs": { "$value": "clamp(0.3125rem, 0.2083rem + 0.4630vw, 0.625rem)" },
+      "xs":  { "$value": "clamp(0.625rem,  0.4167rem + 0.9259vw, 1.25rem)" },
+      "sm":  { "$value": "clamp(1.25rem,   0.8333rem + 1.8519vw, 2.5rem)" },
+      "md":  { "$value": "clamp(1.875rem,  1.25rem   + 2.7778vw, 3.75rem)" },
+      "lg":  { "$value": "clamp(2.5rem,    1.6667rem + 3.7037vw, 5rem)" },
+      "xl":  { "$value": "clamp(3.125rem,  2.0833rem + 4.6296vw, 6.25rem)" },
+      "2xl": { "$value": "clamp(3.75rem,   2.5rem    + 5.5556vw, 7.5rem)" }
+    },
+    "card":       { "$value": "{spacing.sm}",        "$type": "dimension" },
+    "control":    { "$value": "{spacing.xs}",         "$type": "dimension" },
+    "heading":    { "$value": "{spacing.fluid.sm}",   "$type": "dimension" },
+    "section":    { "$value": "{spacing.fluid.2xl}",  "$type": "dimension" },
+    "surface":    { "$value": "{spacing.fluid.sm}",   "$type": "dimension" },
+    "typography": { "$value": "{spacing.fluid.xs}",   "$type": "dimension" }
+  }
+}

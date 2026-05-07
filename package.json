@@ -1,7 +1,7 @@
 {
   "name": "@uncinq/design-tokens",
   "version": "0.4.0",
-  "description": "Framework-agnostic CSS design tokens — primitive and semantic layers.",
+  "description": "Framework-agnostic design tokens — JSON DTCG primitive and semantic — CSS custom properties.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,23 +13,29 @@
     "url": "https://uncinq.dev/"
   },
   "keywords": [
-    "design-tokens",
     "css",
     "custom-properties",
-    "design-system"
+    "design-system",
+    "design-tokens",
+    "dtcg",
+    "tokens"
   ],
   "files": [
+    "dist/css/",
     "tokens/"
   ],
   "exports": {
-    ".": "./tokens/index.css",
-    "./tokens/index.css": "./tokens/index.css",
-    "./tokens/primitive.css": "./tokens/primitive.css",
-    "./tokens/semantic.css": "./tokens/semantic.css",
-    "./tokens/primitive/*": "./tokens/primitive/*",
-    "./tokens/semantic/*": "./tokens/semantic/*"
+    ".": "./dist/css/index.css",
+    "./css/index.css": "./dist/css/index.css",
+    "./css/primitive.css": "./dist/css/primitive.css",
+    "./css/semantic.css": "./dist/css/semantic.css",
+    "./css/themes.css": "./dist/css/themes.css",
+    "./css/primitive/*": "./dist/css/primitive/*",
+    "./css/semantic/*": "./dist/css/semantic/*",
+    "./css/themes/*": "./dist/css/themes/*",
+    "./tokens/*": "./tokens/*"
   },
-  "style": "./tokens/index.css",
+  "style": "./dist/css/index.css",
   "publishConfig": {
     "access": "public"
   }

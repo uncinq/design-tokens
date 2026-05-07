@@ -1,0 +1,52 @@
+{
+  "size": {
+    "tablet": {
+      "$value": "{size.768}",
+      "$type": "dimension"
+    },
+    "tablet-wide": {
+      "$value": "{size.1024}",
+      "$type": "dimension"
+    },
+    "laptop": {
+      "$value": "{size.1440}",
+      "$type": "dimension"
+    },
+    "desktop": {
+      "$value": "{size.1600}",
+      "$type": "dimension"
+    },
+    "desktop-wide": {
+      "$value": "{size.1920}",
+      "$type": "dimension"
+    },
+    "2xs": {
+      "$value": "{size.5}",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "{size.10}",
+      "$type": "dimension"
+    },
+    "sm": {
+      "$value": "{size.20}",
+      "$type": "dimension"
+    },
+    "md": {
+      "$value": "{size.40}",
+      "$type": "dimension"
+    },
+    "lg": {
+      "$value": "{size.60}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{size.80}",
+      "$type": "dimension"
+    },
+    "2xl": {
+      "$value": "{size.100}",
+      "$type": "dimension"
+    }
+  }
+}

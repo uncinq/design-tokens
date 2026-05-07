@@ -1,0 +1,28 @@
+{
+  "border": {
+    "style": {
+      "normal": {
+        "$value": "solid",
+        "$type": "string"
+      }
+    },
+    "width": {
+      "none": {
+        "$value": "0px",
+        "$type": "dimension"
+      },
+      "normal": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "large": {
+        "$value": "2px",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "4px",
+        "$type": "dimension"
+      }
+    }
+  }
+}

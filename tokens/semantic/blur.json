@@ -1,0 +1,8 @@
+{
+  "blur": {
+    "backdrop": {
+      "$value": "{blur.sm}",
+      "$type": "dimension"
+    }
+  }
+}

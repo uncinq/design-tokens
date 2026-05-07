@@ -1,0 +1,52 @@
+{
+  "icon": {
+    "size": {
+      "$value": "{size.16}",
+      "$type": "string"
+    },
+    "arrow": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "arrow-skip": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "chevron": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "close": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "dash": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "filter": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "menu": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "plus": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "share": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "tick": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    },
+    "toc": {
+      "$value": "url('data:image/svg+xml",
+      "$type": "string"
+    }
+  }
+}

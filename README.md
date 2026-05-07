@@ -57,7 +57,9 @@ Scoped to a specific component. Generic component tokens are provided by [@uncin
 
 ## Naming convention
 
-All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
+### Semantic tokens
+
+Global semantic tokens follow: `--{category}-{subcategory?}-{variant}-{state?}`
 
 ```
 --{category}                     --color
@@ -66,14 +68,36 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
       -{state}                   --color-text-disabled
 ```
 
+### Component tokens
+
+Component tokens follow: `--{component}-{property}-{sub-property?}-{state?}`
+
+The property mirrors the CSS property name — `background-color`, `border-color`, `text-decoration-color` — so the token reads the same way as the CSS declaration it controls.
+
+```
+--{component}                    --btn
+  -{property}                    --btn-background-color
+    -{sub-property}              --btn-text-decoration-color  (text-decoration + color)
+      -{state}                   --btn-background-color-hover
+```
+
 ### Rules
 
 - **Lowercase kebab-case** — always
 - **No component names** in primitive or semantic tokens (`--button-*` belongs in component tokens, not here)
 - **Semantic tokens are named by intent** — they may reference a primitive via `var()` or carry a raw value when the value itself has design intent (e.g. `--z-index-modal: 400`, `--radius-pill: 9999px`)
+- **`color-[role]` pour tous les tokens couleur** — `color` est le préfixe catégorie, le rôle UI suit : `color-background`, `color-border`, `color-text`, `color-accent`, `color-placeholder`. Cela groupe tous les tokens couleur alphabétiquement sous `color-*` et reflète la structure des tokens sémantiques globaux (`--color-background` → `--btn-color-background`). `background` n'est jamais abrégé : `color-background` pas `color-bg`.
 - **States at the end** — `-hover`, `-focus`, `-active`, `-disabled`, `-checked`
-- **`color-*` prefix for all color values** — even when the CSS property is `background-color`, `border-color`, etc.
-- **Alphabetical order** — tokens within a file are sorted alphabetically; group related tokens with a comment when the file has many entries:
+- **Alphabetical order** — tokens within a file are sorted alphabetically within each group; group related tokens with a comment when the file has many entries:
+
+| Token | Rôle | CSS property appliquée |
+| --- | --- | --- |
+| `--btn-color-background` | background | `background-color` |
+| `--btn-color-border` | border | `border-color` |
+| `--btn-color-text` | text | `color` |
+| `--btn-color-text-decoration` | text-decoration | `text-decoration-color` |
+| `--form-color-accent` | accent | `color` |
+| `--input-color-placeholder` | placeholder | `color` |
 
 ```css
 /* Brand */
@@ -99,17 +123,17 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 
 | Category | Covers | Example tokens |
 | --- | --- | --- |
-| `color` | All color values | `--color-brand`, `--color-bg-muted`, `--color-text-on-dark` |
+| `color` | All color values | `--color-brand`, `--color-background-muted`, `--color-text-on-dark` |
 | `font-family` | Typefaces | `--font-family-sans`, `--font-family-heading` |
 | `font-size` | Text sizes | `--font-size-sm`, `--font-size-heading-01` |
 | `font-weight` | Weight values | `--font-weight-bold`, `--font-weight-heading` |
 | `line-height` | Line heights | `--line-height-tight`, `--line-height-heading` |
 | `letter-spacing` | Tracking | `--letter-spacing-large` |
-| `text-decoration` | Decoration props | `--text-decoration-underline`, `--text-decoration-offset` |
+| `text-decoration` | Decoration props | `--text-decoration-offset` |
 | `spacing` | Margin / padding | `--spacing-md`, `--spacing-section` |
 | `size` | Width / height | `--size-16`, `--size-tablet` |
 | `radius` | Border radius | `--radius-md`, `--radius-pill` |
-| `border` | Border style/width | `--border-width-normal`, `--border-style-solid` |
+| `border` | Border style/width | `--border-width-normal`, `--border-style-normal` |
 | `shadow` | Box shadows | `--shadow-md`, `--shadow-center-sm` |
 | `duration` | Animation timing | `--duration-fast` |
 | `easing` | Timing functions | `--easing-bounce` |
@@ -119,7 +143,7 @@ All tokens follow the pattern: `--{category}-{subcategory?}-{variant}-{state?}`
 | `fluid-spacing` | Responsive fluid spacing scale (Utopia) | `--fluid-spacing-sm`, `--fluid-spacing-lg` |
 | `focus` | Focus ring tokens | `--focus-color`, `--focus-outline-width` |
 | `opacity` | Opacity values | `--opacity-disabled`, `--opacity-overlay` |
-| `span` | Grid column spans | `--span-6`, `--span-4` |
+| `span` | Grid column spans | `--span-full`, `--span-half` |
 | `z-index` | Stacking order | `--z-index-modal`, `--z-index-dropdown` |
 | `max-width` | Readability caps | `--max-width-paragraph` |
 
@@ -222,11 +246,11 @@ The default brand is **sienna** — a warm brick-red. Override it in your projec
 
 | Token | Default | Usage |
 |-------|---------|-------|
-| `--color-bg` | white | Page background |
-| `--color-bg-muted` | gray-100 | Subtle section backgrounds |
-| `--color-bg-surface` | = `--color-bg` | Card / panel backgrounds |
-| `--color-bg-media` | gray-200 | Image placeholders, skeleton loaders |
-| `--color-bg-accent` | = `--color-accent` | Highlighted sections |
+| `--color-background` | white | Page background |
+| `--color-background-muted` | gray-100 | Subtle section backgrounds |
+| `--color-background-surface` | = `--color-background` | Card / panel backgrounds |
+| `--color-background-media` | gray-200 | Image placeholders, skeleton loaders |
+| `--color-background-accent` | = `--color-accent` | Highlighted sections |
 
 #### Text
 
@@ -377,11 +401,11 @@ tokens/
     size.css              ← rem scale (--size-1 → --size-1920)
   semantic/
     border.css            ← border styles and widths
-    color.css             ← purposeful color aliases (--color-brand, --color-bg…)
+    color.css             ← purposeful color aliases (--color-brand, --color-background…)
     fluid.css             ← responsive clamp() scales (--fluid-text-*, --fluid-spacing-*)
     focus.css             ← focus ring tokens (color, style, width, offset)
     form.css              ← form control tokens (input, label, checkbox, switch…)
-    grid.css              ← columns, gap, flex fractions, integer spans (--span-1 → --span-24)
+    grid.css              ← columns, gap, flex fractions
     motion.css            ← duration, easing (standard + expressive + spring), transitions
     opacity.css           ← purposeful opacity aliases (disabled, overlay)
     radius.css            ← border-radius scale + purposeful aliases

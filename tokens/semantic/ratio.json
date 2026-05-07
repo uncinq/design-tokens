@@ -1,0 +1,14 @@
+{
+  "ratio": {
+    "$type": "string",
+    "banner":      { "$value": "21 / 9" },
+    "cinema":      { "$value": "21 / 9" },
+    "hero":        { "$value": "4 / 1" },
+    "landscape":   { "$value": "5 / 4" },
+    "photography": { "$value": "4 / 3" },
+    "portrait":    { "$value": "4 / 5" },
+    "square":      { "$value": "1 / 1" },
+    "story":       { "$value": "9 / 16" },
+    "video":       { "$value": "16 / 9" }
+  }
+}

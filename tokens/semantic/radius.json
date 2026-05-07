@@ -1,0 +1,48 @@
+{
+  "radius": {
+    "2xs": {
+      "$value": "{size.2}",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "{size.4}",
+      "$type": "dimension"
+    },
+    "sm": {
+      "$value": "{size.8}",
+      "$type": "dimension"
+    },
+    "md": {
+      "$value": "{size.12}",
+      "$type": "dimension"
+    },
+    "lg": {
+      "$value": "{size.16}",
+      "$type": "dimension"
+    },
+    "xl": {
+      "$value": "{size.24}",
+      "$type": "dimension"
+    },
+    "2xl": {
+      "$value": "{size.32}",
+      "$type": "dimension"
+    },
+    "none": {
+      "$value": "0",
+      "$type": "dimension"
+    },
+    "control": {
+      "$value": "{radius.sm}",
+      "$type": "dimension"
+    },
+    "surface": {
+      "$value": "{radius.md}",
+      "$type": "dimension"
+    },
+    "pill": {
+      "$value": "9999px",
+      "$type": "dimension"
+    }
+  }
+}
