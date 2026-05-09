@@ -2,13 +2,13 @@
   "icon": {
     "size": {
       "$value": "{size.16}",
-      "$type": "string"
+      "$type": "dimension"
     },
     "arrow": {
       "$value": "url('data:image/svg+xml",
       "$type": "string"
     },
-    "arrow-skip": {
+    "arrowSkip": {
       "$value": "url('data:image/svg+xml",
       "$type": "string"
     },

@@ -29,7 +29,7 @@
       "$type": "dimension"
     },
     "none": {
-      "$value": "0",
+      "$value": "0px",
       "$type": "dimension"
     },
     "control": {

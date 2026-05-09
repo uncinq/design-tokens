@@ -128,7 +128,7 @@ The property mirrors the CSS property name — `background-color`, `border-color
 | `font-size` | Text sizes | `--font-size-sm`, `--font-size-heading-01` |
 | `font-weight` | Weight values | `--font-weight-bold`, `--font-weight-heading` |
 | `line-height` | Line heights | `--line-height-tight`, `--line-height-heading` |
-| `letter-spacing` | Tracking | `--letter-spacing-large` |
+| `letter-spacing` | Tracking | `--letter-spacing-none`, `--letter-spacing-md` |
 | `text-decoration` | Decoration props | `--text-decoration-offset` |
 | `spacing` | Margin / padding | `--spacing-md`, `--spacing-section` |
 | `size` | Width / height | `--size-16`, `--size-tablet` |

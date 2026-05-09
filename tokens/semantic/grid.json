@@ -1,7 +1,7 @@
 {
   "columns": {
     "$value": "12",
-    "$type": "string"
+    "$type": "number"
   },
   "gap": {
     "$value": "{spacing.md}",
@@ -10,19 +10,19 @@
   "span": {
     "full": {
       "$value": "span {columns}",
-      "$type": "number"
+      "$type": "string"
     },
     "half": {
       "$value": "span calc({columns} / 2)",
-      "$type": "number"
+      "$type": "string"
     },
     "quarter": {
       "$value": "span calc({columns} / 4)",
-      "$type": "number"
+      "$type": "string"
     },
     "third": {
       "$value": "span calc({columns} / 3)",
-      "$type": "number"
+      "$type": "string"
     }
   }
 }

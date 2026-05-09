@@ -1,7 +1,7 @@
 /* semantic/color.css */
 /*
  * Purposeful color aliases — reference primitives, never raw values.
- * Override --color-brand (and optionally --color-*) in your project to rebrand.
+ * Override --color-brand-default (and optionally --color-*) in your project to rebrand.
  *
  * Default brand: sienna (mix crimson #a90940 × terracotta, H ≈ 23°).
  *
@@ -16,48 +16,101 @@
     color-scheme: light;
 
     /* ── Accent ─────────────────────────────────────────────────────────── */
-    --color-accent:        var(--color-sienna-600);
-    --color-accent-muted:  var(--color-sienna-100);
-    --color-accent-hover:  var(--color-sienna-700);
-    --color-accent-strong: var(--color-sienna-900);
+    --color-accent-default: var(--color-sienna-600);
+    --color-accent-hover:   var(--color-sienna-700);
+    --color-accent-muted:   var(--color-sienna-100);
+    --color-accent-strong:  var(--color-sienna-900);
 
-    /* ── Brand ─────────────────────────────────────────────────────────── */
-    --color-brand:        var(--color-sienna-600);
-    --color-brand-muted:  var(--color-sienna-100);
-    --color-brand-hover:  var(--color-sienna-700);
-    --color-brand-strong: var(--color-sienna-900);
+    /* ── Active ─────────────────────────────────────────────────────────── */
+    --color-active: var(--color-accent-default);
 
     /* ── Overlay ───────────────────────────────────────────────────────── */
     --color-backdrop: oklch(from var(--color-black) l c h / var(--opacity-backdrop));
 
     /* ── Backgrounds ───────────────────────────────────────────────────── */
-    --color-background:         var(--color-white);
-    --color-background-accent:  var(--color-accent);
-    --color-background-media:   var(--color-gray-200);
-    --color-background-muted:   var(--color-gray-100);
+    --color-background-default:    var(--color-white);
+    --color-background-accent:     var(--color-accent-default);
+    --color-background-disabled:   var(--color-gray-100);
+    --color-background-media:      var(--color-gray-200);
+    --color-background-muted:      var(--color-gray-100);
     --color-background-muted-hover: var(--color-gray-200);
-    --color-background-surface: var(--color-background);
+    --color-background-surface:    var(--color-background-default);
 
-    /* ── Borders & focus ───────────────────────────────────────────────── */
-    --color-border: var(--color-gray-200);
-    --color-border-hover: var(--color-gray-500);
-    --color-focus:  var(--color-text);
+    /* ── Borders ───────────────────────────────────────────────────────── */
+    --color-border-default: var(--color-gray-200);
+    --color-border-hover:   var(--color-gray-500);
 
-    /* ── Shadows ───────────────────────────────────────────────────────── */
+    /* ── Brand ─────────────────────────────────────────────────────────── */
+    --color-brand-default: var(--color-sienna-600);
+    --color-brand-hover:   var(--color-sienna-700);
+    --color-brand-muted:   var(--color-sienna-100);
+    --color-brand-strong:  var(--color-sienna-900);
+
+    /* ── Credit ─────────────────────────────────────────────────────────── */
+    --color-credit: var(--color-text-muted);
+
+    /* ── Danger ─────────────────────────────────────────────────────────── */
+    --color-danger-default: var(--color-red-600); /* red-600 ensures white text meets WCAG AA */
+    --color-danger-hover:   var(--color-red-700);
+    --color-danger-muted:   var(--color-red-100);
+    --color-danger-strong:  var(--color-red-800);
+
+    /* ── Dark ───────────────────────────────────────────────────────────── */
+    --color-dark-default: var(--color-gray-900);
+    --color-dark-hover:   var(--color-black);
+    --color-dark-muted:   var(--color-gray-100);
+    --color-dark-strong:  var(--color-black);
+
+    /* ── Focus ──────────────────────────────────────────────────────────── */
+    --color-focus: var(--color-text-default);
+
+    /* ── Heading ────────────────────────────────────────────────────────── */
+    --color-heading: var(--color-black);
+
+    /* ── Info ───────────────────────────────────────────────────────────── */
+    --color-info-default: var(--color-blue-600); /* blue-600 ensures white text meets WCAG AA */
+    --color-info-hover:   var(--color-blue-700);
+    --color-info-muted:   var(--color-blue-100);
+    --color-info-strong:  var(--color-blue-800);
+
+    /* ── Light ──────────────────────────────────────────────────────────── */
+    --color-light-default: var(--color-gray-200);
+    --color-light-hover:   var(--color-gray-300);
+    --color-light-muted:   var(--color-gray-100);
+    --color-light-strong:  var(--color-gray-700);
+
+    /* ── Link ───────────────────────────────────────────────────────────── */
+    --color-link-default: var(--color-text-default);
+    --color-link-active:  var(--color-active);
+    --color-link-hover:   var(--color-accent-default);
+
+    /* ── Primary (alias of brand) ───────────────────────────────────────── */
+    --color-primary-default: var(--color-brand-default);
+    --color-primary-hover:   var(--color-brand-hover);
+    --color-primary-muted:   var(--color-brand-muted);
+    --color-primary-strong:  var(--color-brand-strong);
+
+    /* ── Secondary ──────────────────────────────────────────────────────── */
+    --color-secondary-default: var(--color-gray-600);
+    --color-secondary-hover:   var(--color-gray-700);
+    --color-secondary-muted:   var(--color-gray-100);
+    --color-secondary-strong:  var(--color-gray-800);
+
+    /* ── Shadows ────────────────────────────────────────────────────────── */
     --color-shadow-default: var(--color-black);
     --color-shadow-normal:  oklch(from var(--color-shadow-default) l c h / var(--opacity-shadow));
 
-    /* ── Text ──────────────────────────────────────────────────────────── */
-    --color-active:            var(--color-accent);
-    --color-credit:            var(--color-text-muted);
-    --color-heading:           var(--color-black);
-    --color-link:              var(--color-text);
-    --color-link-active:       var(--color-active);
-    --color-link-hover:        var(--color-accent);
-    --color-text:              var(--color-gray-900);
+    /* ── Success ────────────────────────────────────────────────────────── */
+    --color-success-default: var(--color-green-600); /* green-600 ensures white text meets WCAG AA */
+    --color-success-hover:   var(--color-green-700);
+    --color-success-muted:   var(--color-green-100);
+    --color-success-strong:  var(--color-green-800);
+
+    /* ── Text ───────────────────────────────────────────────────────────── */
+    --color-text-default:      var(--color-gray-900);
+    --color-text-disabled:     var(--color-gray-300);
     --color-text-hover:        var(--color-gray-700);
     --color-text-muted:        var(--color-gray-500);
-    --color-text-disabled:     var(--color-gray-300);
     --color-text-on-accent:    var(--color-white);
     --color-text-on-brand:     var(--color-white);
     --color-text-on-danger:    var(--color-white);
@@ -66,51 +119,14 @@
     --color-text-on-light:     var(--color-gray-900);
     --color-text-on-primary:   var(--color-white);
     --color-text-on-secondary: var(--color-white);
-    --color-text-on-surface:   var(--color-text);
     --color-text-on-success:   var(--color-white);
+    --color-text-on-surface:   var(--color-text-default);
     --color-text-on-warning:   var(--color-gray-900); /* amber is bright — dark text */
 
-    /* ── Semantic variants ─────────────────────────────────────────────── */
-
-    /* Primary (alias of brand) */
-    --color-primary:        var(--color-brand);
-    --color-primary-muted:  var(--color-brand-muted);
-    --color-primary-hover:  var(--color-brand-hover);
-    --color-primary-strong: var(--color-brand-strong);
-
-    /* Secondary */
-    --color-secondary:        var(--color-gray-600);
-    --color-secondary-muted:  var(--color-gray-100);
-    --color-secondary-strong: var(--color-gray-800);
-
-    /* Danger — red-600 ensures white text meets WCAG AA */
-    --color-danger:        var(--color-red-600);
-    --color-danger-muted:  var(--color-red-100);
-    --color-danger-strong: var(--color-red-800);
-
-    /* Dark */
-    --color-dark:        var(--color-gray-900);
-    --color-dark-muted:  var(--color-gray-100);
-    --color-dark-strong: var(--color-black);
-
-    /* Info — blue-600 ensures white text meets WCAG AA */
-    --color-info:        var(--color-blue-600);
-    --color-info-muted:  var(--color-blue-100);
-    --color-info-strong: var(--color-blue-800);
-
-    /* Light */
-    --color-light:        var(--color-gray-200);
-    --color-light-muted:  var(--color-gray-100);
-    --color-light-strong: var(--color-gray-700);
-
-    /* Success — green-600 ensures white text meets WCAG AA */
-    --color-success:        var(--color-green-600);
-    --color-success-muted:  var(--color-green-100);
-    --color-success-strong: var(--color-green-800);
-
-    /* Warning — amber-500 is bright; pair with dark text (see text-on-warning above) */
-    --color-warning:        var(--color-amber-500);
-    --color-warning-muted:  var(--color-amber-100);
-    --color-warning-strong: var(--color-amber-700);
+    /* ── Warning ────────────────────────────────────────────────────────── */
+    --color-warning-default: var(--color-amber-500); /* amber-500 is bright; pair with dark text */
+    --color-warning-hover:   var(--color-amber-600);
+    --color-warning-muted:   var(--color-amber-100);
+    --color-warning-strong:  var(--color-amber-700);
   }
 }

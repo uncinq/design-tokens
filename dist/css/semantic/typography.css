@@ -12,9 +12,11 @@
     --font-weight-text:    var(--font-weight-normal);
 
     /* ── Letter spacing ─────────────────────────────────────────────────── */
-    --letter-spacing-normal: 0;
-    --letter-spacing-medium: 0.025em;
-    --letter-spacing-large:  0.05em;
+    --letter-spacing-none: 0em;
+    --letter-spacing-sm:   0.025em;
+    --letter-spacing-md:   0.05em;
+    --letter-spacing-lg:   0.1em;
+    --letter-spacing-xl:   0.2em;
 
     /* ── Line heights ───────────────────────────────────────────────────── */
     --line-height-heading: var(--line-height-tight);

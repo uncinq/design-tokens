@@ -1,33 +1,113 @@
 {
   "shadow": {
     "none": {
-      "$value": "none",
-      "$type": "shadow"
+      "$type": "shadow",
+      "$value": {
+        "color": "transparent",
+        "offsetX": "0",
+        "offsetY": "0",
+        "blur": "0",
+        "spread": "0",
+        "inset": false
+      }
     },
     "sm": {
-      "$value": "0 1px 2px 0 {color.shadow.normal}",
-      "$type": "shadow"
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "2px",
+          "spread": "0",
+          "inset": false
+        },
+        {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "1px",
+          "spread": "-1px",
+          "inset": false
+        }
+      ]
     },
     "md": {
-      "$value": "0 4px 6px -1px {color.shadow.normal}, 0 2px 4px -2px {color.shadow.normal}",
-      "$type": "shadow"
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "4px",
+          "blur": "6px",
+          "spread": "-1px",
+          "inset": false
+        },
+        {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "2px",
+          "blur": "4px",
+          "spread": "-2px",
+          "inset": false
+        }
+      ]
     },
     "lg": {
-      "$value": "0 10px 15px -3px {color.shadow.normal}, 0 4px 6px -4px {color.shadow.normal}",
-      "$type": "shadow"
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "10px",
+          "blur": "15px",
+          "spread": "-3px",
+          "inset": false
+        },
+        {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "4px",
+          "blur": "6px",
+          "spread": "-4px",
+          "inset": false
+        }
+      ]
     },
+
     "center": {
       "sm": {
-        "$value": "0 0 2px  2px  {color.shadow.normal}",
-        "$type": "shadow"
+        "$type": "shadow",
+        "$value": {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "2px",
+          "spread": "2px",
+          "inset": false
+        }
       },
       "md": {
-        "$value": "0 0 5px  5px  {color.shadow.normal}",
-        "$type": "shadow"
+        "$type": "shadow",
+        "$value": {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "4px",
+          "spread": "4px",
+          "inset": false
+        }
       },
       "lg": {
-        "$value": "0 0 10px 10px {color.shadow.normal}",
-        "$type": "shadow"
+        "$type": "shadow",
+        "$value": {
+          "color": "{color.shadow.normal}",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "8px",
+          "spread": "8px",
+          "inset": false
+        }
       }
     }
   }

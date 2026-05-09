@@ -1,11 +1,28 @@
 {
   "opacity": {
-    "$type": "number",
-    "backdrop": { "$value": "0.5" },
-    "disabled":  { "$value": "0.5" },
-    "hover":     { "$value": "0.75" },
-    "overlay":   { "$value": "0.75" },
-    "shadow":    { "$value": "0.1" },
-    "subtle":    { "$value": "0.35" }
+    "backdrop": {
+      "$type": "number",
+      "$value": 0.5
+    },
+    "disabled": {
+      "$type": "number",
+      "$value": 0.5
+    },
+    "hover": {
+      "$type": "number",
+      "$value": 0.75
+    },
+    "overlay": {
+      "$type": "number",
+      "$value": 0.75
+    },
+    "shadow": {
+      "$type": "number",
+      "$value": 0.1
+    },
+    "subtle": {
+      "$type": "number",
+      "$value": 0.35
+    }
   }
 }

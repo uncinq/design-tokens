@@ -1,11 +1,11 @@
 {
   "shadow": {
     "control": {
-      "$value": "none",
+      "$value": "{shadow.none}",
       "$type": "shadow"
     },
-    "control-hover": {
-      "$value": "none",
+    "controlHover": {
+      "$value": "{shadow.none}",
       "$type": "shadow"
     },
     "surface": {

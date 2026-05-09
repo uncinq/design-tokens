@@ -5,9 +5,9 @@
     --border-style-normal: solid;
 
     /* Widths */
-    --border-width-none:   0px;
-    --border-width-normal: 1px;
-    --border-width-large:  2px;
-    --border-width-xl:     4px;
+    --border-width-none: 0px;
+    --border-width-sm:   1px;
+    --border-width-md:   2px;
+    --border-width-lg:   4px;
   }
 }

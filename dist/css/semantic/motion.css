@@ -38,6 +38,12 @@
     --transition-transform: transform var(--duration-normal) var(--easing-default);
     /* Targeted color transitions */
     --transition-property-color: color, background-color, border-color, outline-color, fill, stroke, text-decoration;
-    --transition-color: var(--transition-property-color) var(--duration-normal) var(--easing-default);
+    --transition-color: color var(--duration-normal) var(--easing-default),
+      background-color var(--duration-normal) var(--easing-default),
+      border-color var(--duration-normal) var(--easing-default),
+      outline-color var(--duration-normal) var(--easing-default),
+      fill var(--duration-normal) var(--easing-default),
+      stroke var(--duration-normal) var(--easing-default),
+      text-decoration var(--duration-normal) var(--easing-default);
   }
 }
