@@ -17,7 +17,8 @@
       },
       "background": {
         "$value": "{color.white}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.900}" }
       },
       "border": {
         "$value": "{color.border.default}",

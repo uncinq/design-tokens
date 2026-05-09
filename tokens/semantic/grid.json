@@ -9,7 +9,7 @@
   },
   "span": {
     "full": {
-      "$value": "span {columns}",
+      "$value": "1 / -1",
       "$type": "string"
     },
     "half": {

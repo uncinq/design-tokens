@@ -34,31 +34,31 @@
     },
     "fluid": {
       "2xs": {
-        "$value": "clamp(0.3125rem, 0.2083rem + 0.4630vw, 0.625rem)",
+        "$value": "clamp(0.3125rem, 0.2232rem + 0.4464vw, 0.625rem)",
         "$type": "string"
       },
       "xs": {
-        "$value": "clamp(0.625rem,  0.4167rem + 0.9259vw, 1.25rem)",
+        "$value": "clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem)",
         "$type": "string"
       },
       "sm": {
-        "$value": "clamp(1.25rem,   0.8333rem + 1.8519vw, 2.5rem)",
+        "$value": "clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem)",
         "$type": "string"
       },
       "md": {
-        "$value": "clamp(1.875rem,  1.25rem   + 2.7778vw, 3.75rem)",
+        "$value": "clamp(1.875rem, 1.3393rem + 2.6786vw, 3.75rem)",
         "$type": "string"
       },
       "lg": {
-        "$value": "clamp(2.5rem,    1.6667rem + 3.7037vw, 5rem)",
+        "$value": "clamp(2.5rem, 1.7857rem + 3.5714vw, 5rem)",
         "$type": "string"
       },
       "xl": {
-        "$value": "clamp(3.125rem,  2.0833rem + 4.6296vw, 6.25rem)",
+        "$value": "clamp(3.125rem, 2.2321rem + 4.4643vw, 6.25rem)",
         "$type": "string"
       },
       "2xl": {
-        "$value": "clamp(3.75rem,   2.5rem    + 5.5556vw, 7.5rem)",
+        "$value": "clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem)",
         "$type": "string"
       }
     },

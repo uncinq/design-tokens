@@ -5,47 +5,47 @@
       "$type": "dimension"
     },
     "arrow": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><line x1=%222%22 y1=%228%22 x2=%2212%22 y2=%228%22/><polyline points=%228 4 12 8 8 12%22/></svg>')",
       "$type": "string"
     },
     "arrowSkip": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><line x1=%222%22 y1=%228%22 x2=%2210%22 y2=%228%22/><polyline points=%226 4 10 8 6 12%22/><line x1=%2214%22 y1=%223%22 x2=%2214%22 y2=%2213%22/></svg>')",
       "$type": "string"
     },
     "chevron": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%222 5 8 11 14 5%22/></svg>')",
       "$type": "string"
     },
     "close": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22><line x1=%223%22 y1=%223%22 x2=%2213%22 y2=%2213%22/><line x1=%2213%22 y1=%223%22 x2=%223%22 y2=%2213%22/></svg>')",
       "$type": "string"
     },
     "dash": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 height=%2216%22 width=%2214%22 viewBox=%220 0 448 512%22><path d=%22M431 256c0 17.7-14.3 32-32 32H49c-17.7 0-32-14.3-32-32s14.3-32 32-32h350c17.7 0 32 14.3 32 32z%22/></svg>')",
       "$type": "string"
     },
     "filter": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M1.3 3.3h13.4%22/><path d=%22M4 8h8%22/><path d=%22M6 12.7h4%22/></svg>')",
       "$type": "string"
     },
     "menu": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22><line x1=%222%22 y1=%224%22 x2=%2214%22 y2=%224%22/><line x1=%222%22 y1=%228%22 x2=%2214%22 y2=%228%22/><line x1=%222%22 y1=%2212%22 x2=%2214%22 y2=%2212%22/></svg>')",
       "$type": "string"
     },
     "plus": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22><line x1=%228%22 y1=%223%22 x2=%228%22 y2=%2213%22/><line x1=%223%22 y1=%228%22 x2=%2213%22 y2=%228%22/></svg>')",
       "$type": "string"
     },
     "share": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M8 1.3v8.7%22/><path d=%22m10.7 4-2.7-2.7-2.7 2.7%22/><path d=%22M2.7 8v5.3a1.3 1.3 0 0 0 1.3 1.3h8a1.3 1.3 0 0 0 1.3-1.3v-5.3%22/></svg>')",
       "$type": "string"
     },
     "tick": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 height=%2216%22 width=%2214%22 viewBox=%220 0 448 512%22><path d=%22M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z%22/></svg>')",
       "$type": "string"
     },
     "toc": {
-      "$value": "url('data:image/svg+xml",
+      "$value": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22 fill=%22none%22 stroke=%22%23000000%22 stroke-width=%221%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M10.7 3.3H2%22/><path d=%22M10.7 8H2%22/><path d=%22M10.7 12.7H2%22/><path d=%22M14 3.3h.01%22/><path d=%22M14 8h.01%22/><path d=%22M14 12.7h.01%22/></svg>')",
       "$type": "string"
     }
   }

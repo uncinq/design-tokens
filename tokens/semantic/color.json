@@ -29,7 +29,8 @@
     "background": {
       "default": {
         "$value": "{color.white}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.950}" }
       },
       "accent": {
         "$value": "{color.accent.default}",
@@ -41,15 +42,18 @@
       },
       "media": {
         "$value": "{color.gray.200}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.800}" }
       },
       "muted": {
         "$value": "{color.gray.100}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.900}" }
       },
       "mutedHover": {
         "$value": "{color.gray.200}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.800}" }
       },
       "surface": {
         "$value": "{color.background.default}",
@@ -59,7 +63,8 @@
     "border": {
       "default": {
         "$value": "{color.gray.200}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.800}" }
       },
       "hover": {
         "$value": "{color.gray.500}",
@@ -130,7 +135,8 @@
     },
     "heading": {
       "$value": "{color.black}",
-      "$type": "color"
+      "$type": "color",
+      "$mods": { "dark": "{color.white}" }
     },
     "info": {
       "default": {
@@ -221,7 +227,8 @@
     "shadow": {
       "default": {
         "$value": "{color.black}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.white}" }
       },
       "normal": {
         "$value": "oklch(from {color.shadow.default} l c h / {opacity.shadow})",
@@ -249,19 +256,23 @@
     "text": {
       "default": {
         "$value": "{color.gray.900}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.200}" }
       },
       "disabled": {
         "$value": "{color.gray.300}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.600}" }
       },
       "hover": {
         "$value": "{color.gray.700}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.300}" }
       },
       "muted": {
         "$value": "{color.gray.500}",
-        "$type": "color"
+        "$type": "color",
+        "$mods": { "dark": "{color.gray.400}" }
       },
       "onAccent": {
         "$value": "{color.white}",
