@@ -2,7 +2,7 @@
 
 The [W3C Design Token Community Group (DTCG)](https://www.w3.org/community/design-tokens/) defines a standard interchange format for design tokens, so they can travel between tools (Figma, code, documentation) without loss of meaning.
 
-`@uncinq/design-tokens` is **CSS-first** — tokens are shipped as CSS custom properties, not as DTCG JSON. The DTCG spec informs the architecture (primitive → semantic → component, naming conventions, token types) but there is no JSON source file. If a Figma → DTCG → CSS pipeline is needed in the future, [Style Dictionary](https://amzn.github.io/style-dictionary/) is the recommended build tool.
+`@uncinq/design-tokens` uses DTCG JSON as its source format. [Style Dictionary v5](https://styledictionary.com/) transforms those JSON files into CSS custom properties — see [STYLE-DICTIONARY.md](STYLE-DICTIONARY.md) for the build pipeline. The DTCG spec informs the architecture (primitive → semantic → component, naming conventions, token types).
 
 ---
 
@@ -112,5 +112,5 @@ This is the key mechanism behind the **primitive → semantic → component** hi
 
 - [DTCG specification](https://tr.designtokens.org/format/) — W3C Community Group draft
 - [DTCG GitHub](https://github.com/design-tokens/community-group) — issues, discussion
-- [Style Dictionary](https://amzn.github.io/style-dictionary/) — token build pipeline (JSON → CSS/SCSS/JS)
+- [Style Dictionary v5](https://styledictionary.com/) — token build pipeline, see [STYLE-DICTIONARY.md](STYLE-DICTIONARY.md)
 - [Tokens Studio](https://tokens.studio/) — Figma plugin for DTCG workflows

@@ -422,5 +422,5 @@ tokens/
 
 - [DTCG — format and concepts](docs/dtcg.md)
 - [DTCG specification](https://tr.designtokens.org/format/) — W3C Community Group draft
-- [Style Dictionary](https://amzn.github.io/style-dictionary/) — token build pipeline (JSON → CSS/SCSS/JS)
+- [Style Dictionary v5](https://styledictionary.com/) — token build pipeline, see [docs/STYLE-DICTIONARY.md](docs/STYLE-DICTIONARY.md)
 - [MDN: CSS cascade layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
