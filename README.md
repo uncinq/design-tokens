@@ -194,7 +194,7 @@ The primitive palette provides **11 steps per hue** (50 → 950), named numerica
 | `violet` | ≈ 293° | Modern violet |
 | `yellow` | ≈ 86° | Pure yellow |
 
-Plus `--color-black` and `--color-white` (with `*-rgb` variants for `rgb()` opacity usage).
+Plus `--color-black` and `--color-white`.
 
 **Step guide:**
 
@@ -331,29 +331,60 @@ Then reference it in `tokens/semantic/color.css` or your project's `@layer confi
 
 ---
 
-## CSS cascade layers
+## Customization
 
-All tokens are declared inside `@layer config`, the lowest-priority layer in the stack:
+Two approaches are available depending on how deep the override needs to go.
 
-```css
-@layer config, base, layouts, vendors, components;
-```
+### 1 — CSS override (recommended)
 
-This means any project can **override any token** in its own `@layer config` block, simply by importing after this package:
+All tokens live in `@layer config`, the lowest-priority layer in the stack. Any `@layer config` block imported **after** this package wins by source order — no specificity tricks needed.
 
 ```css
-@import '@uncinq/design-tokens/tokens/index.css'; /* package defaults */
+@import '@uncinq/design-tokens';
 
-/* your project overrides — same layer, wins by order */
 @layer config {
   :root {
-    --color-brand: #0070f3;
-    --font-family-sans: 'Inter', system-ui, sans-serif;
+    --color-brand:        var(--color-violet-600);
+    --color-brand-muted:  var(--color-violet-100);
+    --color-brand-hover:  var(--color-violet-700);
+    --color-brand-strong: var(--color-violet-900);
+    --font-family-sans:   'Inter', system-ui, sans-serif;
   }
 }
 ```
 
+This covers most use cases: brand color, typography, spacing tweaks, component-level tokens.
+
 → MDN: [Using CSS cascade layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
+
+### 2 — JSON + build in the consuming project
+
+The package exports its raw JSON source files (`./tokens/*`). A project can source them directly in its own [Style Dictionary](https://styledictionary.com/) config alongside project-specific token files:
+
+```js
+// style-dictionary.config.js (in the consuming project)
+export default {
+  source: [
+    'node_modules/@uncinq/design-tokens/tokens/**/*.json',
+    'tokens/**/*.json', // project tokens — extend or override the package
+  ],
+  // ...
+};
+```
+
+Project token files that define the same path as a package token will override it during the build. New paths are additive.
+
+Use this approach to:
+
+- Redefine the primitive palette entirely (new brand hue, different scale)
+- Add semantic tokens that don't exist in the package
+- Generate additional output formats (JS, SCSS…)
+
+| Need | Approach |
+| --- | --- |
+| Change brand, typography, a few tokens | CSS `@layer config` |
+| Redefine the entire primitive palette | JSON + build |
+| Add project-specific tokens | JSON + build (or CSS if few) |
 
 ---
 
@@ -372,48 +403,62 @@ yarn add @uncinq/design-tokens
 @import '@uncinq/design-tokens';
 
 /* or by layer */
-@import '@uncinq/design-tokens/tokens/primitive.css';
-@import '@uncinq/design-tokens/tokens/semantic.css';
+@import '@uncinq/design-tokens/css/primitive.css';
+@import '@uncinq/design-tokens/css/semantic.css';
 
 /* or file by file */
-@import '@uncinq/design-tokens/tokens/primitive/color.css';
-@import '@uncinq/design-tokens/tokens/semantic/color.css';
+@import '@uncinq/design-tokens/css/primitive/color.css';
+@import '@uncinq/design-tokens/css/semantic/color.css';
 ```
 
 ### Usage — CDN (no build step)
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@uncinq/design-tokens/tokens/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@uncinq/design-tokens">
 ```
 
 ---
 
 ## File structure
 
+JSON source files (DTCG format — do not edit `dist/`):
+
 ```
 tokens/
-  index.css               ← imports all layers in order
   primitive/
-    color.css             ← color palette (Tailwind v3 — amber, blue, gray, green…)
-    font.css              ← font families, weights, line-heights, text-decoration
-    opacity.css           ← opacity scale (0 → 1)
-    shadow.css            ← box-shadow scale
-    size.css              ← rem scale (--size-1 → --size-1920)
+    blur.json             ← blur scale (xs → xl)
+    color.json            ← full color palette (OKLCH, 11 steps per hue)
+    font.json             ← font families, weights, sizes, line-heights
+    shadow.json           ← box-shadow scale
+    size.json             ← rem scale (--size-1 → --size-1920)
   semantic/
-    border.css            ← border styles and widths
-    color.css             ← purposeful color aliases (--color-brand, --color-background…)
-    fluid.css             ← responsive clamp() scales (--fluid-text-*, --fluid-spacing-*)
-    focus.css             ← focus ring tokens (color, style, width, offset)
-    form.css              ← form control tokens (input, label, checkbox, switch…)
-    grid.css              ← columns, gap, flex fractions
-    motion.css            ← duration, easing (standard + expressive + spring), transitions
-    opacity.css           ← purposeful opacity aliases (disabled, overlay)
-    radius.css            ← border-radius scale + purposeful aliases
-    ratio.css             ← aspect-ratio values (16/9, 4/3…)
-    size.css              ← T-shirt scale + breakpoint aliases
-    spacing.css           ← spacing scale + purposeful aliases
-    typography.css        ← font-size scale (fixed + fluid), heading sizes, max-widths
-    z-index.css           ← stacking order (below → tooltip)
+    blur.json             ← purposeful blur aliases
+    border.json           ← border styles and widths
+    color.json            ← purposeful color aliases (--color-brand, --color-background…)
+    focus.json            ← focus ring tokens (color, style, width, offset)
+    form.json             ← form control tokens (input, label, checkbox, switch…)
+    grid.json             ← columns, gap, flex fractions
+    icon.json             ← SVG icon tokens (data URI)
+    motion.json           ← duration, easing, transitions
+    opacity.json          ← purposeful opacity aliases (disabled, overlay)
+    radius.json           ← border-radius scale + purposeful aliases
+    ratio.json            ← aspect-ratio values (16/9, 4/3…)
+    shadow.json           ← purposeful shadow aliases
+    size.json             ← T-shirt scale + breakpoint aliases
+    spacing.json          ← spacing scale + fluid clamp() aliases
+    typography.json       ← font-size scale (fixed + fluid), heading sizes
+    z-index.json          ← stacking order
+```
+
+Generated CSS (`dist/css/` — built by `npm run build`, do not edit):
+
+```
+dist/css/
+  index.css               ← imports everything
+  primitive.css           ← imports all primitive files
+  semantic.css            ← imports all semantic files
+  primitive/              ← one file per tokens/primitive/*.json
+  semantic/               ← one file per tokens/semantic/*.json
 ```
 
 ---

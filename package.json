@@ -29,10 +29,8 @@
     "./css/index.css": "./dist/css/index.css",
     "./css/primitive.css": "./dist/css/primitive.css",
     "./css/semantic.css": "./dist/css/semantic.css",
-    "./css/themes.css": "./dist/css/themes.css",
     "./css/primitive/*": "./dist/css/primitive/*",
     "./css/semantic/*": "./dist/css/semantic/*",
-    "./css/themes/*": "./dist/css/themes/*",
     "./tokens/*": "./tokens/*"
   },
   "style": "./dist/css/index.css",
