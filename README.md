@@ -86,11 +86,11 @@ The property mirrors the CSS property name — `background-color`, `border-color
 - **Lowercase kebab-case** — always
 - **No component names** in primitive or semantic tokens (`--button-*` belongs in component tokens, not here)
 - **Semantic tokens are named by intent** — they may reference a primitive via `var()` or carry a raw value when the value itself has design intent (e.g. `--z-index-modal: 400`, `--radius-pill: 9999px`)
-- **`color-[role]` pour tous les tokens couleur** — `color` est le préfixe catégorie, le rôle UI suit : `color-background`, `color-border`, `color-text`, `color-accent`, `color-placeholder`. Cela groupe tous les tokens couleur alphabétiquement sous `color-*` et reflète la structure des tokens sémantiques globaux (`--color-background` → `--btn-color-background`). `background` n'est jamais abrégé : `color-background` pas `color-bg`.
+- **`color-[role]` for all color tokens** — `color` is the category prefix, the UI role follows: `color-background`, `color-border`, `color-text`, `color-accent`, `color-placeholder`. This groups all color tokens alphabetically under `color-*` and mirrors the structure of global semantic tokens (`--color-background` → `--btn-color-background`). `background` is never abbreviated: `color-background` not `color-bg`.
 - **States at the end** — `-hover`, `-focus`, `-active`, `-disabled`, `-checked`
 - **Alphabetical order** — tokens within a file are sorted alphabetically within each group; group related tokens with a comment when the file has many entries:
 
-| Token | Rôle | CSS property appliquée |
+| Token | Role | CSS property |
 | --- | --- | --- |
 | `--btn-color-background` | background | `background-color` |
 | `--btn-color-border` | border | `border-color` |
@@ -212,7 +212,7 @@ Plus `--color-black` and `--color-white`.
 | 900 | ≈ 0.33 | ≈ 0.41 | Near-dark, very high contrast |
 | 950 | ≈ 0.22 | ≈ 0.28 | Darkest tint, almost black |
 
-> **Note OKLCH** — L est perceptuellement uniforme, mais les hues intrinsèquement brillantes (amber, yellow, lime) ont des valeurs L naturellement plus élevées aux steps 400–700. C'est un comportement attendu, pas une erreur de calibration. Gray va dans l'autre sens (chroma ≈ 0, pas de boost de brillance, L légèrement plus bas). La colonne "L avg" est représentative des hues chromatiques froides (blue, red, green, violet…).
+> **Note on OKLCH** — L is perceptually uniform, but intrinsically bright hues (amber, yellow, lime) have naturally higher L values at steps 400–700. This is expected behavior, not a calibration error. Gray goes the other way (chroma ≈ 0, no brightness boost, L slightly lower). The "L avg" column is representative of cool chromatic hues (blue, red, green, violet…).
 
 ### Semantic color tokens
 
