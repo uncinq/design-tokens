@@ -1,5 +1,4 @@
 import StyleDictionary from 'style-dictionary';
-import { formattedVariables } from 'style-dictionary/utils';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -24,13 +23,13 @@ function pathToKebab(parts) {
 }
 
 function refToVar(ref) {
-  return /^\{.+\}$/.test(ref)
-    ? `var(--${pathToKebab(ref.slice(1, -1).split('.'))})`
-    : ref;
+  return ref.replace(/\{([^}]+)\}/g, (_, path) => `var(--${pathToKebab(path.split('.'))})`);
 }
 
-function shadowLayerToCSS({ color = 'transparent', offsetX = '0', offsetY = '0', blur = '0', spread = '0', inset = false }) {
-  return `${inset ? 'inset ' : ''}${offsetX} ${offsetY} ${blur} ${spread} ${refToVar(String(color))}`;
+function compositeLayerToCSS(obj) {
+  const { inset, ...props } = obj;
+  const values = Object.values(props).map(v => refToVar(String(v)));
+  return `${inset ? 'inset ' : ''}${values.join(' ')}`;
 }
 
 // -------------------------------------------------------
@@ -45,21 +44,9 @@ StyleDictionary.registerTransform({
   },
 });
 
-StyleDictionary.registerTransform({
-  name: 'shadow/css/with-refs',
-  type: 'value',
-  filter: token => token.$type === 'shadow',
-  transform(token) {
-    const v = token.original?.$value ?? token.original?.value;
-    if (Array.isArray(v))           return v.map(shadowLayerToCSS).join(', ');
-    if (v && typeof v === 'object') return shadowLayerToCSS(v);
-    return token.$value ?? token.value;
-  },
-});
-
 StyleDictionary.registerTransformGroup({
   name: 'custom/css',
-  transforms: ['name/kebab/strip-default', 'shadow/css/with-refs'],
+  transforms: ['name/kebab/strip-default'],
 });
 
 // -------------------------------------------------------
@@ -69,26 +56,27 @@ StyleDictionary.registerTransformGroup({
 StyleDictionary.registerFormat({
   name: 'css/layer-config',
   format({ dictionary, file }) {
-    const lightVars = formattedVariables({
-      format: 'css',
-      dictionary,
-      outputReferences: true,
-      usesDtcg: true,
-      formatting: { indentation: '    ' },
-    });
+    const allVars = dictionary.allTokens.map(t => {
+      const orig = t.original?.$value ?? t.original?.value;
+      let value;
+      if (Array.isArray(orig))                               value = orig.map(compositeLayerToCSS).join(', ');
+      else if (orig !== null && typeof orig === 'object')    value = compositeLayerToCSS(orig);
+      else                                                   value = refToVar(String(orig ?? t.$value ?? t.value));
+      return `    --${t.name}: ${value};`;
+    }).join('\n');
 
     const darkTokens = dictionary.allTokens.filter(t => t.original?.$mods?.dark);
 
     const header = '/**\n * Do not edit directly, this file was auto-generated.\n */';
 
     let out = `${header}\n\n/* ${file.destination} */\n@layer config {\n`;
-    out += `  :root {\n${lightVars.trimEnd()}\n  }`;
+    out += `  :root {\n${allVars}\n  }`;
 
     if (darkTokens.length > 0) {
       const darkVars = darkTokens
         .map(t => `      --${t.name}: ${refToVar(t.original.$mods.dark)};`)
         .join('\n');
-      out += `\n\n  @media (prefers-color-scheme: dark) {\n    :root {\n${darkVars}\n    }\n  }`;
+      out += `\n\n  @media (prefers-color-scheme: dark) {\n    :root {\n      color-scheme: dark;\n${darkVars}\n    }\n  }`;
     }
 
     return out + '\n}\n';

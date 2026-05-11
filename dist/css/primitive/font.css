@@ -1,30 +1,29 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 /* primitive/font.css */
 @layer config {
   :root {
-    /* Families */
-    --font-family-mono:  ui-monospace, monospace;
-    --font-family-sans:  system-ui, sans-serif;
+    --font-family-mono: ui-monospace, monospace;
+    --font-family-sans: system-ui, sans-serif;
     --font-family-serif: Georgia, serif;
-
-    /* Weights */
-    --font-weight-thin:     100;
-    --font-weight-light:    300;
-    --font-weight-normal:   400;
-    --font-weight-medium:   500;
+    --font-weight-thin: 100;
+    --font-weight-extra-light: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
     --font-weight-semibold: 600;
-    --font-weight-bold:     700;
-    --font-weight-black:    900;
-
-    /* Line heights */
-    --line-height-none:    1;
-    --line-height-tight:   1.1;
-    --line-height-snug:    1.25;
-    --line-height-normal:  1.5;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+    --font-weight-black: 900;
+    --line-height-none: 1;
+    --line-height-tight: 1.1;
+    --line-height-snug: 1.25;
+    --line-height-normal: 1.5;
     --line-height-relaxed: 1.75;
-    --line-height-loose:   2;
-
-    /* Text decoration */
-    --text-decoration-offset:    0.25rem;
+    --line-height-loose: 2;
+    --text-decoration-offset: 0.25rem;
     --text-decoration-thickness: 1px;
   }
 }

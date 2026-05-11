@@ -13,52 +13,6 @@
       "$value": "{fontFamily.sans}"
     }
   },
-  "fontWeight": {
-    "control": {
-      "$type": "fontWeight",
-      "$value": "{fontWeight.medium}"
-    },
-    "heading": {
-      "$type": "fontWeight",
-      "$value": "{fontWeight.bold}"
-    },
-    "text": {
-      "$type": "fontWeight",
-      "$value": "{fontWeight.normal}"
-    }
-  },
-  "letterSpacing": {
-    "none": {
-      "$type": "dimension",
-      "$value": "0em"
-    },
-    "sm": {
-      "$type": "dimension",
-      "$value": "0.025em"
-    },
-    "md": {
-      "$type": "dimension",
-      "$value": "0.05em"
-    },
-    "lg": {
-      "$type": "dimension",
-      "$value": "0.1em"
-    },
-    "xl": {
-      "$type": "dimension",
-      "$value": "0.2em"
-    }
-  },
-  "lineHeight": {
-    "heading": {
-      "$type": "number",
-      "$value": "{lineHeight.tight}"
-    },
-    "text": {
-      "$type": "number",
-      "$value": "{lineHeight.normal}"
-    }
-  },
   "fontSize": {
     "2xs": {
       "$type": "dimension",
@@ -159,6 +113,52 @@
     "text": {
       "$type": "string",
       "$value": "{fontSize.fluid.md}"
+    }
+  },
+  "fontWeight": {
+    "control": {
+      "$type": "fontWeight",
+      "$value": "{fontWeight.medium}"
+    },
+    "heading": {
+      "$type": "fontWeight",
+      "$value": "{fontWeight.bold}"
+    },
+    "text": {
+      "$type": "fontWeight",
+      "$value": "{fontWeight.normal}"
+    }
+  },
+  "letterSpacing": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0em"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "0.025em"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "0.05em"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "0.1em"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "0.2em"
+    }
+  },
+  "lineHeight": {
+    "heading": {
+      "$type": "number",
+      "$value": "{lineHeight.tight}"
+    },
+    "text": {
+      "$type": "number",
+      "$value": "{lineHeight.normal}"
     }
   },
   "maxWidth": {

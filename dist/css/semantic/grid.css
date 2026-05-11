@@ -1,12 +1,12 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 /* semantic/grid.css */
 @layer config {
   :root {
-    /* ── Grid base ──────────────────────────────────────────────────────── */
     --columns: 12;
-    --gap:     var(--spacing-md);
-
-    /* ── Grid column spans ──────────────────────────────────────────────── */
-    /* Integer spans — grid-agnostic. Comments show col-12 / col-24 fractions. */
+    --gap: var(--spacing-md);
     --span-full: 1 / -1;
     --span-half: span calc(var(--columns) / 2);
     --span-quarter: span calc(var(--columns) / 4);

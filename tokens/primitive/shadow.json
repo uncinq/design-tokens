@@ -3,11 +3,11 @@
     "none": {
       "$type": "shadow",
       "$value": {
-        "color": "transparent",
         "offsetX": "0",
         "offsetY": "0",
         "blur": "0",
         "spread": "0",
+        "color": "transparent",
         "inset": false
       }
     },
@@ -15,19 +15,19 @@
       "$type": "shadow",
       "$value": [
         {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "1px",
           "blur": "2px",
           "spread": "0",
+          "color": "{color.shadow.normal}",
           "inset": false
         },
         {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "1px",
           "blur": "1px",
           "spread": "-1px",
+          "color": "{color.shadow.normal}",
           "inset": false
         }
       ]
@@ -36,19 +36,19 @@
       "$type": "shadow",
       "$value": [
         {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "4px",
           "blur": "6px",
           "spread": "-1px",
+          "color": "{color.shadow.normal}",
           "inset": false
         },
         {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "2px",
           "blur": "4px",
           "spread": "-2px",
+          "color": "{color.shadow.normal}",
           "inset": false
         }
       ]
@@ -57,55 +57,54 @@
       "$type": "shadow",
       "$value": [
         {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "10px",
           "blur": "15px",
           "spread": "-3px",
+          "color": "{color.shadow.normal}",
           "inset": false
         },
         {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "4px",
           "blur": "6px",
           "spread": "-4px",
+          "color": "{color.shadow.normal}",
           "inset": false
         }
       ]
     },
-
     "center": {
       "sm": {
         "$type": "shadow",
         "$value": {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "0",
           "blur": "2px",
           "spread": "2px",
+          "color": "{color.shadow.normal}",
           "inset": false
         }
       },
       "md": {
         "$type": "shadow",
         "$value": {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "0",
           "blur": "4px",
           "spread": "4px",
+          "color": "{color.shadow.normal}",
           "inset": false
         }
       },
       "lg": {
         "$type": "shadow",
         "$value": {
-          "color": "{color.shadow.normal}",
           "offsetX": "0",
           "offsetY": "0",
           "blur": "8px",
           "spread": "8px",
+          "color": "{color.shadow.normal}",
           "inset": false
         }
       }

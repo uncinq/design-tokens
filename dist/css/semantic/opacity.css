@@ -1,11 +1,15 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 /* semantic/opacity.css */
 @layer config {
   :root {
-    --opacity-backdrop: .50;
-    --opacity-disabled: .50;
-    --opacity-hover:    .75;
-    --opacity-overlay:  .75;
-    --opacity-shadow:   .10;
-    --opacity-subtle:   .35;
+    --opacity-backdrop: 0.5;
+    --opacity-disabled: 0.5;
+    --opacity-hover: 0.75;
+    --opacity-overlay: 0.75;
+    --opacity-shadow: 0.1;
+    --opacity-subtle: 0.35;
   }
 }
