@@ -1,40 +1,13 @@
 {
   "ratio": {
-    "banner": {
-      "$type": "string",
-      "$value": "21 / 9"
-    },
-    "cinema": {
-      "$type": "string",
-      "$value": "21 / 9"
-    },
-    "hero": {
-      "$type": "string",
-      "$value": "4 / 1"
-    },
-    "landscape": {
-      "$type": "string",
-      "$value": "5 / 4"
-    },
-    "photography": {
-      "$type": "string",
-      "$value": "4 / 3"
-    },
-    "portrait": {
-      "$type": "string",
-      "$value": "4 / 5"
-    },
-    "square": {
-      "$type": "string",
-      "$value": "1 / 1"
-    },
-    "story": {
-      "$type": "string",
-      "$value": "9 / 16"
-    },
-    "video": {
-      "$type": "string",
-      "$value": "16 / 9"
-    }
+    "cinema":      { "$type": "string", "$value": "21 / 9" },
+    "hero":        { "$type": "string", "$value": "4 / 1"  },
+    "landscape":   { "$type": "string", "$value": "4 / 3"  },
+    "photography": { "$type": "string", "$value": "3 / 2"  },
+    "portrait":    { "$type": "string", "$value": "3 / 4"  },
+    "print":       { "$type": "string", "$value": "5 / 4"  },
+    "square":      { "$type": "string", "$value": "1 / 1"  },
+    "story":       { "$type": "string", "$value": "9 / 16" },
+    "video":       { "$type": "string", "$value": "16 / 9" }
   }
 }
