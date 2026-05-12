@@ -49,8 +49,8 @@ Scoped to a specific component. Generic component tokens are provided by [@uncin
 
 ```css
 --alert-border-radius: var(--radius-none);
---btn-padding-x: var(--spacing-control);
---btn-padding-y: var(--spacing-control);
+--btn-padding-inline: var(--spacing-control);
+--btn-padding-block: var(--spacing-control);
 ```
 
 ---

@@ -24,7 +24,7 @@
     --input-color-placeholder: var(--color-text-muted);
     --input-color-text: var(--form-color-text);
     --input-padding: var(--form-padding);
-    --file-button-margin-end: var(--size-12);
+    --file-button-margin-inline-end: var(--size-12);
     --file-button-padding: var(--size-8) var(--size-12);
     --textarea-border-radius: var(--form-border-radius);
     --textarea-border-width: var(--form-border-width);
@@ -49,8 +49,8 @@
     --label-color-text: var(--form-color-text);
     --label-font-size: var(--font-size-xs);
     --label-font-weight: var(--font-weight-medium);
-    --label-padding-x: 0;
-    --label-padding-y: var(--spacing-2xs);
+    --label-padding-inline: 0;
+    --label-padding-block: var(--spacing-2xs);
     --label-text-transform: uppercase;
     --help-color-text: var(--color-text-muted);
     --help-font-size: var(--font-size-xs);

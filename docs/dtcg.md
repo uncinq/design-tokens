@@ -71,15 +71,15 @@ CSS property names that are two words (kebab-case in CSS) are written as a singl
 
 | JSON key | CSS custom property |
 | --- | --- |
-| `"fontSize"` | `--btn-font-size` |
-| `"fontWeight"` | `--btn-font-weight` |
 | `"fontFamily"` | `--btn-font-family` |
+| `"fontSize"` | `--btn-font-size` |
 | `"fontStyle"` | `--btn-font-style` |
+| `"fontWeight"` | `--btn-font-weight` |
 | `"lineHeight"` | `--btn-line-height` |
-| `"textDecoration"` | `--btn-text-decoration` |
-| `"textTransform"` | `--btn-text-transform` |
 | `"maxHeight"` | `--btn-max-height` |
 | `"maxWidth"` | `--btn-max-width` |
+| `"textDecoration"` | `--btn-text-decoration` |
+| `"textTransform"` | `--btn-text-transform` |
 
 ```json
 // ✅ correct
@@ -110,6 +110,42 @@ CSS property names that are two words (kebab-case in CSS) are written as a singl
 "color": {
   "background": { "$value": "{color.background.default}", "$type": "color" },
   "text":       { "$value": "{color.text.default}", "$type": "color" }
+}
+```
+
+### Logical properties → sub-keys of `padding` / `margin`
+
+Sub-axes of `padding` and `margin` use **CSS logical property names** as sub-keys — not physical directions (`x`, `y`, `top`, `bottom`, `left`, `right`).
+
+| Sub-key | CSS logical property | Physical equivalent |
+| --- | --- | --- |
+| `"inline"` | `padding-inline` / `margin-inline` | left + right |
+| `"block"` | `padding-block` / `margin-block` | top + bottom |
+| `"inlineStart"` | `padding-inline-start` / `margin-inline-start` | left (LTR) |
+| `"inlineEnd"` | `padding-inline-end` / `margin-inline-end` | right (LTR) |
+| `"blockStart"` | `padding-block-start` / `margin-block-start` | top |
+| `"blockEnd"` | `padding-block-end` / `margin-block-end` | bottom |
+
+```json
+// ✅ correct
+"padding": {
+  "inline": { "$value": "{spacing.sm}", "$type": "dimension" },
+  "block":  { "$value": "{spacing.xs}", "$type": "dimension" }
+}
+
+// ❌ wrong
+"padding": {
+  "x": { "$value": "{spacing.sm}", "$type": "dimension" },
+  "y": { "$value": "{spacing.xs}", "$type": "dimension" }
+}
+```
+
+**Exception — CSS `top`/`bottom`/`left`/`right` as positioning values** (not margin/padding sub-keys) keep their physical names, since they map to CSS position properties, not logical shorthands.
+
+```json
+// ✅ positioning — physical names are correct here
+"sticky": {
+  "top": { "$value": "4rem", "$type": "dimension" }
 }
 ```
 
