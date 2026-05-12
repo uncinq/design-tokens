@@ -77,7 +77,7 @@ StyleDictionary.registerFormat({
       const darkVars = darkTokens
         .map(t => `      --${t.name}: ${refToVar(t.original.$mods.dark)};`)
         .join('\n');
-      out += `\n\n  @media (prefers-color-scheme: dark) {\n    :root {\n      color-scheme: dark;\n${darkVars}\n    }\n  }`;
+      out += `\n\n  @media (prefers-color-scheme: dark) {\n    :root:not([data-color-scheme="light"]) {\n${darkVars}\n    }\n  }`;
     }
 
     return out + '\n}\n';

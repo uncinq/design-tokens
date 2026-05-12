@@ -114,15 +114,21 @@ The build generates a `@media (prefers-color-scheme: dark)` block inside the sam
   }
 
   @media (prefers-color-scheme: dark) {
-    :root {
-      color-scheme: dark;
+    :root:not([data-color-scheme="light"]) {
       --color-background: var(--color-gray-950);
     }
   }
 }
 ```
 
-`color-scheme: dark` is automatically added to the dark block so the browser renders native UI elements (scrollbars, form controls) in dark mode.
+The `:not([data-color-scheme="light"])` selector ensures dark tokens are only applied when the OS is in dark mode **and** the site has not explicitly forced light mode. This covers the two practical scenarios:
+
+- **auto** — no `data-color-scheme` attribute on `<html>`: the OS controls the mode via the media query.
+- **light fixe** — `data-color-scheme="light"` on `<html>`: the media query is ignored, the site stays light regardless of the OS.
+
+Forcing dark mode when the OS is in light mode is not a supported use case.
+
+> **Note** — `color-scheme: dark` is intentionally absent from the generated block. The `color-scheme` property is managed at the HTML level by the consuming application (e.g. via `<meta name="color-scheme">`), not by the token layer.
 
 ### Rules
 
