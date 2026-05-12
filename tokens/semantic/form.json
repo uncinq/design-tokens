@@ -103,9 +103,11 @@
 
   "file": {
     "button": {
-      "marginEnd": {
-        "$value": "{size.12}",
-        "$type": "dimension"
+      "margin": {
+        "end": {
+          "$value": "{size.12}",
+          "$type": "dimension"
+        }
       },
 
       "padding": {
