@@ -12,10 +12,12 @@ The [DTCG spec](https://tr.designtokens.org/format/) defines tokens as JSON obje
 
 ```json
 {
-  "color-brand": {
-    "$value": "oklch(0.530 0.195 22.0)",
-    "$type": "color",
-    "$description": "Primary brand color — used for CTAs and highlights."
+  "color": {
+    "brand": {
+      "$value": "oklch(0.530 0.195 22.0)",
+      "$type": "color",
+      "$description": "Primary brand color — used for CTAs and highlights."
+    }
   }
 }
 ```
@@ -171,15 +173,17 @@ Interactive states (`default`, `hover`, `active`, `disabled`…) are expressed a
 States and camelCase properties compose naturally:
 
 ```json
-"textDecoration": {
-  "default": { "$value": "transparent", "$type": "string" },
-  "hover":   { "$value": "underline",   "$type": "string" }
+"color": {
+  "textDecoration": {
+    "default": { "$value": "transparent", "$type": "color" },
+    "hover":   { "$value": "{color.link.default}", "$type": "color" }
+  }
 }
 ```
 
 ```css
---btn-text-decoration: transparent;
---btn-text-decoration-hover: underline;
+--btn-color-text-decoration: transparent;
+--btn-color-text-decoration-hover: var(--color-link);
 ```
 
 ---
@@ -190,9 +194,13 @@ Tokens can reference other tokens using `{dotted.path}` syntax:
 
 ```json
 {
-  "color-primary": {
-    "$value": "{color.brand}",
-    "$type": "color"
+  "color": {
+    "link": {
+      "default": {
+        "$value": "{color.brand.default}",
+        "$type": "color"
+      }
+    }
   }
 }
 ```
@@ -200,7 +208,7 @@ Tokens can reference other tokens using `{dotted.path}` syntax:
 In CSS, this maps to `var()`:
 
 ```css
---color-primary: var(--color-brand);
+--color-link: var(--color-brand);
 ```
 
 This is the key mechanism behind the **primitive → semantic → component** hierarchy.
