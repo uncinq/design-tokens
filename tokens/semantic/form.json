@@ -21,12 +21,14 @@
         "$mods": { "dark": "{color.gray.900}" }
       },
       "border": {
-        "$value": "{color.border.default}",
-        "$type": "color"
-      },
-      "borderHover": {
-        "$value": "{color.border.hover}",
-        "$type": "color"
+        "default": {
+          "$value": "{color.border.default}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{color.border.hover}",
+          "$type": "color"
+        }
       },
       "text": {
         "$value": "{color.text.default}",
@@ -38,12 +40,14 @@
       "$type": "dimension"
     },
     "shadow": {
-      "$value": "{shadow.control}",
-      "$type": "shadow"
-    },
-    "shadowHover": {
-      "$value": "{shadow.controlHover}",
-      "$type": "shadow"
+      "default": {
+        "$value": "{shadow.control.default}",
+        "$type": "shadow"
+      },
+      "hover": {
+        "$value": "{shadow.control.hover}",
+        "$type": "shadow"
+      }
     },
     "transition": {
       "$value": "{transition.normal}",
@@ -70,13 +74,14 @@
       },
 
       "border": {
-        "$value": "{form.color.border}",
-        "$type": "color"
-      },
-
-      "borderHover": {
-        "$value": "{form.color.borderHover}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.border.default}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.border.hover}",
+          "$type": "color"
+        }
       },
 
       "placeholder": {
@@ -130,13 +135,14 @@
       },
 
       "border": {
-        "$value": "{form.color.border}",
-        "$type": "color"
-      },
-
-      "borderHover": {
-        "$value": "{form.color.borderHover}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.border.default}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.border.hover}",
+          "$type": "color"
+        }
       },
 
       "placeholder": {
@@ -181,13 +187,14 @@
       },
 
       "border": {
-        "$value": "{form.color.border}",
-        "$type": "color"
-      },
-
-      "borderHover": {
-        "$value": "{form.color.borderHover}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.border.default}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.border.hover}",
+          "$type": "color"
+        }
       },
 
       "optgroup": {
@@ -230,21 +237,25 @@
       }
     },
 
-    "font": {
-      "size": {
-        "$value": "{fontSize.xs}",
-        "$type": "dimension"
-      },
+    "fontSize": {
+      "$value": "{fontSize.xs}",
+      "$type": "dimension"
+    },
 
-      "weight": {
-        "$value": "{fontWeight.medium}",
-        "$type": "fontWeight"
-      }
+    "fontWeight": {
+      "$value": "{fontWeight.medium}",
+      "$type": "fontWeight"
     },
 
     "padding": {
-      "$value": "{spacing.2xs} 0",
-      "$type": "string"
+      "x": {
+        "$value": "0",
+        "$type": "dimension"
+      },
+      "y": {
+        "$value": "{spacing.2xs}",
+        "$type": "dimension"
+      }
     },
 
     "textTransform": {
@@ -261,16 +272,14 @@
       }
     },
 
-    "font": {
-      "size": {
-        "$value": "{fontSize.xs}",
-        "$type": "dimension"
-      },
+    "fontSize": {
+      "$value": "{fontSize.xs}",
+      "$type": "dimension"
+    },
 
-      "weight": {
-        "$value": "{fontWeight.normal}",
-        "$type": "fontWeight"
-      }
+    "fontWeight": {
+      "$value": "{fontWeight.normal}",
+      "$type": "fontWeight"
     },
 
     "margin": {
@@ -306,33 +315,33 @@
 
     "color": {
       "background": {
-        "$value": "{form.color.background}",
-        "$type": "color"
-      },
-
-      "backgroundChecked": {
-        "$value": "{form.color.background}",
-        "$type": "color"
-      },
-
-      "backgroundHover": {
-        "$value": "{form.color.background}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        }
       },
 
       "border": {
-        "$value": "{form.color.border}",
-        "$type": "color"
-      },
-
-      "borderChecked": {
-        "$value": "{checkable.color}",
-        "$type": "color"
-      },
-
-      "borderHover": {
-        "$value": "{form.color.borderHover}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.border.default}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{checkable.color}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.border.hover}",
+          "$type": "color"
+        }
       }
     },
 
@@ -383,34 +392,34 @@
 
     "color": {
       "background": {
-        "$value": "{form.color.background}",
-        "$type": "color"
-      },
-
-      "backgroundChecked": {
-        "$value": "{checkable.color}",
-        "$type": "color"
-      },
-
-      "backgroundHover": {
-        "$value": "{form.color.background}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{checkable.color}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        }
       },
 
       "border": {
-        "$value": "{form.color.border}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.border.default}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{checkable.color}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.border.hover}",
+          "$type": "color"
+        }
       },
-
-      "borderChecked": {
-        "$value": "{checkable.color}",
-        "$type": "color"
-      },
-
-      "borderHover": {
-        "$value": "{form.color.borderHover}",
-        "$type": "color"
-      }
     },
 
     "label": {
@@ -455,7 +464,7 @@
 
     "track": {
       "color": {
-        "$value": "{form.color.border}",
+        "$value": "{form.color.border.default}",
         "$type": "color"
       },
 
@@ -481,35 +490,35 @@
 
     "color": {
       "background": {
-        "$value": "{form.color.background}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        }
       },
-
-      "backgroundChecked": {
-        "$value": "{form.color.background}",
-        "$type": "color"
-      },
-
-      "backgroundHover": {
-        "$value": "{form.color.background}",
-        "$type": "color"
-      },
-
       "border": {
-        "$value": "{form.color.border}",
+        "$value": "{form.color.border.default}",
         "$type": "color"
       }
     },
 
     "thumb": {
       "color": {
-        "$value": "{form.color.accent}",
-        "$type": "color"
-      },
-
-      "colorChecked": {
-        "$value": "{form.color.background}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.accent}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        }
       },
 
       "scale": {
@@ -520,13 +529,14 @@
 
     "track": {
       "color": {
-        "$value": "{form.color.background}",
-        "$type": "color"
-      },
-
-      "colorChecked": {
-        "$value": "{form.color.accent}",
-        "$type": "color"
+        "default": {
+          "$value": "{form.color.background}",
+          "$type": "color"
+        },
+        "checked": {
+          "$value": "{form.color.accent}",
+          "$type": "color"
+        }
       }
     },
 

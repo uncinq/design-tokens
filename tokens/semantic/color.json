@@ -46,14 +46,16 @@
         "$mods": { "dark": "{color.gray.800}" }
       },
       "muted": {
-        "$value": "{color.gray.100}",
-        "$type": "color",
-        "$mods": { "dark": "{color.gray.900}" }
-      },
-      "mutedHover": {
-        "$value": "{color.gray.200}",
-        "$type": "color",
-        "$mods": { "dark": "{color.gray.800}" }
+        "default": {
+          "$value": "{color.gray.100}",
+          "$type": "color",
+          "$mods": { "dark": "{color.gray.900}" }
+        },
+        "hover": {
+          "$value": "{color.gray.200}",
+          "$type": "color",
+          "$mods": { "dark": "{color.gray.800}" }
+        }
       },
       "surface": {
         "$value": "{color.background.default}",
