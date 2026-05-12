@@ -63,23 +63,88 @@ The [DTCG spec](https://tr.designtokens.org/format/) defines tokens as JSON obje
 
 ---
 
-## Token groups
+## Naming conventions
 
-Tokens are organized in nested objects. Groups share a `$type` by inheritance:
+### CSS compound properties → camelCase
+
+CSS property names that are two words (kebab-case in CSS) are written as a single **camelCase key** — not as a nested group. The `pathToKebab` transform converts them back to kebab-case for the CSS output, so the result is identical either way.
+
+| JSON key | CSS custom property |
+| --- | --- |
+| `"fontSize"` | `--btn-font-size` |
+| `"fontWeight"` | `--btn-font-weight` |
+| `"fontFamily"` | `--btn-font-family` |
+| `"fontStyle"` | `--btn-font-style` |
+| `"lineHeight"` | `--btn-line-height` |
+| `"textDecoration"` | `--btn-text-decoration` |
+| `"textTransform"` | `--btn-text-transform` |
+| `"maxHeight"` | `--btn-max-height` |
+| `"maxWidth"` | `--btn-max-width` |
 
 ```json
-{
-  "color": {
-    "$type": "color",
-    "gray": {
-      "100": { "$value": "oklch(0.967 0.003 264.542)" },
-      "900": { "$value": "oklch(0.208 0.006 264.542)" }
-    }
+// ✅ correct
+"btn": {
+  "fontSize": { "$value": "{fontSize.sm}", "$type": "dimension" },
+  "fontWeight": { "$value": "{fontWeight.bold}", "$type": "fontWeight" }
+}
+
+// ❌ wrong
+"btn": {
+  "font": {
+    "size": { "$value": "{fontSize.sm}", "$type": "dimension" },
+    "weight": { "$value": "{fontWeight.bold}", "$type": "fontWeight" }
   }
 }
 ```
 
-→ [tr.designtokens.org/format/#groups](https://tr.designtokens.org/format/#groups)
+**Exception — semantic namespaces:** `border`, `color`, `padding`, `margin`, `shadow` used to group multiple sub-properties stay nested, because the group key itself is not a CSS property compound word.
+
+```json
+// ✅ border as a namespace grouping multiple properties
+"border": {
+  "radius": { "$value": "{radius.control}", "$type": "dimension" },
+  "width":  { "$value": "{border.width.sm}", "$type": "dimension" }
+}
+
+// ✅ color as a semantic grouping
+"color": {
+  "background": { "$value": "{color.background.default}", "$type": "color" },
+  "text":       { "$value": "{color.text.default}", "$type": "color" }
+}
+```
+
+### States → nested sub-keys
+
+Interactive states (`default`, `hover`, `active`, `disabled`…) are expressed as **nested keys** under the property they modify. The `default` key is automatically stripped by the build transform.
+
+```json
+"color": {
+  "background": {
+    "default": { "$value": "{color.brand.default}", "$type": "color" },
+    "hover":   { "$value": "{color.brand.hover}",   "$type": "color" }
+  }
+}
+```
+
+```css
+/* output */
+--btn-color-background: var(--color-brand);
+--btn-color-background-hover: var(--color-brand-hover);
+```
+
+States and camelCase properties compose naturally:
+
+```json
+"textDecoration": {
+  "default": { "$value": "transparent", "$type": "string" },
+  "hover":   { "$value": "underline",   "$type": "string" }
+}
+```
+
+```css
+--btn-text-decoration: transparent;
+--btn-text-decoration-hover: underline;
+```
 
 ---
 

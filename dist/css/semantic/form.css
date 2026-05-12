@@ -49,7 +49,8 @@
     --label-color-text: var(--form-color-text);
     --label-font-size: var(--font-size-xs);
     --label-font-weight: var(--font-weight-medium);
-    --label-padding: var(--spacing-2xs) 0;
+    --label-padding-x: 0;
+    --label-padding-y: var(--spacing-2xs);
     --label-text-transform: uppercase;
     --help-color-text: var(--color-text-muted);
     --help-font-size: var(--font-size-xs);
