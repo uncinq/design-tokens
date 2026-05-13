@@ -1,6 +1,6 @@
 {
   "name": "@uncinq/design-tokens",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Framework-agnostic design tokens — JSON DTCG primitive and semantic — CSS custom properties.",
   "license": "MIT",
   "repository": {
