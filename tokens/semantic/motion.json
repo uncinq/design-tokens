@@ -64,6 +64,14 @@
       "$value": "all {duration.slow} {easing.default}",
       "$type": "string"
     },
+    "boxShadow": {
+      "$value": "box-shadow {duration.normal} {easing.default}",
+      "$type": "string"
+    },
+    "color": {
+      "$value": "color {duration.normal} {easing.default}, background-color {duration.normal} {easing.default}, border-color {duration.normal} {easing.default}, outline-color {duration.normal} {easing.default}, fill {duration.normal} {easing.default}, stroke {duration.normal} {easing.default}, text-decoration {duration.normal} {easing.default}",
+      "$type": "string"
+    },
     "opacity": {
       "$value": "opacity {duration.normal} {easing.default}",
       "$type": "string"
@@ -77,10 +85,6 @@
         "$value": "color, background-color, border-color, outline-color, fill, stroke, text-decoration",
         "$type": "string"
       }
-    },
-    "color": {
-      "$value": "color {duration.normal} {easing.default}, background-color {duration.normal} {easing.default}, border-color {duration.normal} {easing.default}, outline-color {duration.normal} {easing.default}, fill {duration.normal} {easing.default}, stroke {duration.normal} {easing.default}, text-decoration {duration.normal} {easing.default}",
-      "$type": "string"
     }
   }
 }

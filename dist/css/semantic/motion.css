@@ -20,9 +20,10 @@
     --transition-fast: all var(--duration-fast) var(--easing);
     --transition-normal: all var(--duration-normal) var(--easing);
     --transition-slow: all var(--duration-slow) var(--easing);
+    --transition-box-shadow: box-shadow var(--duration-normal) var(--easing);
+    --transition-color: color var(--duration-normal) var(--easing), background-color var(--duration-normal) var(--easing), border-color var(--duration-normal) var(--easing), outline-color var(--duration-normal) var(--easing), fill var(--duration-normal) var(--easing), stroke var(--duration-normal) var(--easing), text-decoration var(--duration-normal) var(--easing);
     --transition-opacity: opacity var(--duration-normal) var(--easing);
     --transition-transform: transform var(--duration-normal) var(--easing);
     --transition-property-color: color, background-color, border-color, outline-color, fill, stroke, text-decoration;
-    --transition-color: color var(--duration-normal) var(--easing), background-color var(--duration-normal) var(--easing), border-color var(--duration-normal) var(--easing), outline-color var(--duration-normal) var(--easing), fill var(--duration-normal) var(--easing), stroke var(--duration-normal) var(--easing), text-decoration var(--duration-normal) var(--easing);
   }
 }
