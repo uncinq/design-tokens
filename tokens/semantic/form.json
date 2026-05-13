@@ -421,7 +421,7 @@
           "$value": "{form.color.border.hover}",
           "$type": "color"
         }
-      },
+      }
     },
 
     "label": {
