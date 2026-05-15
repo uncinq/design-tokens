@@ -1,8 +1,10 @@
 {
   "focus": {
     "color": {
-      "$value": "{color.focus}",
-      "$type": "color"
+      "outline": {
+        "$value": "{color.focus}",
+        "$type": "color"
+      }
     },
     "outline": {
       "offset": {

@@ -5,7 +5,7 @@
 /* semantic/focus.css */
 @layer config {
   :root {
-    --focus-color: var(--color-focus);
+    --focus-color-outline: var(--color-focus);
     --focus-outline-offset: 2px;
     --focus-outline-style: solid;
     --focus-outline-width: 1px;
