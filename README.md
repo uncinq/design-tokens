@@ -138,7 +138,7 @@ The property mirrors the CSS property name — `background-color`, `border-color
 | `duration` | Animation timing | `--duration-fast` |
 | `easing` | Timing functions | `--easing-bounce` |
 | `transition` | Shorthand transitions | `--transition-normal`, `--transition-color` |
-| `ratio` | Aspect ratios | `--ratio-16-9` |
+| `ratio` | Aspect ratios | `--ratio-video` |
 | `fluid-text` | Responsive fluid type scale (Utopia) | `--fluid-text-sm`, `--fluid-text-xl` |
 | `fluid-spacing` | Responsive fluid spacing scale (Utopia) | `--fluid-spacing-sm`, `--fluid-spacing-lg` |
 | `focus` | Focus ring tokens | `--focus-color`, `--focus-outline-width` |
