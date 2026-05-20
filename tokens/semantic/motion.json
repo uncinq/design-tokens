@@ -14,41 +14,41 @@
     }
   },
   "easing": {
-    "linear": {
-      "$value": "linear",
-      "$type": "string"
-    },
     "default": {
-      "$value": "ease-in-out",
-      "$type": "string"
+      "$value": "{easing.inOut}",
+      "$type": "cubicBezier"
+    },
+    "linear": {
+      "$value": [0, 0, 1, 1],
+      "$type": "cubicBezier"
     },
     "in": {
-      "$value": "ease-in",
-      "$type": "string"
+      "$value": [0.42, 0, 1, 1],
+      "$type": "cubicBezier"
     },
     "out": {
-      "$value": "ease-out",
-      "$type": "string"
+      "$value": [0, 0, 0.58, 1],
+      "$type": "cubicBezier"
     },
-    "out-circ": {
-      "$value": "cubic-bezier(0, 0.55, 0.45, 1)",
-      "$type": "string"
+    "inOut": {
+      "$value": [0.42, 0, 0.58, 1],
+      "$type": "cubicBezier"
     },
-    "out-expo": {
-      "$value": "cubic-bezier(0.16, 1, 0.3, 1)",
-      "$type": "string"
+    "outCirc": {
+      "$value": [0, 0.55, 0.45, 1],
+      "$type": "cubicBezier"
     },
-    "out-back": {
-      "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
-      "$type": "string"
+    "outExpo": {
+      "$value": [0.16, 1, 0.3, 1],
+      "$type": "cubicBezier"
+    },
+    "outBack": {
+      "$value": [0.34, 1.56, 0.64, 1],
+      "$type": "cubicBezier"
     },
     "bounce": {
-      "$value": "cubic-bezier(0.165, 0.84, 0.44, 1)",
-      "$type": "string"
-    },
-    "spring": {
-      "$value": "linear(0, 0.006, 0.025 2.8%, 0.101, 0.197, 0.325, 0.474, 0.638, 0.806, 0.962, 1.065, 1.12, 1.14, 1.12 30.9%, 1.034, 0.997, 0.986, 0.998, 1)",
-      "$type": "string"
+      "$value": [0.165, 0.84, 0.44, 1],
+      "$type": "cubicBezier"
     }
   },
   "transition": {
