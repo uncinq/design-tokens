@@ -59,8 +59,10 @@ StyleDictionary.registerFormat({
     const allVars = dictionary.allTokens.map(t => {
       const name = pathToKebab(t.path);
       const orig = t.original?.$value ?? t.original?.value;
+      const type = t.$type ?? t.type;
       let value;
-      if (Array.isArray(orig))                               value = orig.map(compositeLayerToCSS).join(', ');
+      if (type === 'cubicBezier' && Array.isArray(orig))     value = `cubic-bezier(${orig.join(', ')})`;
+      else if (Array.isArray(orig))                          value = orig.map(compositeLayerToCSS).join(', ');
       else if (orig !== null && typeof orig === 'object')    value = compositeLayerToCSS(orig);
       else                                                   value = refToVar(String(orig ?? t.$value ?? t.value));
       return `    --${name}: ${value};`;
