@@ -12,8 +12,18 @@
     },
     "color": {
       "accent": {
-        "$value": "{color.black}",
-        "$type": "color"
+        "default": {
+          "$value": "{color.accent.default}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{color.accent.hover}",
+          "$type": "color"
+        },
+        "muted": {
+          "$value": "{color.accent.muted}",
+          "$type": "color"
+        }
       },
       "background": {
         "$value": "{color.white}",
@@ -31,8 +41,14 @@
         }
       },
       "text": {
-        "$value": "{color.text.default}",
-        "$type": "color"
+        "default": {
+          "$value": "{color.text.default}",
+          "$type": "color"
+        },
+        "onAccent": {
+          "$value": "{color.text.onAccent}",
+          "$type": "color"
+        }
       }
     },
     "padding": {
@@ -111,8 +127,14 @@
       },
 
       "padding": {
-        "$value": "{size.8} {size.12}",
-        "$type": "string"
+        "block": {
+          "$value": "{size.6}",
+          "$type": "dimension"
+        },
+        "inline": {
+          "$value": "{size.10}",
+          "$type": "dimension"
+        }
       }
     }
   },

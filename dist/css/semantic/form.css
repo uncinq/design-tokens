@@ -7,11 +7,14 @@
   :root {
     --form-border-radius: var(--radius-xs);
     --form-border-width: var(--border-width-sm);
-    --form-color-accent: var(--color-black);
+    --form-color-accent: var(--color-accent);
+    --form-color-accent-hover: var(--color-accent-hover);
+    --form-color-accent-muted: var(--color-accent-muted);
     --form-color-background: var(--color-white);
     --form-color-border: var(--color-border);
     --form-color-border-hover: var(--color-border-hover);
     --form-color-text: var(--color-text);
+    --form-color-text-on-accent: var(--color-text-on-accent);
     --form-padding: var(--spacing-control);
     --form-shadow: var(--shadow-control);
     --form-shadow-hover: var(--shadow-control-hover);
@@ -25,7 +28,8 @@
     --input-color-text: var(--form-color-text);
     --input-padding: var(--form-padding);
     --file-button-margin-inline-end: var(--size-12);
-    --file-button-padding: var(--size-8) var(--size-12);
+    --file-button-padding-inline: var(--size-10);
+    --file-button-padding-block: var(--size-6);
     --textarea-border-radius: var(--form-border-radius);
     --textarea-border-width: var(--form-border-width);
     --textarea-color-background: var(--form-color-background);
