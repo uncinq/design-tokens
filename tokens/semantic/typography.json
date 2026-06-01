@@ -48,70 +48,70 @@
     },
     "fluid": {
       "2xs": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(0.625rem, 0.5893rem + 0.1786vw, 0.75rem)"
       },
       "xs": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem)"
       },
       "sm": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem)"
       },
       "md": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem)"
       },
       "lg": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem)"
       },
       "xl": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem)"
       },
       "2xl": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(3rem, 2.7143rem + 1.4286vw, 4rem)"
       },
       "display": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "clamp(4rem, 3.4286rem + 2.8571vw, 6rem)"
       }
     },
     "heading": {
       "01": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{fontSize.fluid.xl}"
       },
       "02": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{fontSize.fluid.lg}"
       },
       "03": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{fontSize.fluid.md}"
       },
       "04": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{fontSize.fluid.sm}"
       },
       "05": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{fontSize.fluid.sm}"
       },
       "06": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{fontSize.fluid.sm}"
       }
     },
     "small": {
-      "$type": "string",
+      "$type": "dimension",
       "$value": "{fontSize.fluid.sm}"
     },
     "text": {
-      "$type": "string",
+      "$type": "dimension",
       "$value": "{fontSize.fluid.md}"
     }
   },

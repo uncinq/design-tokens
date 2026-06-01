@@ -35,31 +35,31 @@
     "fluid": {
       "2xs": {
         "$value": "clamp(0.3125rem, 0.2232rem + 0.4464vw, 0.625rem)",
-        "$type": "string"
+        "$type": "dimension"
       },
       "xs": {
         "$value": "clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem)",
-        "$type": "string"
+        "$type": "dimension"
       },
       "sm": {
         "$value": "clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem)",
-        "$type": "string"
+        "$type": "dimension"
       },
       "md": {
         "$value": "clamp(1.875rem, 1.3393rem + 2.6786vw, 3.75rem)",
-        "$type": "string"
+        "$type": "dimension"
       },
       "lg": {
         "$value": "clamp(2.5rem, 1.7857rem + 3.5714vw, 5rem)",
-        "$type": "string"
+        "$type": "dimension"
       },
       "xl": {
         "$value": "clamp(3.125rem, 2.2321rem + 4.4643vw, 6.25rem)",
-        "$type": "string"
+        "$type": "dimension"
       },
       "2xl": {
         "$value": "clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem)",
-        "$type": "string"
+        "$type": "dimension"
       }
     },
     "card": {
@@ -72,19 +72,19 @@
     },
     "heading": {
       "$value": "{spacing.fluid.sm}",
-      "$type": "string"
+      "$type": "dimension"
     },
     "section": {
       "$value": "{spacing.fluid.2xl}",
-      "$type": "string"
+      "$type": "dimension"
     },
     "surface": {
       "$value": "{spacing.fluid.sm}",
-      "$type": "string"
+      "$type": "dimension"
     },
     "typography": {
       "$value": "{spacing.fluid.xs}",
-      "$type": "string"
+      "$type": "dimension"
     }
   }
 }

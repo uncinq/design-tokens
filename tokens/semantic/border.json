@@ -3,7 +3,7 @@
     "style": {
       "normal": {
         "$value": "solid",
-        "$type": "string"
+        "$type": "strokeStyle"
       }
     },
     "width": {

@@ -5,7 +5,7 @@
   },
   "gap": {
     "$value": "{spacing.md}",
-    "$type": "string"
+    "$type": "dimension"
   },
   "span": {
     "full": {

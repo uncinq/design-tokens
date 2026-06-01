@@ -13,7 +13,7 @@
       },
       "style": {
         "$value": "solid",
-        "$type": "string"
+        "$type": "strokeStyle"
       },
       "width": {
         "$value": "1px",
