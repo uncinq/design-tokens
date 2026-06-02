@@ -3,7 +3,7 @@
  */
 
 /* semantic/grid.css */
-@layer config {
+@layer tokens {
   :root {
     --columns: 12;
     --gap: var(--spacing-md);

@@ -3,7 +3,7 @@
  */
 
 /* semantic/size.css */
-@layer config {
+@layer tokens {
   :root {
     --size-tablet: var(--size-768);
     --size-tablet-wide: var(--size-1024);

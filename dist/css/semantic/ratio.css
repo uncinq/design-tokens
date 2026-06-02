@@ -3,7 +3,7 @@
  */
 
 /* semantic/ratio.css */
-@layer config {
+@layer tokens {
   :root {
     --ratio-cinema: 21 / 9;
     --ratio-hero: 4 / 1;
@@ -11,6 +11,7 @@
     --ratio-photography: 3 / 2;
     --ratio-portrait: 3 / 4;
     --ratio-print: 5 / 4;
+    --ratio-social: 4 / 5;
     --ratio-square: 1 / 1;
     --ratio-story: 9 / 16;
     --ratio-video: 16 / 9;

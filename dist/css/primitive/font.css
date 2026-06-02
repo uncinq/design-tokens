@@ -3,7 +3,7 @@
  */
 
 /* primitive/font.css */
-@layer config {
+@layer tokens {
   :root {
     --font-family-mono: ui-monospace, monospace;
     --font-family-sans: system-ui, sans-serif;

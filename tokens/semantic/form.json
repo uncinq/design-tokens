@@ -27,8 +27,7 @@
       },
       "background": {
         "$value": "{color.white}",
-        "$type": "color",
-        "$mods": { "dark": "{color.gray.900}" }
+        "$type": "color"
       },
       "border": {
         "default": {
@@ -106,7 +105,7 @@
       },
 
       "text": {
-        "$value": "{form.color.text}",
+        "$value": "{form.color.text.default}",
         "$type": "color"
       }
     },
@@ -175,7 +174,7 @@
       },
 
       "text": {
-        "$value": "{form.color.text}",
+        "$value": "{form.color.text.default}",
         "$type": "color"
       }
     },
@@ -227,7 +226,7 @@
       },
 
       "text": {
-        "$value": "{form.color.text}",
+        "$value": "{form.color.text.default}",
         "$type": "color"
       }
     },
@@ -256,7 +255,7 @@
   "label": {
     "color": {
       "text": {
-        "$value": "{form.color.text}",
+        "$value": "{form.color.text.default}",
         "$type": "color"
       }
     },
@@ -284,7 +283,7 @@
 
     "textTransform": {
       "$value": "uppercase",
-      "$type": "string"
+      "$type": "textCase"
     }
   },
 
@@ -314,7 +313,7 @@
 
   "checkable": {
     "color": {
-      "$value": "{form.color.accent}",
+      "$value": "{form.color.accent.default}",
       "$type": "color"
     },
 
@@ -476,7 +475,7 @@
       },
 
       "color": {
-        "$value": "{form.color.accent}",
+        "$value": "{form.color.accent.default}",
         "$type": "color"
       },
 
@@ -536,7 +535,7 @@
     "thumb": {
       "color": {
         "default": {
-          "$value": "{form.color.accent}",
+          "$value": "{form.color.accent.default}",
           "$type": "color"
         },
         "checked": {
@@ -558,7 +557,7 @@
           "$type": "color"
         },
         "checked": {
-          "$value": "{form.color.accent}",
+          "$value": "{form.color.accent.default}",
           "$type": "color"
         }
       }

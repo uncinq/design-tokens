@@ -3,7 +3,7 @@
  */
 
 /* semantic/spacing.css */
-@layer config {
+@layer tokens {
   :root {
     --spacing-2xs: var(--size-5);
     --spacing-xs: var(--size-10);

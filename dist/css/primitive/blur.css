@@ -3,7 +3,7 @@
  */
 
 /* primitive/blur.css */
-@layer config {
+@layer tokens {
   :root {
     --blur-xs: 2px;
     --blur-sm: 4px;

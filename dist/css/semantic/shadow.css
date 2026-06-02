@@ -3,7 +3,7 @@
  */
 
 /* semantic/shadow.css */
-@layer config {
+@layer tokens {
   :root {
     --shadow-control: var(--shadow-none);
     --shadow-control-hover: var(--shadow-none);

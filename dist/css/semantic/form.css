@@ -3,7 +3,7 @@
  */
 
 /* semantic/form.css */
-@layer config {
+@layer tokens {
   :root {
     --form-border-radius: var(--radius-xs);
     --form-border-width: var(--border-width-sm);
@@ -28,8 +28,8 @@
     --input-color-text: var(--form-color-text);
     --input-padding: var(--form-padding);
     --file-button-margin-inline-end: var(--size-12);
-    --file-button-padding-inline: var(--size-10);
     --file-button-padding-block: var(--size-6);
+    --file-button-padding-inline: var(--size-10);
     --textarea-border-radius: var(--form-border-radius);
     --textarea-border-width: var(--form-border-width);
     --textarea-color-background: var(--form-color-background);
@@ -103,11 +103,5 @@
     --switch-track-color: var(--form-color-background);
     --switch-track-color-checked: var(--form-color-accent);
     --switch-width: var(--size-40);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-color-scheme="light"]) {
-      --form-color-background: var(--color-gray-900);
-    }
   }
 }

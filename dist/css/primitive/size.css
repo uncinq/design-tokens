@@ -3,7 +3,7 @@
  */
 
 /* primitive/size.css */
-@layer config {
+@layer tokens {
   :root {
     --size-1: 0.0625rem;
     --size-2: 0.125rem;

@@ -3,7 +3,7 @@
  */
 
 /* semantic/blur.css */
-@layer config {
+@layer tokens {
   :root {
     --blur-backdrop: var(--blur-sm);
   }

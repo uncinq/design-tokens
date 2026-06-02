@@ -3,7 +3,7 @@
  */
 
 /* semantic/focus.css */
-@layer config {
+@layer tokens {
   :root {
     --focus-color-outline: var(--color-focus);
     --focus-outline-offset: 2px;

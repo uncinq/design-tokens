@@ -3,7 +3,7 @@
  */
 
 /* primitive/shadow.css */
-@layer config {
+@layer tokens {
   :root {
     --shadow-none: 0 0 0 0 transparent;
     --shadow-sm: 0 1px 2px 0 var(--color-shadow-normal), 0 1px 1px -1px var(--color-shadow-normal);

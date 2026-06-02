@@ -3,7 +3,7 @@
  */
 
 /* semantic/typography.css */
-@layer config {
+@layer tokens {
   :root {
     --font-family-code: var(--font-family-mono);
     --font-family-heading: var(--font-family-sans);

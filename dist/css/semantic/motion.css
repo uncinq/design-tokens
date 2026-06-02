@@ -3,7 +3,7 @@
  */
 
 /* semantic/motion.css */
-@layer config {
+@layer tokens {
   :root {
     --duration-fast: 150ms;
     --duration-normal: 300ms;

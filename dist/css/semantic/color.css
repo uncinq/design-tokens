@@ -3,7 +3,7 @@
  */
 
 /* semantic/color.css */
-@layer config {
+@layer tokens {
   :root {
     --color-accent: var(--color-sienna-600);
     --color-accent-hover: var(--color-sienna-700);
@@ -79,21 +79,5 @@
     --color-warning-hover: var(--color-amber-600);
     --color-warning-muted: var(--color-amber-100);
     --color-warning-strong: var(--color-amber-700);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-color-scheme="light"]) {
-      --color-background: var(--color-gray-950);
-      --color-background-media: var(--color-gray-800);
-      --color-background-muted: var(--color-gray-900);
-      --color-background-muted-hover: var(--color-gray-800);
-      --color-border: var(--color-gray-800);
-      --color-heading: var(--color-white);
-      --color-shadow: var(--color-white);
-      --color-text: var(--color-gray-200);
-      --color-text-disabled: var(--color-gray-600);
-      --color-text-hover: var(--color-gray-300);
-      --color-text-muted: var(--color-gray-400);
-    }
   }
 }

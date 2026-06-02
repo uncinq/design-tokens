@@ -3,7 +3,7 @@
  */
 
 /* semantic/radius.css */
-@layer config {
+@layer tokens {
   :root {
     --radius-2xs: var(--size-2);
     --radius-xs: var(--size-4);
