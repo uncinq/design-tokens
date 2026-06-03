@@ -232,7 +232,7 @@ Semantic tokens are named by **purpose**, not by value. They reference primitive
 The default brand is **sienna** — a warm brick-red. Override it in your project:
 
 ```css
-@layer config {
+@layer tokens {
   :root {
     --color-brand:        var(--color-violet-600);
     --color-brand-muted:  var(--color-violet-100);
@@ -327,7 +327,7 @@ Add a new primitive scale in `tokens/primitive/color.css` following the existing
 --color-coral-950: oklch(0.225 0.078 35.0);
 ```
 
-Then reference it in `tokens/semantic/color.css` or your project's `@layer config` override.
+Then reference it in `tokens/semantic/color.css` or your project's `@layer tokens` override.
 
 ---
 
@@ -337,12 +337,12 @@ Two approaches are available depending on how deep the override needs to go.
 
 ### 1 — CSS override (recommended)
 
-All tokens live in `@layer config`, the lowest-priority layer in the stack. Any `@layer config` block imported **after** this package wins by source order — no specificity tricks needed.
+All tokens live in `@layer tokens`, the lowest-priority layer in the stack. Any `@layer tokens` block imported **after** this package wins by source order — no specificity tricks needed.
 
 ```css
 @import '@uncinq/design-tokens';
 
-@layer config {
+@layer tokens {
   :root {
     --color-brand:        var(--color-violet-600);
     --color-brand-muted:  var(--color-violet-100);
@@ -382,7 +382,7 @@ Use this approach to:
 
 | Need | Approach |
 | --- | --- |
-| Change brand, typography, a few tokens | CSS `@layer config` |
+| Change brand, typography, a few tokens | CSS `@layer tokens` |
 | Redefine the entire primitive palette | JSON + build |
 | Add project-specific tokens | JSON + build (or CSS if few) |
 

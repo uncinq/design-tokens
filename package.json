@@ -31,12 +31,13 @@
     "./css/semantic.css": "./dist/css/semantic.css",
     "./css/primitive/*": "./dist/css/primitive/*",
     "./css/semantic/*": "./dist/css/semantic/*",
+    "./css/themes/*": "./dist/css/themes/*",
     "./tokens/*": "./tokens/*"
   },
   "style": "./dist/css/index.css",
   "type": "module",
   "scripts": {
-    "build": "style-dictionary build --config style-dictionary.config.js"
+    "build": "node style-dictionary.config.js"
   },
   "devDependencies": {
     "style-dictionary": "^5.0.0"

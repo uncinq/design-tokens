@@ -30,9 +30,9 @@ color.background.default   →   --color-background
 color.text.muted           →   --color-text-muted
 ```
 
-### Format — `css/layer-config`
+### Format — `css/layer-tokens`
 
-All tokens are wrapped in `@layer config { :root { … } }`. This is the lowest-priority layer in the Un Cinq stack, so any project can override any token by importing after this package inside its own `@layer config` block.
+All tokens are wrapped in `@layer tokens { :root { … } }`. This is a low-priority layer in the Un Cinq stack (order: `reset, tokens, base, layouts, vendors, components`), so any project can override any token by importing after this package inside its own `@layer tokens` block.
 
 References are preserved as `var()` — tokens are **not** resolved to their final values:
 
@@ -85,56 +85,52 @@ Tokens whose `$value` is an object or an array of objects (e.g. `shadow`) are se
 
 ---
 
-## Dark mode — `$mods.dark`
+## Dark mode — `themes/dark.json`
 
-Dark mode overrides are declared **inline** on the semantic token, in a custom `$mods` extension:
+Dark mode is a **separate token set**, `tokens/themes/dark.json` — **not** declared inline on tokens (there is no `$mods`/`$modes` extension).
 
-```json
-{
-  "color": {
-    "background": {
-      "default": {
-        "$value": "{color.gray.50}",
-        "$type": "color",
-        "$mods": {
-          "dark": "{color.gray.950}"
-        }
-      }
-    }
-  }
-}
-```
+The model is **default + override**:
 
-The build generates a `@media (prefers-color-scheme: dark)` block inside the same `@layer config`:
+- The `semantic` layer carries the **default (light)** values, at their natural place (`semantic/color.json`, `semantic/form.json`). There is **no** `themes/light.json` — light is the baseline, not a mode you switch into.
+- `themes/dark.json` holds **only the tokens that differ** in dark mode (background, text, heading, shadow, border, form background). Everything mode-invariant (brand, accent, status, …) is inherited automatically through `var()`.
+
+This mirrors the DTCG **Resolver** philosophy (a base set + an overlay holding only the differences), so it stays forward-compatible as the Resolver spec stabilises.
+
+### Generated output
+
+The build emits `dist/css/themes/dark.css` with a single rule, inside `@layer tokens`:
 
 ```css
-@layer config {
-  :root {
-    --color-background: var(--color-gray-50);
-  }
-
+@layer tokens {
   @media (prefers-color-scheme: dark) {
     :root:not([data-color-scheme="light"]) {
       --color-background: var(--color-gray-950);
+      /* … */
     }
   }
 }
 ```
 
-The `:not([data-color-scheme="light"])` selector ensures dark tokens are only applied when the OS is in dark mode **and** the site has not explicitly forced light mode. This covers the two practical scenarios:
+The light defaults stay in `dist/css/semantic/*.css` on `:root`. The dark file is purely additive — a light-only (mono-mode) site never needs to load it.
 
-- **auto** — no `data-color-scheme` attribute on `<html>`: the OS controls the mode via the media query.
-- **light fixe** — `data-color-scheme="light"` on `<html>`: the media query is ignored, the site stays light regardless of the OS.
+### Activation matrix
 
-Forcing dark mode when the OS is in light mode is not a supported use case.
+Dark mode follows the OS preference. The only attribute that does anything is `data-color-scheme="light"`, which **forces light** even when the OS prefers dark. Forcing dark against a light OS is intentionally **not** supported (there is no `[data-color-scheme="dark"]` rule).
+
+| `data-color-scheme` on `<html>` | OS preference | Result | Why |
+| --- | --- | --- | --- |
+| *(none)* | light | **light** | `:root` defaults; the media query is inactive |
+| *(none)* | dark | **dark** | the media rule matches `:root` (not forced light) |
+| `light` | dark | **light** | `:not([data-color-scheme="light"])` excludes it → `:root` defaults |
+| `light` | light | **light** | `:root` defaults; the media query is inactive |
+| *(any other)* | dark | **dark** | the media rule still matches — only `light` opts out |
 
 > **Note** — `color-scheme: dark` is intentionally absent from the generated block. The `color-scheme` property is managed at the HTML level by the consuming application (e.g. via `<meta name="color-scheme">`), not by the token layer.
 
 ### Rules
 
-- Only semantic tokens should carry `$mods.dark` — primitives are neutral by definition.
-- The dark value follows the same `{dotted.path}` reference syntax as `$value`.
-- A raw value (not a reference) is also valid: `"dark": "oklch(0.15 0 0)"`.
+- Only colour tokens that actually change between modes belong in `themes/dark.json`; everything mode-invariant stays in `semantic`.
+- Dark values follow the same `{dotted.path}` reference syntax as `$value` (e.g. `{color.gray.950}`).
 
 ---
 

@@ -1,10 +1,3 @@
-/* @uncinq/design-tokens — index.css */
-/*
- * Imports all layers in order: primitives first, then semantic.
- * Use this file to get everything, or import primitive.css / semantic.css individually.
- *
- * Usage:
- *   @import '@uncinq/design-tokens/tokens/index.css';
- */
-@import 'primitive.css';
-@import 'semantic.css';
+@import "./primitive.css";
+@import "./semantic.css";
+@import "./themes/dark.css";

@@ -1,8 +1,6 @@
-/* @uncinq/design-tokens — primitive.css */
-@layer config;
-
-@import 'primitive/blur.css';
-@import 'primitive/color.css';
-@import 'primitive/font.css';
-@import 'primitive/shadow.css';
-@import 'primitive/size.css';
+/* primitive.css — barrel, do not edit */
+@import "./primitive/blur.css";
+@import "./primitive/color.css";
+@import "./primitive/font.css";
+@import "./primitive/shadow.css";
+@import "./primitive/size.css";

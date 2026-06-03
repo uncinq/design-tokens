@@ -29,7 +29,7 @@ The [DTCG spec](https://tr.designtokens.org/format/) defines tokens as JSON obje
 | `$value` | ✅ | The token's value |
 | `$type` | recommended | The token type (see below) |
 | `$description` | optional | Human-readable documentation |
-| `$extensions` | optional | Vendor-specific metadata (e.g. Figma, Tokens Studio) |
+| `$extensions` | optional | Vendor-specific metadata (e.g. Figma) |
 
 ---
 
@@ -222,4 +222,3 @@ This is the key mechanism behind the **primitive → semantic → component** hi
 - [DTCG specification](https://tr.designtokens.org/format/) — W3C Community Group draft
 - [DTCG GitHub](https://github.com/design-tokens/community-group) — issues, discussion
 - [Style Dictionary v5](https://styledictionary.com/) — token build pipeline, see [STYLE-DICTIONARY.md](STYLE-DICTIONARY.md)
-- [Tokens Studio](https://tokens.studio/) — Figma plugin for DTCG workflows
