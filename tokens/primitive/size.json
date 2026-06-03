@@ -108,8 +108,16 @@
       "$value": "2rem",
       "$type": "dimension"
     },
+    "36": {
+      "$value": "2.25rem",
+      "$type": "dimension"
+    },
     "40": {
       "$value": "2.5rem",
+      "$type": "dimension"
+    },
+    "44": {
+      "$value": "2.75rem",
       "$type": "dimension"
     },
     "48": {
@@ -144,12 +152,12 @@
       "$value": "4.5rem",
       "$type": "dimension"
     },
-    "80": {
-      "$value": "5rem",
+    "76": {
+      "$value": "4.75rem",
       "$type": "dimension"
     },
-    "88": {
-      "$value": "5.5rem",
+    "80": {
+      "$value": "5rem",
       "$type": "dimension"
     },
     "96": {
@@ -160,8 +168,24 @@
       "$value": "6.25rem",
       "$type": "dimension"
     },
+    "112": {
+      "$value": "7rem",
+      "$type": "dimension"
+    },
+    "128": {
+      "$value": "8rem",
+      "$type": "dimension"
+    },
+    "144": {
+      "$value": "9rem",
+      "$type": "dimension"
+    },
     "150": {
       "$value": "9.375rem",
+      "$type": "dimension"
+    },
+    "160": {
+      "$value": "10rem",
       "$type": "dimension"
     },
     "768": {
