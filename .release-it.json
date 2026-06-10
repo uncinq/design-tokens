@@ -6,6 +6,6 @@
     "commitMessage": "chore: release v${version}"
   },
   "npm": {
-    "publish": true
+    "publish": false
   }
 }
