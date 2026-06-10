@@ -4,8 +4,18 @@
     "$type": "number"
   },
   "gap": {
-    "$value": "{spacing.md}",
-    "$type": "dimension"
+    "default": {
+      "$value": "{spacing.md}",
+      "$type": "dimension"
+    },
+    "column": {
+      "$value": "{spacing.md}",
+      "$type": "dimension"
+    },
+    "row": {
+      "$value": "{spacing.section}",
+      "$type": "dimension"
+    }
   },
   "span": {
     "full": {

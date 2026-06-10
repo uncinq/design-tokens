@@ -7,6 +7,8 @@
   :root {
     --columns: 12;
     --gap: var(--spacing-md);
+    --gap-column: var(--spacing-md);
+    --gap-row: var(--spacing-section);
     --span-full: 1 / -1;
     --span-half: span calc(var(--columns) / 2);
     --span-quarter: span calc(var(--columns) / 4);
