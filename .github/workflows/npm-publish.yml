@@ -32,8 +32,24 @@ jobs:
         run: npm publish --provenance
 
       - name: Notify Discord of Release
-        uses: SethCohen/github-releases-to-discord@v1.20.0
-        with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          reduce_headings: true
-        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          REPO: ${{ github.event.repository.name }}
+          TITLE: ${{ github.event.release.name || github.event.release.tag_name }}
+          URL: ${{ github.event.release.html_url }}
+          NOTES: ${{ github.event.release.body }}
+        run: |
+          payload=$(jq -n \
+            --arg title "$REPO — $TITLE" \
+            --arg url "$URL" \
+            --arg desc "$NOTES" \
+            '{
+              embeds: [{
+                title: $title,
+                url: $url,
+                description: ($desc | if length > 4000 then .[0:3997] + "…" else . end),
+                color: 5814783
+              }]
+            }')
+          curl -sf -X POST -H "Content-Type: application/json" \
+            -d "$payload" "$DISCORD_WEBHOOK_URL"
