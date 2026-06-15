@@ -289,6 +289,10 @@
         "$value": "{color.gray.900}",
         "$type": "color"
       },
+      "onMuted": {
+        "$value": "{color.gray.900}",
+        "$type": "color"
+      },
       "onPrimary": {
         "$value": "{color.white}",
         "$type": "color"
