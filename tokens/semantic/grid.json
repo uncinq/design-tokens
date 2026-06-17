@@ -13,7 +13,7 @@
       "$type": "dimension"
     },
     "row": {
-      "$value": "{spacing.section}",
+      "$value": "{spacing.fluid.sm}",
       "$type": "dimension"
     }
   },
