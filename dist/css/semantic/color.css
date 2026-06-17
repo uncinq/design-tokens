@@ -19,7 +19,9 @@
     --color-background-muted-hover: var(--color-gray-200);
     --color-background-surface: var(--color-background);
     --color-border: var(--color-gray-200);
+    --color-border-on-muted: var(--color-gray-300);
     --color-border-hover: var(--color-gray-500);
+    --color-border-hover-on-muted: var(--color-gray-600);
     --color-brand: var(--color-sienna-600);
     --color-brand-hover: var(--color-sienna-700);
     --color-brand-muted: var(--color-sienna-100);

@@ -35,7 +35,7 @@
           "$type": "color"
         },
         "hover": {
-          "$value": "{color.border.hover}",
+          "$value": "{color.border.hover.default}",
           "$type": "color"
         }
       },

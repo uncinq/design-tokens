@@ -63,9 +63,19 @@
         "$value": "{color.gray.200}",
         "$type": "color"
       },
-      "hover": {
-        "$value": "{color.gray.500}",
+      "onMuted": {
+        "$value": "{color.gray.300}",
         "$type": "color"
+      },
+      "hover": {
+        "default": {
+          "$value": "{color.gray.500}",
+          "$type": "color"
+        },
+        "onMuted": {
+          "$value": "{color.gray.600}",
+          "$type": "color"
+        }
       }
     },
     "brand": {
