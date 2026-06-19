@@ -5,7 +5,11 @@
 /* semantic/grid.css */
 @layer tokens {
   :root {
-    --columns: 12;
+    --columns-mobile: 1;
+    --columns-tablet: 12;
+    --columns-tablet-wide: 12;
+    --columns-laptop: 12;
+    --columns-desktop: 12;
     --gap: var(--spacing-md);
     --gap-column: var(--spacing-md);
     --gap-row: var(--spacing-fluid-sm);

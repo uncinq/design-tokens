@@ -1,7 +1,25 @@
 {
   "columns": {
-    "$value": "12",
-    "$type": "number"
+    "mobile": {
+      "$value": "1",
+      "$type": "number"
+    },
+    "tablet": {
+      "$value": "12",
+      "$type": "number"
+    },
+    "tabletWide": {
+      "$value": "12",
+      "$type": "number"
+    },
+    "laptop": {
+      "$value": "12",
+      "$type": "number"
+    },
+    "desktop": {
+      "$value": "12",
+      "$type": "number"
+    }
   },
   "gap": {
     "default": {
@@ -23,15 +41,15 @@
       "$type": "string"
     },
     "half": {
-      "$value": "span calc({columns} / 2)",
+      "$value": "span calc(var(--columns) / 2)",
       "$type": "string"
     },
     "quarter": {
-      "$value": "span calc({columns} / 4)",
+      "$value": "span calc(var(--columns) / 4)",
       "$type": "string"
     },
     "third": {
-      "$value": "span calc({columns} / 3)",
+      "$value": "span calc(var(--columns) / 3)",
       "$type": "string"
     }
   }
