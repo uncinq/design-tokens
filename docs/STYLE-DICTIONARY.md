@@ -68,7 +68,7 @@ Tokens whose `$value` is an object or an array of objects (e.g. `shadow`) are se
           "offsetY": "1px",
           "blur": "2px",
           "spread": "0",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       ]
@@ -78,7 +78,7 @@ Tokens whose `$value` is an object or an array of objects (e.g. `shadow`) are se
 ```
 
 ```css
---shadow-sm: 0 1px 2px 0 var(--color-shadow-normal);
+--shadow-sm: 0 1px 2px 0 var(--color-shadow-light);
 ```
 
 `inset` is always treated as a boolean prefix (`inset` or nothing), not a positional value.

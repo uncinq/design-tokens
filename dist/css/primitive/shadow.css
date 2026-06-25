@@ -6,11 +6,11 @@
 @layer tokens {
   :root {
     --shadow-none: 0 0 0 0 transparent;
-    --shadow-sm: 0 1px 2px 0 var(--color-shadow-normal), 0 1px 1px -1px var(--color-shadow-normal);
-    --shadow-md: 0 4px 6px -1px var(--color-shadow-normal), 0 2px 4px -2px var(--color-shadow-normal);
-    --shadow-lg: 0 10px 15px -3px var(--color-shadow-normal), 0 4px 6px -4px var(--color-shadow-normal);
-    --shadow-center-sm: 0 0 2px 2px var(--color-shadow-normal);
-    --shadow-center-md: 0 0 4px 4px var(--color-shadow-normal);
-    --shadow-center-lg: 0 0 8px 8px var(--color-shadow-normal);
+    --shadow-sm: 0 1px 2px 0 var(--color-shadow-light), 0 1px 1px -1px var(--color-shadow-light);
+    --shadow-md: 0 4px 6px -1px var(--color-shadow-light), 0 2px 4px -2px var(--color-shadow-light);
+    --shadow-lg: 0 10px 15px -3px var(--color-shadow-light), 0 4px 6px -4px var(--color-shadow-light);
+    --shadow-center-sm: 0 0 2px 2px var(--color-shadow-light);
+    --shadow-center-md: 0 0 4px 4px var(--color-shadow-light);
+    --shadow-center-lg: 0 0 8px 8px var(--color-shadow-light);
   }
 }

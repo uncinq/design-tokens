@@ -57,7 +57,9 @@
     --color-secondary-muted: var(--color-gray-100);
     --color-secondary-strong: var(--color-gray-800);
     --color-shadow: var(--color-black);
-    --color-shadow-normal: oklch(from var(--color-shadow) l c h / var(--opacity-shadow));
+    --color-shadow-light: oklch(from var(--color-shadow) l c h / var(--opacity-shadow));
+    --color-shadow-medium: oklch(from var(--color-shadow) l c h / var(--opacity-backdrop));
+    --color-shadow-strong: oklch(from var(--color-shadow) l c h / var(--opacity-overlay));
     --color-success: var(--color-green-600);
     --color-success-hover: var(--color-green-700);
     --color-success-muted: var(--color-green-100);

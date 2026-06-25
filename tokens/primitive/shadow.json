@@ -19,7 +19,7 @@
           "offsetY": "1px",
           "blur": "2px",
           "spread": "0",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         },
         {
@@ -27,7 +27,7 @@
           "offsetY": "1px",
           "blur": "1px",
           "spread": "-1px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       ]
@@ -40,7 +40,7 @@
           "offsetY": "4px",
           "blur": "6px",
           "spread": "-1px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         },
         {
@@ -48,7 +48,7 @@
           "offsetY": "2px",
           "blur": "4px",
           "spread": "-2px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       ]
@@ -61,7 +61,7 @@
           "offsetY": "10px",
           "blur": "15px",
           "spread": "-3px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         },
         {
@@ -69,7 +69,7 @@
           "offsetY": "4px",
           "blur": "6px",
           "spread": "-4px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       ]
@@ -82,7 +82,7 @@
           "offsetY": "0",
           "blur": "2px",
           "spread": "2px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       },
@@ -93,7 +93,7 @@
           "offsetY": "0",
           "blur": "4px",
           "spread": "4px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       },
@@ -104,7 +104,7 @@
           "offsetY": "0",
           "blur": "8px",
           "spread": "8px",
-          "color": "{color.shadow.normal}",
+          "color": "{color.shadow.light}",
           "inset": false
         }
       }

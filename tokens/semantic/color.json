@@ -235,8 +235,16 @@
         "$value": "{color.black}",
         "$type": "color"
       },
-      "normal": {
+      "light": {
         "$value": "oklch(from {color.shadow.default} l c h / {opacity.shadow})",
+        "$type": "color"
+      },
+      "medium": {
+        "$value": "oklch(from {color.shadow.default} l c h / {opacity.backdrop})",
+        "$type": "color"
+      },
+      "strong": {
+        "$value": "oklch(from {color.shadow.default} l c h / {opacity.overlay})",
         "$type": "color"
       }
     },
