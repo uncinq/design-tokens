@@ -19,14 +19,14 @@ intercept = min_px − slope × viewport_min   (÷ 16 → rem)
 
 ## Viewport range
 
-All fluid tokens use the same viewport range: **320 px → 1440 px** (range = 1120).
+All fluid tokens use the same viewport range: **375 px → 1440 px** (range = 1065).
 
 ```text
-slope     = (max_px − min_px) / 1120
-intercept = min_px − slope × 320   (÷ 16 → rem)
+slope     = (max_px − min_px) / 1065
+intercept = min_px − slope × 375   (÷ 16 → rem)
 ```
 
-This range covers small phones (320 px) to wide desktop screens (1440 px). Tokens are clamped at both ends — below 320 px they stay at `min`, above 1440 px they stay at `max`.
+This range covers modern phones (375 px) to wide desktop screens (1440 px). Tokens are clamped at both ends — below 375 px they stay at `min`, above 1440 px they stay at `max`.
 
 ---
 
