@@ -68,6 +68,7 @@
     --color-text-hover: var(--color-gray-700);
     --color-text-muted: var(--color-gray-500);
     --color-text-on-accent: var(--color-white);
+    --color-text-on-black: var(--color-white);
     --color-text-on-brand: var(--color-white);
     --color-text-on-danger: var(--color-white);
     --color-text-on-dark: var(--color-white);
@@ -79,6 +80,7 @@
     --color-text-on-success: var(--color-white);
     --color-text-on-surface: var(--color-text);
     --color-text-on-warning: var(--color-gray-900);
+    --color-text-on-white: var(--color-black);
     --color-warning: var(--color-amber-500);
     --color-warning-hover: var(--color-amber-600);
     --color-warning-muted: var(--color-amber-100);

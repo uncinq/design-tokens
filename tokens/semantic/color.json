@@ -283,6 +283,10 @@
         "$value": "{color.white}",
         "$type": "color"
       },
+      "onBlack": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
       "onBrand": {
         "$value": "{color.white}",
         "$type": "color"
@@ -325,6 +329,10 @@
       },
       "onWarning": {
         "$value": "{color.gray.900}",
+        "$type": "color"
+      },
+      "onWhite": {
+        "$value": "{color.black}",
         "$type": "color"
       }
     },
