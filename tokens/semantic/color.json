@@ -2,19 +2,19 @@
   "color": {
     "accent": {
       "default": {
-        "$value": "{color.sienna.600}",
+        "$value": "{color.brand.default}",
         "$type": "color"
       },
       "hover": {
-        "$value": "{color.sienna.700}",
+        "$value": "{color.brand.hover}",
         "$type": "color"
       },
       "muted": {
-        "$value": "{color.sienna.100}",
+        "$value": "{color.brand.muted}",
         "$type": "color"
       },
       "strong": {
-        "$value": "{color.sienna.900}",
+        "$value": "{color.brand.strong}",
         "$type": "color"
       }
     },
@@ -144,6 +144,20 @@
       "$value": "{color.black}",
       "$type": "color"
     },
+    "highlight": {
+      "default": {
+        "$value": "{color.yellow.100}",
+        "$type": "color"
+      },
+      "hover": {
+        "$value": "{color.yellow.200}",
+        "$type": "color"
+      },
+      "strong": {
+        "$value": "{color.yellow.900}",
+        "$type": "color"
+      }
+    },
     "info": {
       "default": {
         "$value": "{color.blue.600}",
@@ -194,25 +208,7 @@
         "$type": "color"
       }
     },
-    "primary": {
-      "default": {
-        "$value": "{color.brand.default}",
-        "$type": "color"
-      },
-      "hover": {
-        "$value": "{color.brand.hover}",
-        "$type": "color"
-      },
-      "muted": {
-        "$value": "{color.brand.muted}",
-        "$type": "color"
-      },
-      "strong": {
-        "$value": "{color.brand.strong}",
-        "$type": "color"
-      }
-    },
-    "secondary": {
+    "neutral": {
       "default": {
         "$value": "{color.gray.600}",
         "$type": "color"
@@ -299,6 +295,10 @@
         "$value": "{color.white}",
         "$type": "color"
       },
+      "onHighlight": {
+        "$value": "{color.text.default}",
+        "$type": "color"
+      },
       "onInfo": {
         "$value": "{color.white}",
         "$type": "color"
@@ -311,11 +311,7 @@
         "$value": "{color.gray.900}",
         "$type": "color"
       },
-      "onPrimary": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onSecondary": {
+      "onNeutral": {
         "$value": "{color.white}",
         "$type": "color"
       },

@@ -5,10 +5,10 @@
 /* semantic/color.css */
 @layer tokens {
   :root {
-    --color-accent: var(--color-sienna-600);
-    --color-accent-hover: var(--color-sienna-700);
-    --color-accent-muted: var(--color-sienna-100);
-    --color-accent-strong: var(--color-sienna-900);
+    --color-accent: var(--color-brand);
+    --color-accent-hover: var(--color-brand-hover);
+    --color-accent-muted: var(--color-brand-muted);
+    --color-accent-strong: var(--color-brand-strong);
     --color-active: var(--color-accent);
     --color-backdrop: oklch(from var(--color-black) l c h / var(--opacity-backdrop));
     --color-background: var(--color-white);
@@ -37,6 +37,9 @@
     --color-dark-strong: var(--color-black);
     --color-focus: var(--color-text);
     --color-heading: var(--color-black);
+    --color-highlight: var(--color-yellow-100);
+    --color-highlight-hover: var(--color-yellow-200);
+    --color-highlight-strong: var(--color-yellow-900);
     --color-info: var(--color-blue-600);
     --color-info-hover: var(--color-blue-700);
     --color-info-muted: var(--color-blue-100);
@@ -48,14 +51,10 @@
     --color-link: var(--color-text);
     --color-link-active: var(--color-active);
     --color-link-hover: var(--color-accent);
-    --color-primary: var(--color-brand);
-    --color-primary-hover: var(--color-brand-hover);
-    --color-primary-muted: var(--color-brand-muted);
-    --color-primary-strong: var(--color-brand-strong);
-    --color-secondary: var(--color-gray-600);
-    --color-secondary-hover: var(--color-gray-700);
-    --color-secondary-muted: var(--color-gray-100);
-    --color-secondary-strong: var(--color-gray-800);
+    --color-neutral: var(--color-gray-600);
+    --color-neutral-hover: var(--color-gray-700);
+    --color-neutral-muted: var(--color-gray-100);
+    --color-neutral-strong: var(--color-gray-800);
     --color-shadow: var(--color-black);
     --color-shadow-light: oklch(from var(--color-shadow) l c h / var(--opacity-shadow));
     --color-shadow-medium: oklch(from var(--color-shadow) l c h / var(--opacity-backdrop));
@@ -72,11 +71,11 @@
     --color-text-on-brand: var(--color-white);
     --color-text-on-danger: var(--color-white);
     --color-text-on-dark: var(--color-white);
+    --color-text-on-highlight: var(--color-text);
     --color-text-on-info: var(--color-white);
     --color-text-on-light: var(--color-gray-900);
     --color-text-on-muted: var(--color-gray-900);
-    --color-text-on-primary: var(--color-white);
-    --color-text-on-secondary: var(--color-white);
+    --color-text-on-neutral: var(--color-white);
     --color-text-on-success: var(--color-white);
     --color-text-on-surface: var(--color-text);
     --color-text-on-warning: var(--color-gray-900);
