@@ -300,7 +300,7 @@
         "$type": "color"
       },
       "onHighlight": {
-        "$value": "{color.text.default}",
+        "$value": "{color.gray.900}",
         "$type": "color"
       },
       "onInfo": {

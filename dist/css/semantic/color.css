@@ -72,7 +72,7 @@
     --color-text-on-brand: var(--color-white);
     --color-text-on-danger: var(--color-white);
     --color-text-on-dark: var(--color-white);
-    --color-text-on-highlight: var(--color-text);
+    --color-text-on-highlight: var(--color-gray-900);
     --color-text-on-info: var(--color-white);
     --color-text-on-light: var(--color-gray-900);
     --color-text-on-muted: var(--color-gray-900);
