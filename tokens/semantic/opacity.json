@@ -12,6 +12,10 @@
       "$type": "number",
       "$value": 0.75
     },
+    "muted": {
+      "$type": "number",
+      "$value": 0.7
+    },
     "overlay": {
       "$type": "number",
       "$value": 0.75

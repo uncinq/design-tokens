@@ -276,7 +276,7 @@
         "$type": "color"
       },
       "muted": {
-        "$value": "{color.gray.500}",
+        "$value": "oklch(from {color.text.default} l c h / {opacity.muted})",
         "$type": "color"
       },
       "onAccent": {
