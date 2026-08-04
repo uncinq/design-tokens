@@ -170,5 +170,11 @@
       "$type": "dimension",
       "$value": "70ch"
     }
+  },
+  "textTransform": {
+    "heading": {
+      "$type": "string",
+      "$value": "none"
+    }
   }
 }

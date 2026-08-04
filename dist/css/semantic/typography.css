@@ -44,5 +44,6 @@
     --letter-spacing-xl: 0.2em;
     --max-width-heading: 50ch;
     --max-width-paragraph: 70ch;
+    --text-transform-heading: none;
   }
 }
