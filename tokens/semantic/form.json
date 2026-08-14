@@ -270,6 +270,11 @@
       "$type": "fontWeight"
     },
 
+    "lineHeight": {
+      "$value": "{lineHeight.snug}",
+      "$type": "number"
+    },
+
     "padding": {
       "inline": {
         "$value": "0",
@@ -281,9 +286,14 @@
       }
     },
 
+    "textAlign": {
+      "$value": "start",
+      "$type": "string"
+    },
+
     "textTransform": {
       "$value": "uppercase",
-      "$type": "textCase"
+      "$type": "string"
     }
   },
 
@@ -308,6 +318,11 @@
     "margin": {
       "$value": "0",
       "$type": "dimension"
+    },
+
+    "textAlign": {
+      "$value": "start",
+      "$type": "string"
     }
   },
 

@@ -80,6 +80,7 @@ CSS property names that are two words (kebab-case in CSS) are written as a singl
 | `"lineHeight"` | `--btn-line-height` |
 | `"maxHeight"` | `--btn-max-height` |
 | `"maxWidth"` | `--btn-max-width` |
+| `"textAlign"` | `--btn-text-align` |
 | `"textDecoration"` | `--btn-text-decoration` |
 | `"textTransform"` | `--btn-text-transform` |
 

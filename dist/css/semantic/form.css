@@ -53,13 +53,16 @@
     --label-color-text: var(--form-color-text);
     --label-font-size: var(--font-size-xs);
     --label-font-weight: var(--font-weight-medium);
+    --label-line-height: var(--line-height-snug);
     --label-padding-inline: 0;
     --label-padding-block: var(--spacing-2xs);
+    --label-text-align: start;
     --label-text-transform: uppercase;
     --help-color-text: var(--color-text-muted);
     --help-font-size: var(--font-size-xs);
     --help-font-weight: var(--font-weight-normal);
     --help-margin: 0;
+    --help-text-align: start;
     --checkable-color: var(--form-color-accent);
     --checkable-size: 1.25em;
     --checkbox-border-radius: 0;
