@@ -272,7 +272,7 @@
 
     "lineHeight": {
       "$value": "{lineHeight.snug}",
-      "$type": "number"
+      "$type": "dimension"
     },
 
     "padding": {
