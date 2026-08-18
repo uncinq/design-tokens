@@ -289,7 +289,6 @@ Used to ensure contrast when a color is the background:
 | `--color-success` | green-600 | Confirmations |
 | `--color-warning` | amber-500 | Warnings — use with `--color-text-on-warning` |
 | `--color-info` | blue-600 | Informational |
-| `--color-secondary` | gray-500 | De-emphasized UI |
 | `--color-dark` | gray-900 | Dark surfaces |
 | `--color-light` | gray-200 | Light surfaces |
 
