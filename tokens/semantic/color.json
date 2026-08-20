@@ -153,6 +153,10 @@
         "$value": "{color.yellow.200}",
         "$type": "color"
       },
+      "muted": {
+        "$value": "{color.yellow.100}",
+        "$type": "color"
+      },
       "strong": {
         "$value": "{color.yellow.900}",
         "$type": "color"

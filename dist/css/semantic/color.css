@@ -39,6 +39,7 @@
     --color-heading: var(--color-black);
     --color-highlight: var(--color-yellow-100);
     --color-highlight-hover: var(--color-yellow-200);
+    --color-highlight-muted: var(--color-yellow-100);
     --color-highlight-strong: var(--color-yellow-900);
     --color-info: var(--color-blue-600);
     --color-info-hover: var(--color-blue-700);
