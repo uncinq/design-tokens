@@ -166,6 +166,10 @@
       "$type": "dimension",
       "$value": "50ch"
     },
+    "item": {
+      "$type": "dimension",
+      "$value": "30ch"
+    },
     "paragraph": {
       "$type": "dimension",
       "$value": "70ch"
