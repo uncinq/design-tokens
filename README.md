@@ -10,7 +10,7 @@ Design tokens are the atomic decisions of a design system: colors, spacing, typo
 
 ## Token architecture
 
-This package follows the [DTCG](docs/dtcg.md) three-layer model — primitive → semantic → component:
+This package follows the [DTCG](docs/DTCG.md) three-layer model — primitive → semantic → component:
 
 ```
 primitive   →   semantic   →   component
@@ -72,13 +72,13 @@ Global semantic tokens follow: `--{category}-{subcategory?}-{variant}-{state?}`
 
 Component tokens follow: `--{component}-{property}-{sub-property?}-{state?}`
 
-The property mirrors the CSS property name — `background-color`, `border-color`, `text-decoration-color` — so the token reads the same way as the CSS declaration it controls.
+The property mirrors the CSS property name, so the token reads the same way as the CSS declaration it controls — colors excepted, where `color` leads and the role follows (see the rules below).
 
 ```
 --{component}                    --btn
-  -{property}                    --btn-background-color
-    -{sub-property}              --btn-text-decoration-color  (text-decoration + color)
-      -{state}                   --btn-background-color-hover
+  -{property}                    --btn-padding-inline
+    -{sub-property}              --btn-color-text-decoration  (color + text-decoration)
+      -{state}                   --btn-color-background-hover
 ```
 
 ### Rules
@@ -133,8 +133,9 @@ The property mirrors the CSS property name — `background-color`, `border-color
 | `spacing` | Margin / padding | `--spacing-md`, `--spacing-section` |
 | `size` | Width / height | `--size-16`, `--size-tablet` |
 | `radius` | Border radius | `--radius-md`, `--radius-pill` |
-| `border` | Border style/width | `--border-width-normal`, `--border-style-normal` |
+| `border` | Border style/width | `--border-width-sm`, `--border-style-normal` |
 | `shadow` | Box shadows | `--shadow-md`, `--shadow-center-sm` |
+| `gradient` | Overlay gradients | `--gradient-darken-color-from`, `--gradient-darken-stop` |
 | `duration` | Animation timing | `--duration-fast` |
 | `easing` | Timing functions | `--easing-bounce` |
 | `transition` | Shorthand transitions | `--transition-normal`, `--transition-color` |
@@ -168,7 +169,7 @@ All primitive color values are defined in **OKLCH** (`oklch(L C H)`):
 - **Better interpolation** — gradients and animations between two OKLCH colors don't pass through muddy grays.
 - **Future-proof** — native in all modern browsers, the color space used by Tailwind v4, Radix, and the W3C Design Tokens spec.
 
-> Browser support: Chrome 111+, Firefox 113+, Safari 15.4+. Legacy browsers receive the nearest sRGB fallback automatically.
+> Browser support: Chrome 111+, Firefox 113+, Safari 15.4+. No sRGB fallback is generated — every value ships as `oklch()`, so anything older needs a fallback of its own.
 
 ### Primitive palette
 
@@ -314,19 +315,35 @@ Each variant has `-muted` (tinted bg) and `-strong` (hover / emphasis) companion
 - **Warning (amber-500)** — always pair with `--color-text-on-warning` (gray-900). Never white text on amber-500.
 - **Decorative only** — any step is fine when color carries no information (icons, borders, illustrations).
 
-### Adding a custom hue
+### Dark theme
 
-Add a new primitive scale in `tokens/primitive/color.css` following the existing pattern:
+`tokens/themes/dark.json` re-declares 13 semantic color tokens — backgrounds, border, text, `--form-color-background`, and `--color-shadow`, which flips to white. The generated `dist/css/themes/dark.css` wraps them, still inside `@layer tokens`:
 
 ```css
-/* ── Coral — H ≈ 35° ──────────────────────────────────────────────── */
---color-coral-50:  oklch(0.975 0.014 35.0);
---color-coral-100: oklch(0.948 0.032 35.0);
-/* … 11 steps … */
---color-coral-950: oklch(0.225 0.078 35.0);
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) { /* … */ }
+}
 ```
 
-Then reference it in `tokens/semantic/color.css` or your project's `@layer tokens` override.
+So the dark scheme follows the OS setting, and `data-color-scheme="light"` on `<html>` opts a page out of it. There is no forced-dark selector — the package never turns dark on a light OS. The theme comes with the full `index.css`; importing `css/semantic.css` alone leaves it out.
+
+### Adding a custom hue
+
+Add a new primitive scale in `tokens/primitive/color.json`, following the existing pattern — one DTCG color object per step:
+
+```json
+{
+  "color": {
+    "coral": {
+      "50":  { "$value": { "colorSpace": "oklch", "components": [0.975, 0.014, 35.0] }, "$type": "color" },
+      "100": { "$value": { "colorSpace": "oklch", "components": [0.948, 0.032, 35.0] }, "$type": "color" },
+      "950": { "$value": { "colorSpace": "oklch", "components": [0.225, 0.078, 35.0] }, "$type": "color" }
+    }
+  }
+}
+```
+
+Run `npm run build`, then reference the generated `--color-coral-*` from `tokens/semantic/color.json` or from your project's own `@layer tokens` override.
 
 ---
 
@@ -436,6 +453,7 @@ tokens/
     color.json            ← purposeful color aliases (--color-brand, --color-background…)
     focus.json            ← focus ring tokens (color, style, width, offset)
     form.json             ← form control tokens (input, label, checkbox, switch…)
+    gradient.json         ← darkening overlay gradient (colors + responsive stops)
     grid.json             ← columns, gap, flex fractions
     icon.json             ← SVG icon tokens (data URI)
     motion.json           ← duration, easing, transitions
@@ -447,6 +465,8 @@ tokens/
     spacing.json          ← spacing scale + fluid clamp() aliases
     typography.json       ← font-size scale (fixed + fluid), heading sizes
     z-index.json          ← stacking order
+  themes/
+    dark.json             ← dark color scheme overrides
 ```
 
 Generated CSS (`dist/css/` — built by `npm run build`, do not edit):
@@ -458,13 +478,14 @@ dist/css/
   semantic.css            ← imports all semantic files
   primitive/              ← one file per tokens/primitive/*.json
   semantic/               ← one file per tokens/semantic/*.json
+  themes/                 ← one file per tokens/themes/*.json
 ```
 
 ---
 
 ## References
 
-- [DTCG — format and concepts](docs/dtcg.md)
+- [DTCG — format and concepts](docs/DTCG.md)
 - [DTCG specification](https://tr.designtokens.org/format/) — W3C Community Group draft
 - [Style Dictionary v5](https://styledictionary.com/) — token build pipeline, see [docs/STYLE-DICTIONARY.md](docs/STYLE-DICTIONARY.md)
 - [MDN: CSS cascade layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
