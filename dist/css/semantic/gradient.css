@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+/* semantic/gradient.css */
+@layer tokens {
+  :root {
+    --gradient-darken-color-from: var(--color-shadow-strong);
+    --gradient-darken-color-to: var(--color-shadow-light);
+    --gradient-darken-stop: 100%;
+    --gradient-darken-stop-tablet: 50%;
+    --gradient-darken-stop-desktop: 33%;
+  }
+}

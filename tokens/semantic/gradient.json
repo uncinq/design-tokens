@@ -1,0 +1,30 @@
+{
+  "gradient": {
+    "darken": {
+      "color": {
+        "from": {
+          "$type": "color",
+          "$value": "{color.shadow.strong}"
+        },
+        "to": {
+          "$type": "color",
+          "$value": "{color.shadow.light}"
+        }
+      },
+      "stop": {
+        "default": {
+          "$type": "dimension",
+          "$value": "100%"
+        },
+        "tablet": {
+          "$type": "dimension",
+          "$value": "50%"
+        },
+        "desktop": {
+          "$type": "dimension",
+          "$value": "33%"
+        }
+      }
+    }
+  }
+}
