@@ -42,6 +42,7 @@
     --letter-spacing-md: 0.05em;
     --letter-spacing-lg: 0.1em;
     --letter-spacing-xl: 0.2em;
+    --max-width: 60rem;
     --max-width-heading: 50ch;
     --max-width-item: 30ch;
     --max-width-paragraph: 70ch;

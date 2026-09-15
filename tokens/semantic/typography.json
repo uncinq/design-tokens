@@ -162,6 +162,10 @@
     }
   },
   "maxWidth": {
+    "default": {
+      "$type": "dimension",
+      "$value": "60rem"
+    },
     "heading": {
       "$type": "dimension",
       "$value": "50ch"
