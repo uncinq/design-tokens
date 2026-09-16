@@ -194,7 +194,7 @@
         "$type": "color"
       },
       "strong": {
-        "$value": "{color.gray.700}",
+        "$value": "{color.gray.500}",
         "$type": "color"
       }
     },

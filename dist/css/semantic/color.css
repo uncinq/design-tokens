@@ -48,7 +48,7 @@
     --color-light: var(--color-gray-200);
     --color-light-hover: var(--color-gray-300);
     --color-light-muted: var(--color-gray-100);
-    --color-light-strong: var(--color-gray-700);
+    --color-light-strong: var(--color-gray-500);
     --color-link: var(--color-text);
     --color-link-active: var(--color-active);
     --color-link-hover: var(--color-accent);
