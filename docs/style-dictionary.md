@@ -1,4 +1,10 @@
-# Style Dictionary — build pipeline
+---
+isIndex: false
+title: Style Dictionary
+description: How the JSON token sources are compiled into CSS custom properties, including the dark theme pass.
+weight: 7
+---
+
 
 [Style Dictionary v5](https://styledictionary.com/) transforms the DTCG JSON token files into CSS custom properties.
 
@@ -149,3 +155,27 @@ No changes to `style-dictionary.config.js` are needed.
 - [Style Dictionary v5 docs](https://styledictionary.com/)
 - [DTCG format](DTCG.md) — token structure and types
 - [Utopia fluid scales](UTOPIA.md) — `clamp()` values in spacing and typography tokens
+
+---
+
+## The JSON manifest
+
+Alongside the CSS, the build writes `dist/tokens.json`: a flat array of every token the package ships.
+
+```json
+[
+  {
+    "name": "--color-brand",
+    "value": "var(--color-sienna-600)",
+    "type": "color",
+    "file": "semantic/color",
+    "description": ""
+  }
+]
+```
+
+The documentation site renders its reference tables from this file, which is why the reference cannot drift from the stylesheets.
+
+The guarantee comes from a single shared function. `tokenToCssValue()` serializes a token to its CSS value, and **both** the CSS format and the manifest format call it. There is no second implementation of the naming or the value logic to fall out of step, and the build asserts the equivalence: the manifest holds exactly one entry per declaration emitted in `dist/css/`, with the same name and the same value.
+
+`description` comes from the DTCG `$description` key. Adding one to a token source makes it appear in the published reference with no other change.

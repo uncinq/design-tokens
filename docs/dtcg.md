@@ -1,4 +1,10 @@
-# DTCG — Design Token Community Group
+---
+isIndex: false
+title: DTCG format
+description: The Design Tokens Community Group JSON format, its keys, types and naming conventions as used in this package.
+weight: 6
+---
+
 
 The [W3C Design Token Community Group (DTCG)](https://www.w3.org/community/design-tokens/) defines a standard interchange format for design tokens, so they can travel between tools (Figma, code, documentation) without loss of meaning.
 

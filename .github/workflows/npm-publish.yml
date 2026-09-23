@@ -31,6 +31,22 @@ jobs:
       - name: Publish
         run: npm publish --provenance
 
+      - name: Trigger docs site rebuild
+        env:
+          NETLIFY_DOCS_BUILD_HOOK: ${{ secrets.NETLIFY_DOCS_BUILD_HOOK }}
+        run: |
+          # socle.uncinq.dev mounts this package's docs/ from node_modules and
+          # refreshes it on every build, so a release only needs to ask Netlify
+          # to rebuild. Never fail the publish over the documentation site:
+          # the package is already on npm by this point.
+          if [ -z "$NETLIFY_DOCS_BUILD_HOOK" ]; then
+            echo "NETLIFY_DOCS_BUILD_HOOK is not set — skipping docs rebuild."
+            exit 0
+          fi
+          curl -fsS -X POST -d '{}' "$NETLIFY_DOCS_BUILD_HOOK" \
+            && echo "Docs rebuild triggered." \
+            || echo "Docs rebuild could not be triggered."
+
       - name: Notify Discord of Release
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

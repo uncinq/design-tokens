@@ -48,6 +48,21 @@ function colorObjectToCss({ colorSpace, components, alpha }) {
 const indent = (text, n) =>
   text.split('\n').map(line => ' '.repeat(n) + line).join('\n');
 
+// Serialize a token to the exact CSS value that ships. Shared by the CSS format
+// and the JSON manifest, so the documented value can never disagree with the
+// generated stylesheet. References are kept as var() rather than flattened.
+function tokenToCssValue(t) {
+  const orig = t.original?.$value ?? t.original?.value;
+  const type = t.$type ?? t.type;
+  if (type === 'cubicBezier' && Array.isArray(orig)) return `cubic-bezier(${orig.join(', ')})`;
+  if (type === 'color' && orig && typeof orig === 'object' && Array.isArray(orig.components)) {
+    return colorObjectToCss(orig);
+  }
+  if (Array.isArray(orig)) return orig.map(compositeLayerToCSS).join(', ');
+  if (orig !== null && typeof orig === 'object') return compositeLayerToCSS(orig);
+  return refToVar(String(orig ?? t.$value ?? t.value));
+}
+
 // -------------------------------------------------------
 // Transforms
 // -------------------------------------------------------
@@ -72,19 +87,9 @@ StyleDictionary.registerFormat({
   format({ dictionary, file, options }) {
     const rules = options?.rules ?? [{ selector: ':root' }];
 
-    const decls = dictionary.allTokens.map(t => {
-      const name = pathToKebab(t.path);
-      const orig = t.original?.$value ?? t.original?.value;
-      const type = t.$type ?? t.type;
-      let value;
-      if (type === 'cubicBezier' && Array.isArray(orig))   value = `cubic-bezier(${orig.join(', ')})`;
-      else if (type === 'color' && orig && typeof orig === 'object' && Array.isArray(orig.components))
-                                                           value = colorObjectToCss(orig);
-      else if (Array.isArray(orig))                        value = orig.map(compositeLayerToCSS).join(', ');
-      else if (orig !== null && typeof orig === 'object')  value = compositeLayerToCSS(orig);
-      else                                                 value = refToVar(String(orig ?? t.$value ?? t.value));
-      return `--${name}: ${value};`;
-    }).join('\n');
+    const decls = dictionary.allTokens
+      .map(t => `--${pathToKebab(t.path)}: ${tokenToCssValue(t)};`)
+      .join('\n');
 
     const blocks = rules
       .map(({ selector, media }) => {
@@ -95,6 +100,28 @@ StyleDictionary.registerFormat({
       .join('\n');
 
     return `/**\n * Do not edit directly, this file was auto-generated.\n */\n\n/* ${file.destination} */\n@layer tokens {\n${blocks}\n}\n`;
+  },
+});
+
+// -------------------------------------------------------
+// Format — JSON manifest, consumed by the documentation site
+// -------------------------------------------------------
+
+// A flat array of every token, carrying the same name and the same value the
+// CSS format emits. The documentation renders its reference tables from this,
+// so a token cannot be documented with a name or a value the stylesheet does
+// not actually ship.
+StyleDictionary.registerFormat({
+  name: 'json/manifest',
+  format({ dictionary, options }) {
+    const entries = dictionary.allTokens.map(t => ({
+      name: `--${pathToKebab(t.path)}`,
+      value: tokenToCssValue(t),
+      type: t.$type ?? t.type ?? '',
+      file: options.fileMap.get(t.filePath) ?? '',
+      description: t.$description ?? t.description ?? '',
+    }));
+    return JSON.stringify(entries, null, 2) + '\n';
   },
 });
 
@@ -116,6 +143,10 @@ const tokenFiles = getTokenFiles('./tokens');
 const baseFiles = tokenFiles.filter(f => f.rel !== 'themes/dark');
 const darkFile = tokenFiles.find(f => f.rel === 'themes/dark');
 
+// Maps an absolute source path back to its "semantic/color" style identifier,
+// which is how the documentation addresses a group of tokens.
+const fileMap = new Map(tokenFiles.map(f => [f.filePath, f.rel]));
+
 // Base build — primitives + semantic (defaults = light), each on :root.
 await new StyleDictionary({
   usesDtcg: true,
@@ -131,6 +162,11 @@ await new StyleDictionary({
         filter: t => t.filePath === f.filePath,
         options: { rules: RULES[f.rel] ?? [{ selector: ':root' }] },
       })),
+    },
+    manifest: {
+      transformGroup: 'custom/css',
+      buildPath: 'dist/',
+      files: [{ destination: '.manifest-base.json', format: 'json/manifest', options: { fileMap } }],
     },
   },
 }).buildAllPlatforms();
@@ -152,8 +188,30 @@ await new StyleDictionary({
         options: { rules: RULES[darkFile.rel] },
       }],
     },
+    manifest: {
+      transformGroup: 'custom/css',
+      buildPath: 'dist/',
+      files: [{
+        destination: '.manifest-dark.json',
+        format: 'json/manifest',
+        // Same filter as the CSS above: the base tokens are sourced only so the
+        // dark references resolve, they must not be emitted twice.
+        filter: t => t.filePath === darkFile.filePath,
+        options: { fileMap },
+      }],
+    },
   },
 }).buildAllPlatforms();
+
+// dist/tokens.json — the two passes concatenated, base tokens then the dark
+// overlay, mirroring the order the stylesheets are imported in.
+{
+  const read = f => JSON.parse(fs.readFileSync(`./dist/${f}`, 'utf8'));
+  const manifest = [...read('.manifest-base.json'), ...read('.manifest-dark.json')];
+  fs.writeFileSync('./dist/tokens.json', JSON.stringify(manifest, null, 2) + '\n');
+  fs.rmSync('./dist/.manifest-base.json');
+  fs.rmSync('./dist/.manifest-dark.json');
+}
 
 // Each generated CSS file declares its own cascade layer (@layer tokens { … }),
 // so barrels and index use a plain @import — no layer() function on the import.
