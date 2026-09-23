@@ -3,6 +3,7 @@ isIndex: false
 title: Naming
 description: The naming grammar for semantic and component tokens, the rules that keep it consistent, and the scales in use.
 weight: 1
+icon: tag
 ---
 
 A token name is an API. Once a project references `--color-text-muted`, renaming it is a breaking change, so the grammar below is worth following closely.

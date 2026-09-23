@@ -3,6 +3,7 @@ isIndex: false
 title: Fluid scales
 description: The Utopia method behind the fluid font-size and spacing tokens, and when to reach for them.
 weight: 8
+icon: arrows-expand
 ---
 
 

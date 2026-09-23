@@ -3,6 +3,7 @@ isIndex: false
 title: Style Dictionary
 description: How the JSON token sources are compiled into CSS custom properties, including the dark theme pass.
 weight: 7
+icon: gear
 ---
 
 

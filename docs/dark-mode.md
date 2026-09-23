@@ -3,6 +3,7 @@ isIndex: false
 title: Dark mode
 description: How the dark theme overlays 13 semantic tokens, how a page opts out, and why there is no forced-dark selector.
 weight: 3
+icon: moon-stars
 ---
 
 The dark theme is an **overlay**, not a second palette. `tokens/themes/dark.json` re-declares 13 semantic tokens and nothing else. Every other token, including the whole primitive palette, is shared.
