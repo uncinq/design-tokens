@@ -39,7 +39,7 @@ color.text.muted           →   --color-text-muted
 
 ### Format — `css/layer-tokens`
 
-All tokens are wrapped in `@layer tokens { :root { … } }`. This is a low-priority layer in the Un Cinq stack (order: `reset, tokens, base, layouts, vendors, components`), so any project can override any token by importing after this package inside its own `@layer tokens` block.
+All tokens are wrapped in `@layer tokens { :root { … } }`. `tokens` sits near the bottom of the recommended order, `reset, tokens, libs, vendors, base, layouts, components, pages, utilities`, so any project can override any token by importing after this package inside its own `@layer tokens` block.
 
 References are preserved as `var()` — tokens are **not** resolved to their final values:
 

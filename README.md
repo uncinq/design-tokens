@@ -1,6 +1,6 @@
 # @uncinq/design-tokens
 
-> Framework-agnostic design tokens for Un Cinq projects — Hugo, Symfony, Shopify, or any CSS environment.
+> Framework-agnostic design tokens — Hugo, Symfony, Shopify, or any CSS environment.
 
 <img width="1280" height="640" alt="share-design-tokens" src="https://github.com/user-attachments/assets/66b8ce73-b07d-4cd0-bcb7-f8e0f7a5bb98" />
 
