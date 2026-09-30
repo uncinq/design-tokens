@@ -2,14 +2,14 @@
 isIndex: false
 title: DTCG format
 description: The Design Tokens Community Group JSON format, its keys, types and naming conventions as used in this package.
-weight: 6
+weight: 7
 icon: braces
 ---
 
 
 The [W3C Design Token Community Group (DTCG)](https://www.w3.org/community/design-tokens/) defines a standard interchange format for design tokens, so they can travel between tools (Figma, code, documentation) without loss of meaning.
 
-`@uncinq/design-tokens` uses DTCG JSON as its source format. [Style Dictionary v5](https://styledictionary.com/) transforms those JSON files into CSS custom properties — see [STYLE-DICTIONARY.md](STYLE-DICTIONARY.md) for the build pipeline. The DTCG spec informs the architecture (primitive → semantic → component, naming conventions, token types).
+`@uncinq/design-tokens` uses DTCG JSON as its source format. [Style Dictionary v5](https://styledictionary.com/) transforms those JSON files into CSS custom properties — see [Style Dictionary](../style-dictionary/) for the build pipeline. The DTCG spec informs the architecture (primitive → semantic → component, naming conventions, token types).
 
 ---
 
@@ -229,4 +229,4 @@ This is the key mechanism behind the **primitive → semantic → component** hi
 
 - [DTCG specification](https://tr.designtokens.org/format/) — W3C Community Group draft
 - [DTCG GitHub](https://github.com/design-tokens/community-group) — issues, discussion
-- [Style Dictionary v5](https://styledictionary.com/) — token build pipeline, see [STYLE-DICTIONARY.md](STYLE-DICTIONARY.md)
+- [Style Dictionary v5](https://styledictionary.com/) — token build pipeline, see [Style Dictionary](../style-dictionary/)

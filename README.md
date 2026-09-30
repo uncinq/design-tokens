@@ -71,6 +71,7 @@ Full documentation: **[socle.uncinq.dev/docs/design-tokens/](https://socle.uncin
 
 It is also versioned with the code in [`docs/`](docs/), and ships inside the npm package, so it is readable offline and from `node_modules`:
 
+- [Overview](docs/overview.md) — the three-layer architecture, installation, file structure
 - [Naming](docs/naming.md) — the grammar, the rules, the scales, the category list
 - [Colors](docs/colors.md) — OKLCH, the palette, the semantic roles, WCAG guidance
 - [Dark mode](docs/dark-mode.md) — the overlay model and how to opt out

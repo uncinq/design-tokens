@@ -2,7 +2,7 @@
 isIndex: false
 title: Reference
 description: Every token in the package, generated from the JSON sources so it can never drift from the shipped CSS.
-weight: 5
+weight: 6
 icon: table
 ---
 

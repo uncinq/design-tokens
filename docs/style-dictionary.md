@@ -2,7 +2,7 @@
 isIndex: false
 title: Style Dictionary
 description: How the JSON token sources are compiled into CSS custom properties, including the dark theme pass.
-weight: 7
+weight: 8
 icon: gear
 ---
 
@@ -154,8 +154,8 @@ No changes to `style-dictionary.config.js` are needed.
 ## References
 
 - [Style Dictionary v5 docs](https://styledictionary.com/)
-- [DTCG format](DTCG.md) — token structure and types
-- [Utopia fluid scales](UTOPIA.md) — `clamp()` values in spacing and typography tokens
+- [DTCG format](../dtcg/) — token structure and types
+- [Utopia fluid scales](../utopia/) — `clamp()` values in spacing and typography tokens
 
 ---
 

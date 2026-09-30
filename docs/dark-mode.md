@@ -2,7 +2,7 @@
 isIndex: false
 title: Dark mode
 description: How the dark theme overlays 13 semantic tokens, how a page opts out, and why there is no forced-dark selector.
-weight: 3
+weight: 4
 icon: moon-stars
 ---
 

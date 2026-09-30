@@ -2,7 +2,7 @@
 isIndex: false
 title: Colors
 description: The OKLCH color space, the 19-hue primitive palette, the semantic color roles, and WCAG guidance for using them.
-weight: 2
+weight: 3
 icon: droplet-half
 ---
 

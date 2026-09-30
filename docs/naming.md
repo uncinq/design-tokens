@@ -2,7 +2,7 @@
 isIndex: false
 title: Naming
 description: The naming grammar for semantic and component tokens, the rules that keep it consistent, and the scales in use.
-weight: 1
+weight: 2
 icon: tag
 ---
 
