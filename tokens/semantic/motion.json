@@ -34,6 +34,10 @@
       "$value": [0.42, 0, 0.58, 1],
       "$type": "cubicBezier"
     },
+    "inOutQuart": {
+      "$value": [0.77, 0, 0.175, 1],
+      "$type": "cubicBezier"
+    },
     "outCirc": {
       "$value": [0, 0.55, 0.45, 1],
       "$type": "cubicBezier"
