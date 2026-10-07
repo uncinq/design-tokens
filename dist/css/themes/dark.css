@@ -18,6 +18,7 @@
       --color-text-disabled: var(--color-gray-600);
       --color-text-hover: var(--color-gray-300);
       --color-text-muted: var(--color-gray-400);
+      --color-text-on-muted: var(--color-gray-200);
       --form-color-background: var(--color-gray-900);
     }
   }

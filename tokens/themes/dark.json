@@ -56,6 +56,10 @@
       "muted": {
         "$value": "{color.gray.400}",
         "$type": "color"
+      },
+      "onMuted": {
+        "$value": "{color.gray.200}",
+        "$type": "color"
       }
     }
   },
