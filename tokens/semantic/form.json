@@ -385,8 +385,14 @@
 
     "label": {
       "padding": {
-        "$value": "0 0 0 .3125rem",
-        "$type": "string"
+        "inline": {
+          "$value": ".3125rem 0",
+          "$type": "string"
+        },
+        "block": {
+          "$value": "0",
+          "$type": "dimension"
+        }
       }
     },
 
@@ -462,8 +468,14 @@
 
     "label": {
       "padding": {
-        "$value": "0 0 0 .3125rem",
-        "$type": "string"
+        "inline": {
+          "$value": ".3125rem 0",
+          "$type": "string"
+        },
+        "block": {
+          "$value": "0",
+          "$type": "dimension"
+        }
       }
     },
 

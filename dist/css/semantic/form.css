@@ -73,7 +73,8 @@
     --checkbox-color-border: var(--form-color-border);
     --checkbox-color-border-checked: var(--checkable-color);
     --checkbox-color-border-hover: var(--form-color-border-hover);
-    --checkbox-label-padding: 0 0 0 .3125rem;
+    --checkbox-label-padding-inline: .3125rem 0;
+    --checkbox-label-padding-block: 0;
     --checkbox-mask-checked: var(--icon-tick) center no-repeat;
     --checkbox-mask-indeterminate: var(--icon-dash) center no-repeat;
     --checkbox-scale-checked: 0.7;
@@ -86,7 +87,8 @@
     --radio-color-border: var(--form-color-border);
     --radio-color-border-checked: var(--checkable-color);
     --radio-color-border-hover: var(--form-color-border-hover);
-    --radio-label-padding: 0 0 0 .3125rem;
+    --radio-label-padding-inline: .3125rem 0;
+    --radio-label-padding-block: 0;
     --radio-scale-checked: 0.5;
     --range-thumb-border-width: var(--size-4);
     --range-thumb-border-color: var(--color-white);
