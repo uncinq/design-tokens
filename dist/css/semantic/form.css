@@ -13,8 +13,8 @@
     --form-color-background: var(--color-white);
     --form-color-border: var(--color-border);
     --form-color-border-hover: var(--color-border-hover);
+    --form-color-on-accent: var(--color-on-accent);
     --form-color-text: var(--color-text);
-    --form-color-text-on-accent: var(--color-text-on-accent);
     --form-padding: var(--spacing-control);
     --form-shadow: var(--shadow-control);
     --form-shadow-hover: var(--shadow-control-hover);

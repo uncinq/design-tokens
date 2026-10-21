@@ -39,13 +39,15 @@
           "$type": "color"
         }
       },
+      "on": {
+        "accent": {
+          "$value": "{color.on.accent}",
+          "$type": "color"
+        }
+      },
       "text": {
         "default": {
           "$value": "{color.text.default}",
-          "$type": "color"
-        },
-        "onAccent": {
-          "$value": "{color.text.onAccent}",
           "$type": "color"
         }
       }

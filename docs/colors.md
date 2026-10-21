@@ -127,26 +127,28 @@ The default brand is **sienna**, a warm brick-red. `--color-accent` and its vari
 
 `--color-text-muted` is derived rather than aliased: `oklch(from var(--color-text) l c h / var(--opacity-muted))`. It therefore follows any override of `--color-text` automatically, which is why it is not simply an alias of gray-500. The dark theme is the one place that overrides it outright, to gray-400, because a transparent text color over a dark background does not mute the same way it does over a light one.
 
-### Text on colored backgrounds
+### Content on colored backgrounds
 
-These exist so that contrast holds when a color becomes the background.
+These exist so that contrast holds when a color becomes the background. `--color-on-brand` is the color of whatever sits on `--color-brand`: text and links, but also icons, borders, or the fill of an inverted button.
 
 ```css
---color-text-on-brand      /* white */
---color-text-on-accent     /* white */
---color-text-on-dark       /* white */
---color-text-on-black      /* white */
---color-text-on-light      /* gray-900 */
---color-text-on-white      /* black */
---color-text-on-surface    /* equals --color-text */
---color-text-on-muted      /* gray-900 */
---color-text-on-neutral    /* white */
---color-text-on-danger     /* white */
---color-text-on-info       /* white */
---color-text-on-success    /* white */
---color-text-on-highlight  /* gray-900 */
---color-text-on-warning    /* gray-900, amber is bright so dark text is required */
+--color-on-brand      /* white */
+--color-on-accent     /* white */
+--color-on-dark       /* white */
+--color-on-black      /* white */
+--color-on-light      /* gray-900 */
+--color-on-white      /* black */
+--color-on-surface    /* equals --color-text */
+--color-on-muted      /* gray-900 */
+--color-on-neutral    /* white */
+--color-on-danger     /* white */
+--color-on-info       /* white */
+--color-on-success    /* white */
+--color-on-highlight  /* gray-900 */
+--color-on-warning    /* gray-900, amber is bright so dark content is required */
 ```
+
+The name carries no role on purpose. A role-specific variant keeps the role and moves `on` to the end: `--color-border-on-muted` is the border tuned for a muted surface, next to `--color-on-muted` for the content.
 
 ### Status and surface variants
 
@@ -154,7 +156,7 @@ These exist so that contrast holds when a color becomes the background.
 | --- | --- | --- |
 | `--color-danger` | red-600 | Errors, destructive actions |
 | `--color-success` | green-600 | Confirmations |
-| `--color-warning` | amber-500 | Warnings, pair with `--color-text-on-warning` |
+| `--color-warning` | amber-500 | Warnings, pair with `--color-on-warning` |
 | `--color-info` | blue-600 | Informational |
 | `--color-highlight` | yellow-100 | Marked or highlighted text |
 | `--color-neutral` | gray-500 | Neutral emphasis |
@@ -195,7 +197,7 @@ Rules of thumb for this palette:
 
 - **White text on a colored background** needs step **600 or darker**. Step 500 and below typically land around 3 to 3.5 : 1, which fails for normal text.
 - **Colored text on white** needs step **700 or darker** for normal text.
-- **Warning** is the exception that proves the rule. `--color-warning` is amber-500, whose `L` is about 0.78, so it must be paired with `--color-text-on-warning` (gray-900). Never put white text on it.
+- **Warning** is the exception that proves the rule. `--color-warning` is amber-500, whose `L` is about 0.78, so it must be paired with `--color-on-warning` (gray-900). Never put white text on it.
 - **Decorative use** is unconstrained. Any step is fine when color carries no information, as in borders, illustrations or icons that duplicate a visible label.
 
 These are starting points, not a substitute for measuring. Contrast depends on both colors, and an override of `--color-brand` invalidates the assumptions above.

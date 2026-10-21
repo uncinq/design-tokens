@@ -34,6 +34,12 @@
       "$value": "{color.white}",
       "$type": "color"
     },
+    "on": {
+      "muted": {
+        "$value": "{color.gray.200}",
+        "$type": "color"
+      }
+    },
     "shadow": {
       "default": {
         "$value": "{color.white}",
@@ -55,10 +61,6 @@
       },
       "muted": {
         "$value": "{color.gray.400}",
-        "$type": "color"
-      },
-      "onMuted": {
-        "$value": "{color.gray.200}",
         "$type": "color"
       }
     }

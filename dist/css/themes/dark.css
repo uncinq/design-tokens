@@ -13,12 +13,12 @@
       --color-background-muted-hover: var(--color-gray-800);
       --color-border: var(--color-gray-800);
       --color-heading: var(--color-white);
+      --color-on-muted: var(--color-gray-200);
       --color-shadow: var(--color-white);
       --color-text: var(--color-gray-200);
       --color-text-disabled: var(--color-gray-600);
       --color-text-hover: var(--color-gray-300);
       --color-text-muted: var(--color-gray-400);
-      --color-text-on-muted: var(--color-gray-200);
       --form-color-background: var(--color-gray-900);
     }
   }

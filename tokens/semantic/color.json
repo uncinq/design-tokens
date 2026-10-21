@@ -230,6 +230,64 @@
         "$type": "color"
       }
     },
+    "on": {
+      "accent": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "black": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "brand": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "danger": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "dark": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "highlight": {
+        "$value": "{color.gray.900}",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "light": {
+        "$value": "{color.gray.900}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{color.gray.900}",
+        "$type": "color"
+      },
+      "neutral": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "{color.white}",
+        "$type": "color"
+      },
+      "surface": {
+        "$value": "{color.text.default}",
+        "$type": "color"
+      },
+      "warning": {
+        "$value": "{color.gray.900}",
+        "$type": "color"
+      },
+      "white": {
+        "$value": "{color.black}",
+        "$type": "color"
+      }
+    },
     "shadow": {
       "default": {
         "$value": "{color.black}",
@@ -281,62 +339,6 @@
       },
       "muted": {
         "$value": "oklch(from {color.text.default} l c h / {opacity.muted})",
-        "$type": "color"
-      },
-      "onAccent": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onBlack": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onBrand": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onDanger": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onDark": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onHighlight": {
-        "$value": "{color.gray.900}",
-        "$type": "color"
-      },
-      "onInfo": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onLight": {
-        "$value": "{color.gray.900}",
-        "$type": "color"
-      },
-      "onMuted": {
-        "$value": "{color.gray.900}",
-        "$type": "color"
-      },
-      "onNeutral": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onSuccess": {
-        "$value": "{color.white}",
-        "$type": "color"
-      },
-      "onSurface": {
-        "$value": "{color.text.default}",
-        "$type": "color"
-      },
-      "onWarning": {
-        "$value": "{color.gray.900}",
-        "$type": "color"
-      },
-      "onWhite": {
-        "$value": "{color.black}",
         "$type": "color"
       }
     },

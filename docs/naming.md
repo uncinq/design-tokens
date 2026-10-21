@@ -98,7 +98,7 @@ The zero-padding on heading levels is there so that `01` through `06` sort corre
 
 | Category | Covers | Example |
 | --- | --- | --- |
-| `color` | All color values | `--color-brand`, `--color-text-on-dark` |
+| `color` | All color values | `--color-brand`, `--color-on-dark` |
 | `font-family` | Typefaces | `--font-family-heading` |
 | `font-size` | Text sizes | `--font-size-sm`, `--font-size-heading-01` |
 | `font-size-fluid` | Responsive fluid type scale | `--font-size-fluid-xl` |

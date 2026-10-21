@@ -21,12 +21,12 @@ That is the point of the semantic layer: if a component reads `--color-backgroun
 | `--color-background-muted-hover` | gray-200 | gray-800 |
 | `--color-border` | gray-200 | gray-800 |
 | `--color-heading` | black | white |
+| `--color-on-muted` | gray-900 | gray-200 |
 | `--color-shadow` | black | white |
 | `--color-text` | gray-900 | gray-200 |
 | `--color-text-disabled` | gray-300 | gray-600 |
 | `--color-text-hover` | gray-700 | gray-300 |
 | `--color-text-muted` | derived from `--color-text` | gray-400 |
-| `--color-text-on-muted` | gray-900 | gray-200 |
 | `--form-color-background` | white | gray-900 |
 
 Two of these do more work than they look. `--color-shadow` flipping to white inverts the entire shadow system in one line, because `--color-shadow-light`, `-medium` and `-strong` all derive from it with relative color syntax. And `--color-background-surface` is not in the list at all, because it aliases `--color-background` and follows for free.
