@@ -3,7 +3,7 @@ isIndex: false
 title: Customizing
 description: The two override strategies, CSS layer override and JSON plus build, and when each one is the right tool.
 weight: 5
-icon: sliders
+icon: sliders-horizontal
 ---
 
 There are two ways to change what this package produces. Pick by how deep the change goes, not by preference.
