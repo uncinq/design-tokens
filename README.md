@@ -98,6 +98,10 @@ npm run build     # tokens/**/*.json → dist/css/**
 - [`@uncinq/component-tokens`](https://github.com/uncinq/component-tokens) — the component layer
 - [`@uncinq/css-base`](https://github.com/uncinq/css-base) — the CSS foundation consuming these tokens
 
+## Sponsors
+
+Socle is free and open source. If it saves you time, you can support its development on [GitHub Sponsors](https://github.com/sponsors/sebousan).
+
 ## License
 
 MIT © [Un Cinq](https://uncinq.dev/)
